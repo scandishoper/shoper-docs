@@ -1,0 +1,2899 @@
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://scandishoper.github.io/shoper-docs/technology/p44/">
+      
+      
+        <link rel="prev" href="../p43/">
+      
+      
+        <link rel="next" href="../p45/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/2026-2-16-2.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>hexo博客搭建 - shoper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-8JQ8PJF435"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-8JQ8PJF435",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-8JQ8PJF435",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="shoper" class="md-header__button md-logo" aria-label="shoper" data-md-component="logo">
+      
+  <img src="../../assets/2026-2-16-3.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            shoper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              hexo博客搭建
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/scandishoper/shoper-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scandishoper/shoper-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/p17/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algo/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../solutions/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  题解
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../csdiy/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  csdiy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../views/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  看法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/p17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  博客
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="shoper" class="md-nav__button md-logo" aria-label="shoper" data-md-component="logo">
+      
+  <img src="../../assets/2026-2-16-3.png" alt="logo">
+
+    </a>
+    shoper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/scandishoper/shoper-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scandishoper/shoper-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/p17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../algo/index.md" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../solutions/index.md" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    题解
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../csdiy/index.md" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    csdiy
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    技术
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI翻译插件配置教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    hexo博客搭建
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    hexo博客搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.准备阶段
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.需要下载的软件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.需要下载的软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 安装 Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.安装 Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 下载并安装 vscode （这是一款轻量型的代码编辑器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.配置 Git 密钥并连接至 Github
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.配置 Git 密钥并连接至 Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-git-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 打开 Git Bash 如图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 配置用户名和邮箱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 配置公钥连接 Github
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 配置公钥连接 Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-ssh-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 执行以下命令生成 ssh 公钥，此公钥用于你的计算机连接 Github
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-ssh-key-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2 将 SSH KEY 配置到 GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3 测试连接，输入以下命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接没有现实如图信息，则查看下面这篇博文尝试解决！！！
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-githubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.创建 GitHub.io 仓库
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.创建 GitHub.io 仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-new-repositorygithubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户名&gt;.github.io 的仓库。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-githubio-githubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)（不要忘记加.github.io
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-public-creat-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Creat repository 进行创建即可
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.初始化 Hexo 博客
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.初始化 Hexo 博客">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-dcollege-open-git-bash-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college），在文件夹内右键鼠标，选择 【Open Git Bash here】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-git-bash-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 在【Git BASH】输入如下命令安装 Hexo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-hexo-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 安装完后输入【hexo -v】验证是否安装成功。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 初始化 Hexo 项目安装相关依赖。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-college" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 初始化项目后，college 文件夹中 有如下结构：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-hexo-cl-hexo-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.将静态博客挂载到 GitHub Pages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.将静态博客挂载到 GitHub Pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-hexo-deployer-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 安装 hexo-deployer-git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-_configyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 修改 _config.yml 文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-githubhexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httpscollegegithubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        稍等两分钟，打开浏览器访问：https://college.github.io （注意！这里要用你的仓库名字替换），这时候我们就可以看到博客内容了。
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cloudflare-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.将静态博客挂载到 Cloudflare Pages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.将静态博客挂载到 Cloudflare Pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-cloudflare-pages-workers-pages-pages-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 打开 Cloudflare Pages，在 【Workers 和 Pages】 中选择 【Pages】 的 【连接到 Git】 如图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githubioprivate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Private】私库了（不改也行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-git-bash-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#81-vscode-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 打开 vscode， 在 vscode 中打开项目文件夹
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 新建终端，以后直接在 vscode 上运行命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-pug-stylus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 第一次使用需要安装 pug 以及 stylus 的渲染器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-_configyml-nextanzhiyu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 覆盖配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.平时编辑博客和博文的一些基本操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.平时编辑博客和博文的一些基本操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面命令上传，才能反馈给网站产生变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 新建一篇博文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-scaffolds-postmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 平时我个人更改博客的一些小技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一开始面对晦涩的名词多有不解，不过没事！我们目的本来就不是要学会它的原理，只是搭建一个较为自由的个人平台，方便自己记录些东西。刚开始可能会出现许多问题，遇到问题可以多问问 ai 详细描述你的困境，一般都能解决（我就是这样子。。。
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    在学校内上传博文报错的解决
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    智慧树军事课脚本
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动刷题刷课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../views/index.md" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    看法
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../blog/p17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    博客
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.准备阶段
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.需要下载的软件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.需要下载的软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 安装 Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.安装 Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 下载并安装 vscode （这是一款轻量型的代码编辑器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.配置 Git 密钥并连接至 Github
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.配置 Git 密钥并连接至 Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-git-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 打开 Git Bash 如图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 配置用户名和邮箱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 配置公钥连接 Github
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 配置公钥连接 Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-ssh-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 执行以下命令生成 ssh 公钥，此公钥用于你的计算机连接 Github
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-ssh-key-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2 将 SSH KEY 配置到 GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3 测试连接，输入以下命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接没有现实如图信息，则查看下面这篇博文尝试解决！！！
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-githubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.创建 GitHub.io 仓库
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.创建 GitHub.io 仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-new-repositorygithubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户名&gt;.github.io 的仓库。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-githubio-githubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)（不要忘记加.github.io
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-public-creat-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Creat repository 进行创建即可
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.初始化 Hexo 博客
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.初始化 Hexo 博客">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-dcollege-open-git-bash-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college），在文件夹内右键鼠标，选择 【Open Git Bash here】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-git-bash-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 在【Git BASH】输入如下命令安装 Hexo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-hexo-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 安装完后输入【hexo -v】验证是否安装成功。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 初始化 Hexo 项目安装相关依赖。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-college" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 初始化项目后，college 文件夹中 有如下结构：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-hexo-cl-hexo-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.将静态博客挂载到 GitHub Pages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.将静态博客挂载到 GitHub Pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-hexo-deployer-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 安装 hexo-deployer-git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-_configyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 修改 _config.yml 文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-githubhexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httpscollegegithubio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        稍等两分钟，打开浏览器访问：https://college.github.io （注意！这里要用你的仓库名字替换），这时候我们就可以看到博客内容了。
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cloudflare-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.将静态博客挂载到 Cloudflare Pages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.将静态博客挂载到 Cloudflare Pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-cloudflare-pages-workers-pages-pages-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 打开 Cloudflare Pages，在 【Workers 和 Pages】 中选择 【Pages】 的 【连接到 Git】 如图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githubioprivate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Private】私库了（不改也行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-git-bash-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#81-vscode-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 打开 vscode， 在 vscode 中打开项目文件夹
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 新建终端，以后直接在 vscode 上运行命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-pug-stylus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 第一次使用需要安装 pug 以及 stylus 的渲染器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-_configyml-nextanzhiyu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 覆盖配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.平时编辑博客和博文的一些基本操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.平时编辑博客和博文的一些基本操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面命令上传，才能反馈给网站产生变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 新建一篇博文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-scaffolds-postmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 平时我个人更改博客的一些小技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一开始面对晦涩的名词多有不解，不过没事！我们目的本来就不是要学会它的原理，只是搭建一个较为自由的个人平台，方便自己记录些东西。刚开始可能会出现许多问题，遇到问题可以多问问 ai 详细描述你的困境，一般都能解决（我就是这样子。。。
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+    <div class="md-meta" style="margin: .6rem 0 1.2rem 0; font-size: 0.85rem; opacity: .8;">
+      
+        <span>创建：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月16日 10:50:24 UTC">2026年2月16日</span></span>
+      
+      
+        <span style="margin-left: .8rem;">更新：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月16日 11:26:03 UTC">2026年2月16日</span></span>
+      
+      
+        <span style="margin-left: .8rem;">作者：<span class='git-page-authors git-authors'>scandi</span></span>
+      
+    </div>
+  
+
+  
+                  
+
+
+  
+    <a href="https://github.com/scandishoper/shoper-docs/edit/master/docs/technology/p44.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/scandishoper/shoper-docs/raw/master/docs/technology/p44.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="0">本博文记录搭建类似本博客网站的方式，可以 0 经济成本完成</h1>
+<p>整体过程 借助 hexo 框架使用现有主题直接形成网站基本框架，然后部署到 GitHub Pages 和 Cloudflare Pages 上。</p>
+<h2 id="1">1.准备阶段</h2>
+<p>1.（必须）你需要注册一个 <a href="https://github.com/">GitHub</a> 账号（如果无法直接打开 github 试试 <a href="https://hoa.moe/blog/access-github/">这个小玩意</a></p>
+<p>2.（非必需）你可以注册一个<a href="https://dash.cloudflare.com/login">Cloudflare Pages</a> 它可以将博客的 CDN 加速</p>
+<h2 id="2">2.需要下载的软件</h2>
+<h3 id="21-node">2.1 安装 Node</h3>
+<p>1.打开 Node 官网，下载并安装和自己系统相配的 Node 的安装程序，否则会出现安装问题。下载地址：<a href="https://nodejs.org/en">https://nodejs.org/en</a></p>
+<p>2.安装完成后，要检查看看是否安装成功。操作如下：在键盘按下 win + R 键，输入 CMD，然后回车，打开 CMD 窗口，执行下面的命令。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>node<span class="w"> </span>-v
+</span></code></pre></div>
+<p>看到类似下面的版本信息，则说明安装成功。
+<img alt="111" src="assets/1.png" /></p>
+<h3 id="22-git">2.2.安装 Git</h3>
+<p>1.打开 Git 官网，下载并安装和自己系统相配的 Git:<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p>2.点击电脑 window 开始按钮，可以搜索到 Git CMD，Git Bash，Git GUI。（主要使用 Git Bash</p>
+<h3 id="23-vscode">2.3 下载并安装 <a href="https://code.visualstudio.com/">vscode</a> （这是一款轻量型的代码编辑器</h3>
+<hr />
+<h2 id="3-git-github">3.配置 Git 密钥并连接至 Github</h2>
+<h3 id="31-git-bash">3.1 打开 Git Bash 如图</h3>
+<p><img alt="111" src="assets/111.png" /></p>
+<h3 id="32">3.2 配置用户名和邮箱</h3>
+<p>用户名和邮箱可以自己随便取（不用真实也许
+这里假设
+用户名为：scandi
+邮箱：3567140151@qq.com
+在上面打开的 Git Bash 中 依次输入下面命令然后回车</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span>scandi
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="m">3567140151</span>@qq.com
+</span></code></pre></div>
+<p>然后通过下面命令检查是否配置成功。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>config<span class="w"> </span>-l
+</span></code></pre></div>
+<p>类似下图即配置成功
+<img alt="1111" src="assets/1111.png" /></p>
+<h3 id="33-github">3.3 配置公钥连接 Github</h3>
+<h4 id="331-ssh-github">3.3.1 执行以下命令生成 ssh 公钥，此公钥用于你的计算机连接 Github</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;你的邮箱&quot;</span>
+</span></code></pre></div>
+<p>提示 【Enter file in which to save the key】 直接一路回车即可。</p>
+<p>之后打开 C 盘下用户文件夹下的.ssh 的文件夹，会看到以下文件
+<img alt="11111" src="assets/11111.png" />
+用记事本打开上述图片中的公钥 【id_rsa.pub】，复制里面的内容，然后开始在 github 中配置 ssh 密钥。</p>
+<h4 id="332-ssh-key-github">3.3.2 将 SSH KEY 配置到 GitHub</h4>
+<p>进入 github，点击右上角头像 选择 【settings】，进入设置页后选择 【SSH and GPG keys】，名字随便起，公钥填到 【Key】 那一栏。如图
+<img alt="111111" src="assets/111111.png" /></p>
+<h4 id="333">3.3.3 测试连接，输入以下命令</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</span></code></pre></div>
+<p>第一次连接会提示【Are you sure you want to continue connecting (yes/no/[fingerprint])?】，输入 yes 即可<br />
+如图即连接成功
+<img alt="1111111" src="assets/1111111.png" /></p>
+<h3 id="ssh">如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接没有现实如图信息，则查看下面这篇博文尝试解决！！！</h3>
+<p><a href="https://scandidreams.top/2025/02/23/%E5%9C%A8%E5%AD%A6%E6%A0%A1%E5%86%85%E4%B8%8A%E4%BC%A0%E5%8D%9A%E6%96%87%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3/">解决博文</a></p>
+<hr />
+<h2 id="4-githubio">4.创建 GitHub.io 仓库</h2>
+<h3 id="41-new-repositorygithubio">4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户名&gt;.github.io 的仓库。</h3>
+<h3 id="42-githubio-githubio">4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)（不要忘记加.github.io</h3>
+<h3 id="43-public-creat-repository">4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Creat repository 进行创建即可</h3>
+<h2 id="_1"><img alt="2" src="assets/2.png" /></h2>
+<hr />
+<h2 id="5-hexo">5.初始化 Hexo 博客</h2>
+<h3 id="51-dcollege-open-git-bash-here">5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college），在文件夹内右键鼠标，选择 【Open Git Bash here】</h3>
+<p><img alt="1111111" src="assets/22.png" /></p>
+<h3 id="52-git-bash-hexo">5.2 在【Git BASH】输入如下命令安装 Hexo</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>hexo-cli<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>hexo<span class="w"> </span>-v
+</span></code></pre></div>
+<p><img alt="1111111" src="assets/222.png" /></p>
+<h3 id="53-hexo-v">5.3 安装完后输入【hexo -v】验证是否安装成功。</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>hexo<span class="w"> </span>-v
+</span></code></pre></div>
+<p><img alt="1111111" src="assets/2222.png" /></p>
+<h3 id="54-hexo">5.4 初始化 Hexo 项目安装相关依赖。</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>hexo<span class="w"> </span>init<span class="w"> </span>“自己取文件名”
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">cd</span><span class="w"> </span>“上面取的文件名”
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>npm<span class="w"> </span>i
+</span></code></pre></div>
+<p><img alt="1111111" src="assets/22222.png" /></p>
+<h3 id="55-college">5.5 初始化项目后，college 文件夹中 有如下结构：</h3>
+<p><img alt="1111111" src="assets/222222.png" /></p>
+<h3 id="56-hexo-cl-hexo-s">5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>hexo<span class="w"> </span>cl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>hexo<span class="w"> </span>s
+</span></code></pre></div>
+<p>出现如图
+<img alt="1111111" src="assets/3.png" /></p>
+<p>打开浏览器，输入地址：【http://localhost:4000/ 】 ，看到下面的效果，说明你的博客已经构建成功了。</p>
+<h2 id="_2"><img alt="1111111" src="assets/2222222.png" /></h2>
+<hr />
+<h2 id="6-github-pages">6.将静态博客挂载到 GitHub Pages</h2>
+<h3 id="61-hexo-deployer-git">6.1 安装 hexo-deployer-git</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>npm<span class="w"> </span>install<span class="w"> </span>hexo-deployer-git<span class="w"> </span>--save
+</span></code></pre></div>
+<h3 id="62-_configyml">6.2 修改 _config.yml 文件</h3>
+<p>在 college 目录下的_config.yml，就是整个 Hexo 框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。
+<img alt="1111111" src="assets/33.png" />
+找到最后一行的配置如图
+<img alt="1111111" src="assets/333.png" />
+修改它像下面代码这样的格式</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>deploy:
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span>type:<span class="w"> </span>git
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>repository:
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span>branch:<span class="w"> </span>main
+</span></code></pre></div>
+<p>然后将 repository 修改为你自己的 github 项目地址即可，还有分支要改为 main 代表主分支（注意缩进）。
+你自己的 github 项目地址在下面这里找
+<img alt="1111111" src="assets/3333.png" />
+总体类似下面这样
+<img alt="1111111" src="assets/33333.png" /></p>
+<h3 id="63-githubhexo">6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。</h3>
+<p>（在 Git Bash 上用第一行那个命令，不要全部复制上去）</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>//<span class="w"> </span>Git<span class="w"> </span>BASH终端
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>hexo<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>hexo<span class="w"> </span>generate<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>hexo<span class="w"> </span>deploy
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>//<span class="w"> </span>或者
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>//<span class="w"> </span>VSCODE终端
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>hexo<span class="w"> </span>cl<span class="p">;</span><span class="w"> </span>hexo<span class="w"> </span>g<span class="p">;</span><span class="w"> </span>hexo<span class="w"> </span>d
+</span></code></pre></div>
+<p>如果出现【Deploy done】，则说明部署成功了。
+<img alt="1111111" src="assets/333333.png" /></p>
+<h3 id="httpscollegegithubio">稍等两分钟，打开浏览器访问：https://college.github.io （注意！这里要用你的仓库名字替换），这时候我们就可以看到博客内容了。</h3>
+<p><img alt="1111111" src="assets/3333333.png" /></p>
+<hr />
+<h2 id="7-cloudflare-pages">7.将静态博客挂载到 Cloudflare Pages</h2>
+<h3 id="71-cloudflare-pages-workers-pages-pages-git">7.1 打开 Cloudflare Pages，在 【Workers 和 Pages】 中选择 【Pages】 的 【连接到 Git】 如图</h3>
+<p><img alt="1111111" src="assets/4.png" />
+然后选择 连接 Github，登录账号，选择你要部署的仓库
+<img alt="1111111" src="assets/44.png" />
+点击保存并部署后等待部署完成即可。
+<img alt="1111111" src="assets/444.png" />
+提示【成功！您的项目已部署到以下区域：全球】后，浏览器访问：https://college-github-io.pages.dev ，这时候我们就可以看到博客内容了。
+<img alt="1111111" src="assets/4444.png" /></p>
+<h3 id="githubioprivate">这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Private】私库了（不改也行</h3>
+<hr />
+<h2 id="8">8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它</h2>
+<p>本博客网站采用的主题是【anzhiyu】
+实际上 搜索【hexo 主题】，会有大量主题供你选择，挑一个喜欢的下载就行，每个主题都会提供下载命令，这里我以【next】主题为例（当然【anzhiyu】主题一样的流程，我同时举例</p>
+<h3 id="81-git-bash-next">8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span>hexo
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>//下面这个是【next】
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/theme-next/hexo-theme-next<span class="w"> </span>themes/next
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>//下面这个是【anzhiyu】
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>main<span class="w"> </span>https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git<span class="w"> </span>themes/anzhiyu
+</span></code></pre></div>
+<p>如下图，即为下载成功
+<img alt="1111111" src="assets/444444.png" /></p>
+<h3 id="81-vscode-vscode">8.1 打开 vscode， 在 vscode 中打开项目文件夹</h3>
+<p><img alt="1111111" src="assets/44444.png" /></p>
+<p><img alt="1111111" src="assets/4444444.png" /></p>
+<h3 id="82-vscode">8.2 新建终端，以后直接在 vscode 上运行命令</h3>
+<p><img alt="1111111" src="assets/5.png" /></p>
+<h3 id="83-pug-stylus">8.3 第一次使用需要安装 pug 以及 stylus 的渲染器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>npm<span class="w"> </span>install<span class="w"> </span>hexo-renderer-pug<span class="w"> </span>hexo-renderer-stylus<span class="w"> </span>--save
+</span></code></pre></div>
+<h3 id="84-_configyml-nextanzhiyu">8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】</h3>
+<p><img alt="1111111" src="assets/55.png" /></p>
+<h3 id="85">8.5 覆盖配置</h3>
+<p>手动将【/themes/next/_config.yml】或者【/themes/anzhiyu/_config.yml】复制到根目录下并重命名为【_config.next.yml】或者【_config.anzhiyu.yml】即可。
+如图
+<img alt="1111111" src="assets/555.png" /></p>
+<hr />
+<h2 id="9">9.平时编辑博客和博文的一些基本操作</h2>
+<h3 id="91">9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面命令上传，才能反馈给网站产生变化</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>//本地预览
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>hexo<span class="w"> </span>cl<span class="p">;</span><span class="w"> </span>hexo<span class="w"> </span>s
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>//推送更新上线
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>hexo<span class="w"> </span>cl<span class="p">;</span><span class="w"> </span>hexo<span class="w"> </span>g<span class="p">;</span><span class="w"> </span>hexo<span class="w"> </span>d
+</span></code></pre></div>
+<p>每次修改后，可以先运行【hexo cl; hexo s】命令，就会生成临时页面效果链接，打开就可以看临时效果，这时候不会对公开网站产生修改变化。
+等你觉得修改没问题，想要上线完成修改，再运行【hexo cl; hexo g; hexo d】命令，推送更新上线。</p>
+<h3 id="92">9.2 新建一篇博文</h3>
+<p>终端中输入下面命令</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>hexo<span class="w"> </span>new<span class="w"> </span><span class="s2">&quot;博文名称&quot;</span>
+</span></code></pre></div>
+<p>回车确认后，在总文件夹中的 source 文件夹的 _posts 文件夹中出现一个新的博文文件（markdown 格式）这样就可以直接对博文进行编辑</p>
+<h3 id="93-scaffolds-postmd">9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板</h3>
+<p>修改【post.md】模板 可以使得每次新建的博文文章，会有一段相同的初始化设置，免得每次都重复添加
+post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>---
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>title:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>title<span class="w"> </span><span class="o">}}</span><span class="w"> </span><span class="c1">#【必需】页面标题</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>date:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>date<span class="w"> </span><span class="o">}}</span><span class="w"> </span><span class="c1">#【必需】页面创建日期</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>updated:<span class="w"> </span><span class="c1">#【可选】页面更新日期</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>tags:<span class="w"> </span><span class="c1">#【可选】文章标签</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>categories:<span class="w"> </span><span class="c1">#【可选】文章分类</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>keywords:<span class="w"> </span><span class="c1">#【可选】文章关键字</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>description:<span class="w"> </span><span class="c1">#【可选】文章描述</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>top:<span class="w"> </span><span class="c1"># 1 置顶</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>top_img:<span class="w"> </span><span class="c1">#【可选】文章顶部图片</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>comments:<span class="w"> </span><span class="c1">#【可选】显示文章评论模块(默认 true)</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>cover:<span class="w"> </span>https://img.090227.xyz/file/ae62475a131f3734a201c.png<span class="w"> </span><span class="c1">#【可选】文章缩略图(如果没有设置 top_img,文章页顶部将显示缩略图，可设为 false/图片地址/留空)</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>toc:<span class="w"> </span><span class="c1">#【可选】显示文章 TOC(默认为设置中 toc 的 enable 配置)</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>toc_number:<span class="w"> </span><span class="c1">#【可选】显示 toc_number(默认为设置中 toc 的 number 配置)</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>toc_style_simple:<span class="w"> </span><span class="c1">#【可选】显示 toc 简洁模式</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>copyright:<span class="w"> </span><span class="c1">#【可选】显示文章版权模块(默认为设置中 post_copyright 的 enable 配置)</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>copyright_author:<span class="w"> </span><span class="c1">#【可选】文章版权模块的文章作者</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>copyright_author_href:<span class="w"> </span><span class="c1">#【可选】文章版权模块的文章作者链接</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>copyright_url:<span class="w"> </span><span class="c1">#【可选】文章版权模块的文章作者链接</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>copyright_info:<span class="w"> </span><span class="c1">#【可选】文章版权模块的版权声明文字</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>mathjax:<span class="w"> </span><span class="c1">#【可选】显示 mathjax(当设置 mathjax 的 per_page: false 时，才需要配置，默认 false)</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>katex:<span class="w"> </span><span class="c1">#【可选】显示 katex(当设置 katex 的 per_page: false 时，才需要配置，默认 false)</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>aplayer:<span class="w"> </span><span class="c1">#【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的音乐 配置</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>highlight_shrink:<span class="w"> </span><span class="c1">#【可选】配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>aside:<span class="w"> </span><span class="c1">#【可选】显示侧边栏 (默认 true)</span>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>swiper_index:<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="c1">#【可选】首页轮播图配置 index 索引，数字越小越靠前</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>top_group_index:<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="c1">#【可选】首页右侧卡片组配置, 数字越小越靠前</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>ai:<span class="w"> </span><span class="c1">#【可选】文章ai摘要</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>background:<span class="w"> </span><span class="s2">&quot;#fff&quot;</span><span class="w"> </span><span class="c1">#【可选】文章主色，必须是16进制颜色且有6位，不可缩减，例如#ffffff 不可写成#fff</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>---
+</span></code></pre></div>
+<h3 id="94">9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行</h3>
+<h3 id="95">9.5 平时我个人更改博客的一些小技巧</h3>
+<p>首先打开网站，按键盘【f12】，点击如图红色框框的东西</p>
+<p><img alt="1111111" src="assets/66.png" /></p>
+<p>然后再用鼠标对准网页中的元素，比如对准某张图片位置，既可以得到定义所选图片的代码，复制这些代码的部分关键词，然后再回到 vscode 的环境主题文件【_config.next.yml】或者【_config.anzhiyu.yml】中，按 ctrl+f，打开搜索功能，粘贴上刚才的代码关键词，就可以直接修改选中元素</p>
+<hr />
+<h2 id="ai">至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一开始面对晦涩的名词多有不解，不过没事！我们目的本来就不是要学会它的原理，只是搭建一个较为自由的个人平台，方便自己记录些东西。刚开始可能会出现许多问题，遇到问题可以多问问 ai 详细描述你的困境，一般都能解决（我就是这样子。。。</h2>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月16日 11:26:03 UTC">2026年2月16日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月16日 10:50:24 UTC">2026年2月16日</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="贡献者">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      scandi
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面对你有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢你的反馈！欢迎通过 <a href="..." target="_blank" rel="noopener">反馈表单</a> 告诉我哪里可以做得更好。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+
+<h2 id="__comments">评论</h2>
+
+<!-- Giscus（把你从 giscus.app 生成的 snippet 粘贴/替换到这里） -->
+<script src="https://giscus.app/client.js"
+        data-repo="scandishoper/shoper-docs"
+        data-repo-id="R_kgDORRSjbg"
+        data-category="General"
+        data-category-id="DIC_kwDORRSjbs4C2iWN"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- 同步 giscus 主题（跟随 Material 的浅色/深色切换） -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  // 初次加载：根据当前配色设置 giscus theme
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate"
+      ? "transparent_dark"
+      : "light"
+    giscus.setAttribute("data-theme", theme)
+  }
+
+  // 监听主题切换：通知 iframe 更新 theme
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+          ? "transparent_dark"
+          : "light"
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../p43/" class="md-footer__link md-footer__link--prev" aria-label="上一页: AI翻译插件配置教程">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                AI翻译插件配置教程
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../p45/" class="md-footer__link md-footer__link--next" aria-label="下一页: 在学校内上传博文报错的解决">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                在学校内上传博文报错的解决
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 shoper – <a href="#__consent">Change cookie settings</a>
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/scandishoper" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie consent</h4>
+<p>我使用 cookies 来识别您的重复访问和偏好，以及其他信息 以评估我的文档的有效性以及用户是否 找到他们正在寻找的东西。在你同意的情况下，你正在帮助我实现目标。 让我的文档更好。</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Custom name
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "content.action.edit", "content.action.view", "search.suggest", "search.highlight", "search.share", "navigation.footer", "navigation.expand", "navigation.path", "navigation.prune", "header.autohide", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/consent.js"></script>
+      
+    
+  </body>
+</html>
