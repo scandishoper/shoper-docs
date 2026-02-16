@@ -1,0 +1,7 @@
+mkdocs-material
+mkdocs-git-revision-date-localized-plugin
+mkdocs-git-authors-plugin
+mkdocs-encryptcontent-plugin
+mkdocs-rss-plugin
+mkdocs-redirects
+mkdocs-minify-plugin

@@ -1,0 +1,21 @@
+{# overrides/main.html #}
+{% extends "base.html" %}
+
+{% block content %}
+  {# 元信息块：标题下方（正文前） #}
+  {% if page and page.meta %}
+    <div class="md-meta" style="margin: .6rem 0 1.2rem 0; font-size: 0.85rem; opacity: .8;">
+      {% if page.meta.git_creation_date_localized %}
+        <span>创建：{{ page.meta.git_creation_date_localized }}</span>
+      {% endif %}
+      {% if page.meta.git_revision_date_localized %}
+        <span style="margin-left: .8rem;">更新：{{ page.meta.git_revision_date_localized }}</span>
+      {% endif %}
+      {% if git_page_authors %}
+        <span style="margin-left: .8rem;">作者：{{ git_page_authors }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {{ super() }}
+{% endblock %}

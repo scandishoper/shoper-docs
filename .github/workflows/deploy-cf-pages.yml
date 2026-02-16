@@ -1,0 +1,34 @@
+# .github/workflows/deploy-cf-pages.yml
+name: deploy-cloudflare-pages
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CI: "true"
+      SITE_URL: "https://your-project.pages.dev/"
+      ENABLE_PRIVATE: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Build
+        run: mkdocs build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site --project-name your-project
