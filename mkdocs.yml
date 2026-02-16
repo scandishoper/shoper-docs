@@ -149,7 +149,7 @@ copyright: >
   
 
 nav:
-  - 主页: blog/p17.md
+  - 主页: index.md
 
   - 算法:
       - index: algo/index.md
