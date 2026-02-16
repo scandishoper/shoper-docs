@@ -1,7 +1,7 @@
 site_name: shoper
 site_url: !ENV [SITE_URL, "https://docs.scandidreams.top/"]  # 假设：你有自定义域名
-repo_url: https://github.com/yourname/your-repo
-repo_name: yourname/your-repo
+repo_url: https://github.com/scandishoper/shoper-docs
+repo_name: scandishoper/shoper-docs
 
 theme:
   name: material
@@ -140,7 +140,7 @@ extra:
       - forks
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/WUSTACM/
+      link: https://github.com/scandishoper
 
 copyright: >
   Copyright &copy; 2026 shoper –
