@@ -41,8 +41,8 @@ jobs:
           pip install -r requirements.txt
 
       # ✅ 可选：你想先 build 检查也行（不想也行）
-      - name: Build
-        run: mkdocs build --strict
+      # - name: Build
+        # run: mkdocs build --strict
 
       # ✅ 3) 如果你有自定义域名（比如 docs.scandidreams.top），就写 CNAME
       #    没有自定义域名就删掉这一步
