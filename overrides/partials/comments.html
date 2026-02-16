@@ -1,0 +1,53 @@
+{% if page.meta.comments %}
+
+<h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
+
+<!-- Giscus（把你从 giscus.app 生成的 snippet 粘贴/替换到这里） -->
+<script src="https://giscus.app/client.js"
+        data-repo="scandishoper/shoper-docs"
+        data-repo-id="R_kgDORRSjbg"
+        data-category="General"
+        data-category-id="DIC_kwDORRSjbs4C2iWN"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- 同步 giscus 主题（跟随 Material 的浅色/深色切换） -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  // 初次加载：根据当前配色设置 giscus theme
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate"
+      ? "transparent_dark"
+      : "light"
+    giscus.setAttribute("data-theme", theme)
+  }
+
+  // 监听主题切换：通知 iframe 更新 theme
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+          ? "transparent_dark"
+          : "light"
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+
+{% endif %}
