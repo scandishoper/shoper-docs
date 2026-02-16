@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: "true"
-      SITE_URL: "https://your-project.pages.dev/"
+      SITE_URL: "https://shoper-docs.pages.dev/"
       ENABLE_PRIVATE: "false"
     steps:
       - uses: actions/checkout@v4
@@ -31,4 +31,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site --project-name your-project
+          command: pages deploy site --project-name shoper-docs
