@@ -11,17 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: "true"
-      # ✅ 1) 如果你是 GitHub Pages 默认地址：改成你的真实仓库地址
-      # 例：https://scandidreams.github.io/my-notes/
-      SITE_URL: "https://github.com/scandishoper/shoper-docs"
+      # ✅ GitHub Pages 的 site_url 应该是“网页地址”，不是仓库地址
+      #    你的仓库：scandishoper/shoper-docs
+      #    GitHub Pages 默认地址通常是：
+      #    https://scandishoper.github.io/shoper-docs/
+      SITE_URL: "https://scandishoper.github.io/shoper-docs/"
 
-      # ✅ 2) 默认不启用私密加密（需要时手动改 true）
+      # ✅ 默认不启用私密加密（需要时改 true，或在 Actions env/secret 控制）
       ENABLE_PRIVATE: "false"
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # ✅ git 日期/作者插件必须要完整历史
+          fetch-depth: 0  # 给 git 日期/作者插件用（如果你启用了这些插件）
 
       - uses: actions/setup-python@v5
         with:
@@ -40,14 +42,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ✅ 可选：你想先 build 检查也行（不想也行）
+      # ✅ 构建（你想严格检查就把 --strict 加回去）
       - name: Build
         run: mkdocs build
 
-      # ✅ 3) 如果你有自定义域名（比如 docs.scandidreams.top），就写 CNAME
-      #    没有自定义域名就删掉这一步
+      # ✅ 如果你“真的”有自定义域名才保留这一步；没有就删掉或注释掉
+      #    例如你想用 docs.scandidreams.top 指向 GitHub Pages
       - name: Write CNAME
         run: echo "docs.scandidreams.top" > site/CNAME
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
