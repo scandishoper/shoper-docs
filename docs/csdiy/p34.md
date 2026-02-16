@@ -1,0 +1,106 @@
+---
+title: CSAPP_note
+date: 2025.5.17
+cover: assets/2cb79efe667b08d4b12e3b103d67653.jpg
+swiper_index: 10
+top_group_index: 10
+background: "#fff"
+updated:
+tags: csapp
+categories: 技术
+keywords:
+description:
+top:
+top_img:
+comments:
+toc:
+toc_number:
+toc_style_simple:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+aside:
+ai:
+---
+
+# csapp 笔记
+
+## 第二章
+
+### 1. 信息的存储 （Information Storage
+
+- 字节 Byte
+  - 1byte = 8 bit
+- 字长 word size
+  - 64 bit 机器 的 Virtual Address Space 为 16 EB
+- K -> M -> G -> T -> P -> E
+
+- 大端法 - 小端法
+- 左移没有特殊，右移有算术右移和逻辑右移的区分
+  - 逻辑右移最高位补 0 即可
+  - 算术右移最高位补原最高位值
+
+### 2.整数的表示 (Integer Representations
+
+- B2Uw(x) -> 二进制表示无符号数 （w = 位数
+  - complement 补码 -> B2Tw(x) -> 有符号数
+    - 补码的最高位是一个负权重
+      - 最高位如果是 1，此数必然是负数（算一下就知道
+      - 有符号数的-1，每位都是 1。这和 U 数的最大值二进制表示一样
+      - 强制有符号数转换为无符号数
+        - 如果有符号数是正数，转换无异常，相等
+        - 反之，转换后的数等于原数加 2 倍最高位权重
+      - 不要混用有符号数和无符号数
+- 数据类型拓展
+  - 无符号数直接补 0 即可
+  - 有符号数类似算术右移的规则
+- 截断无符号数
+  - B2Uw(x) mod 2^k == 去除二进制最低 k 位
+  - 截断有符号数
+    - U2Tk -> 改变解释二进制方法为有符号数
+    - B2Tk(x) = U2Tk( B2Uw(x) mod 2^k)
+
+### 3.整数的运算 (Integer Arithmetic
+
+- 加法 -> 正溢出和负溢出
+- 将乘法转换为 移位+加法 或者移位 + 减法
+  - 例如 x \* 14 = x \* (2^3 + 2^2 + 2) = (x<<3) + (x<<2) + (x<<1)
+- 有符号数的除法与移位关系
+  - if x > 0 -> x / 2^k == x >> k
+  - if x < 0 -> x / 2^k == (x + (1<<k) - 1) >> k
+
+### 4.浮点数 (Floating Point
+
+- V = ((-1) ^ s) \* M \* (2 ^ E)
+- float -> 32 位 分为三部分
+  - 第一部分 s （1 个 bit）这也是最高位 表示正负
+  - 第二部分 exp （8 个 bit）
+  - 第三部分 frac （23 个 bit）
+- double -> 64 位 同样为三部分
+- 规格化的表示 exp 不全 0， 也不全 1
+  - E = e - bias
+  - bias(float) = (2^(8 - 1)) - 1 = 127 （8 其实是 exp 的长度 - exp 的取值范围就是（00000.....1）到（1111...0）-> -126 <= e <= 127
+  - M = 1 + f
+- 非规格化的表示 exp 全为 0
+  - 表示浮点数的 0
+    - 当 s = 0， M = f = 0 -> V = +0.0
+    - 当 s = 1， M = f = 0 -> V = -0.0
+  - 非常接近 0 的数
+    - E = 1 - bias = -126
+    - M = f
+- 特殊值的表示 exp 全为 1
+  - 无穷
+    - 当 s = 0， f = 0 -> V = +无穷
+    - 当 s = 1， f = 0 -> V = -无穷
+  - NaN （not a number
+- 舍入
+  - 向上舍入
+    - 向下舍入
+    - 向 0 舍入 （x<0->向上舍入 x>0->向下舍入
+    - 向偶数舍入 （如 1.5 -> 舍入为 2

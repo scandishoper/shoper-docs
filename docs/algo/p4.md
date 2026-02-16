@@ -1,0 +1,165 @@
+---
+title: 优先/pair/map/set/自定义比较器
+date: 2025.3.5
+cover: assets/2cb79efe667b08d4b12e3b103d67653.jpg
+swiper_index: 10
+top_group_index: 10
+background: "#fff"
+updated:
+tags: STL
+categories: 算法
+keywords:
+description:
+top:
+top_img:
+comments:
+toc:
+toc_number:
+toc_style_simple:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+aside:
+ai:
+---
+
+## 优先队列
+
+     #include <queue>
+     代码          含义
+     q.push(ele)   元素ele入栈增加元素 (logN)
+     q.pop()       弹出队首元素 (logN)
+     q.top()       q.top() == 队首元素
+     q.empty()     判断栈内是否为空，空为真
+     q.size()      返回栈内元素的个数
+
+### 没有 clear！！！
+
+### 设置优先级
+
+```c++
+//默认大根堆，每次取出最大元素
+priority_queue<int> q;
+//小根堆，每次取出最小元素
+priority_queue<int, vector<int>, greater<int>> q;
+
+//less<int> 表示数字大的优先级大，堆顶为最大的元素
+//greater<int>表示数字小的优先级大，堆顶为最小的元素
+```
+
+## pair
+
+代替二元结构体
+
+```c++
+//头文件
+#include <utility>
+
+//1.初始化定义
+pair<string, int> p("wangyaqi", 1);//带初始值的
+pair<string, int> p;//不带初始值的
+
+//2.赋值  会一个就行
+p = {"wang", 18};
+p = make_pair("wang", 18);
+p = pair<string, int>("wang", 18);
+
+
+//定义pair数组
+pair<int, int> p[10];
+for (int i = 0; i < 10; i++)
+{
+     scanf("%d%d", &p[i].first, &p[i].second);
+}
+```
+
+## map / multimap
+
+     1.  map 和 multimap 的内置排序都是根据 key 排序，与 value 无关。
+     2.map 元素的 key 不可以出现相同的，multimap 可以
+     3.multimap 排序时，当 key 相等时，不会比较 value，排序与 value 无关！
+
+```c++
+//map的赋值
+map<string, int> a;
+a["scandi"] = 666;
+a.insert({"scandi", 666});
+
+//multimap的赋值
+multimap<string, int> a;
+a.insert({"scandi", 666});
+```
+
+### 函数方法
+
+      mp.find(key)
+      mp.erase(it)
+      mp.erase(key)
+      mp.erase(first, last)
+      mp.size()
+      mp.clear()
+      mp.insert()
+      mp.empty()
+      mp.begin()
+      mp.end()
+      mp.rbegin()
+      mp.rend()
+      mp.count(key)
+      mp.lower_bound(k)   返回第一个大于等于k的元素的迭代器
+      mp.upper_bound(k)   返回第一个大于k的元素的迭代器
+
+## set / multiset
+
+      1.两者都会对所有元素排序，先主first排，相等再主second排！
+      2.set元素唯一性，multiset可以不唯一
+
+```c++
+//头文件
+#include<set>
+//初始化定义
+set<int> s;
+```
+
+### 函数方法
+
+      st.begin()
+      st.end()
+      st.rbegin()
+      st.rend()
+      st.clear()
+      st.empty()
+      st.insert(ele)
+      st.size()
+      st.erase(it)
+      st.erase(first, second)
+      st.erase(value)
+
+      st.find(ele)
+      st.count(ele)
+      st.lower_bound(k)
+      st.upper_bound(k)
+
+## 自定义比较器
+
+```c++
+//1.函数形式  sort中使用
+bool cmp(int a, int b)
+{
+     return a > b;
+}
+
+//2.仿函数形式  map / set等等中使用
+struct cmp
+{
+    bool operator()(int a, int b) const
+    {
+        return a > b; // 降序排序
+    }
+};
+```

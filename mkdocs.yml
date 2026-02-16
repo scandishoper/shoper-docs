@@ -149,19 +149,76 @@ copyright: >
   
 
 nav:
-  - 主页: index.md
+  - 主页: blog/p17.md
+
   - 算法:
-      - algo/index.md
       - 基础:
-          - algo/basic/index.md
-          - 二分查找: algo/basic/binary-search.md
+          - 二分: algo/p2.md
+          - 三分: algo/p1.md
+          - 位运算: algo/p5.md
+          - 高精度算法: algo/p16.md
+          - 曼哈顿距离与切比雪夫距离的转换: algo/p11.md
+      - 常见算法:
+          - 排序算法: algo/p9.md
+          - 贪心-局部交叉型: algo/p14.md
+          - 背包九讲: algo/p13.md
+          - 六六表-数构造: algo/p6.md
       - 数据结构:
-          - algo/ds/index.md
+          - 栈-队列-双端: algo/p12.md
+          - 优先-map-set: algo/p4.md
+          - 并查集: algo/p8.md
+          - 二叉树的遍历: algo/p3.md
+      - 数论:
+          - 数论: algo/p10.md
+          - 逆元-取余公式-快速幂算法: algo/p15.md
+      - 图论:
+          - 图论: algo/p7.md
+
   - 题解:
-      - solutions/index.md
-      - LeetCode:
-          - solutions/leetcode/index.md
-          - "0001 Two Sum": solutions/leetcode/0001-two-sum.md
-  - csdiy: csdiy/index.md
-  - 看法: views/index.md
-  - 博客: blog/index.md
+      - Codeforces Hello 2026: solutions/p35.md
+      - Codeforces Round 1071 (Div. 3) 题解: solutions/p36.md
+      - Codeforces Round 1072 (Div. 3)题解: solutions/p37.md
+      - Codeforces Round 1075 (Div. 2) 题解: solutions/p38.md
+      - Codeforces Round 1076 (Div. 3) 题解: solutions/p39.md
+      - Codeforces Round 1077 (Div. 2)题解: solutions/p40.md
+      - Codeforces Round 1078 (Div. 2) 题解: solutions/p41.md
+      - wustoj-cpp: solutions/p42.md
+
+  - csdiy:
+      - CSAPP-note: csdiy/p34.md
+
+  - 技术:
+      - AI翻译插件配置教程: technology/p43.md
+      - hexo博客搭建: technology/p44.md
+      - 在学校内上传博文报错的解决: technology/p45.md
+      - 智慧树军事课脚本: technology/p46.md
+      - 自动刷题刷课: technology/p47.md
+
+  - 看法:
+      - EP56《亲密关系》：在一起的意义是照见自己: views/p48.md
+      - 高中思维转变: views/p53.md
+      - 如何看待试点班: views/p51.md
+      - 计算机专业如何入门（ACMer 版: views/p52.md
+      - 在武科大中如何真正学习: views/p50.md
+      - 《囧妈》观后感: views/p49.md
+
+  - 博客:
+      - 主页: blog/p17.md
+      - 学期与杂谈:
+          - 大一上: blog/p28.md
+          - 大一寒假: blog/p30.md
+          - 大一寒假题单: blog/p31.md
+          - 我的大一下: blog/p33.md
+          - 大一下暑假杂谈: blog/p29.md
+          - 大二上随笔: blog/p32.md
+      - 周记:
+          - 周记1: blog/p18.md
+          - 周记2: blog/p21.md
+          - 周记3: blog/p22.md
+          - 周记4: blog/p23.md
+          - 周记6: blog/p24.md
+          - 周记7: blog/p25.md
+          - 周记8: blog/p26.md
+          - 周记9: blog/p27.md
+          - 周记11: blog/p19.md
+          - 周记13: blog/p20.md
