@@ -13,7 +13,7 @@ jobs:
       CI: "true"
       # ✅ 1) 如果你是 GitHub Pages 默认地址：改成你的真实仓库地址
       # 例：https://scandidreams.github.io/my-notes/
-      SITE_URL: "https://yourname.github.io/your-repo/"
+      SITE_URL: "https://github.com/scandishoper/shoper-docs"
 
       # ✅ 2) 默认不启用私密加密（需要时手动改 true）
       ENABLE_PRIVATE: "false"
