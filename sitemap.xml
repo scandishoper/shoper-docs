@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.com/scandishoper/shoper-docs/</loc>
+         <loc>https://scandishoper.github.io/shoper-docs/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
     <url>
-         <loc>https://github.com/scandishoper/shoper-docs/blog/</loc>
+         <loc>https://scandishoper.github.io/shoper-docs/blog/</loc>
          <lastmod>2026-02-16</lastmod>
     </url>
 </urlset>
