@@ -152,6 +152,7 @@ nav:
   - 主页: blog/p17.md
 
   - 算法:
+      - index: algo/index.md
       - 基础:
           - 二分: algo/p2.md
           - 三分: algo/p1.md
@@ -175,6 +176,7 @@ nav:
           - 图论: algo/p7.md
 
   - 题解:
+      - index: solutions/index.md
       - Codeforces Hello 2026: solutions/p35.md
       - Codeforces Round 1071 (Div. 3) 题解: solutions/p36.md
       - Codeforces Round 1072 (Div. 3)题解: solutions/p37.md
@@ -185,9 +187,11 @@ nav:
       - wustoj-cpp: solutions/p42.md
 
   - csdiy:
+      - index: csdiy/index.md
       - CSAPP-note: csdiy/p34.md
 
   - 技术:
+      - index: technology/index.md
       - AI翻译插件配置教程: technology/p43.md
       - hexo博客搭建: technology/p44.md
       - 在学校内上传博文报错的解决: technology/p45.md
@@ -195,6 +199,7 @@ nav:
       - 自动刷题刷课: technology/p47.md
 
   - 看法:
+      - index: views/index.md
       - EP56《亲密关系》：在一起的意义是照见自己: views/p48.md
       - 高中思维转变: views/p53.md
       - 如何看待试点班: views/p51.md
@@ -203,7 +208,7 @@ nav:
       - 《囧妈》观后感: views/p49.md
 
   - 博客:
-      - 主页: blog/p17.md
+      - index: blog/p17.md
       - 学期与杂谈:
           - 大一上: blog/p28.md
           - 大一寒假: blog/p30.md
