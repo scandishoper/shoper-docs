@@ -153,25 +153,29 @@ nav:
 
   - 算法:
       - index: algo/index.md
-      - 基础:
+      - 基础算法:
           - 二分: algo/p2.md
           - 三分: algo/p1.md
           - 位运算: algo/p5.md
           - 高精度算法: algo/p16.md
           - 曼哈顿距离与切比雪夫距离的转换: algo/p11.md
-      - 常见算法:
           - 排序算法: algo/p9.md
           - 贪心-局部交叉型: algo/p14.md
-          - 背包九讲: algo/p13.md
           - 六六表-数构造: algo/p6.md
+      - 动态规划:
+          - 背包九讲: algo/p13.md
       - 数据结构:
           - 栈-队列-双端: algo/p12.md
           - 优先-map-set: algo/p4.md
           - 并查集: algo/p8.md
           - 二叉树的遍历: algo/p3.md
+          - ST表: algo/p56.md
       - 数论:
           - 数论: algo/p10.md
           - 逆元-取余公式-快速幂算法: algo/p15.md
+          - 组合数学与经典计数模型: algo/p57.md
+          - 线性基: algo/p58.md
+          - 扩展欧几里得: algo/p59.md
       - 图论:
           - 图论: algo/p7.md
 
@@ -188,7 +192,9 @@ nav:
 
   - csdiy:
       - index: csdiy/index.md
-      - CSAPP-note: csdiy/p34.md
+      - CSAPP第二章: csdiy/p34.md
+      - CSAPP第三章: csdiy/55.md
+      - CS106L笔记: csdiy/54.md
 
   - 技术:
       - index: technology/index.md
