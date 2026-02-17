@@ -208,7 +208,7 @@ nav:
       - 《囧妈》观后感: views/p49.md
 
   - 博客:
-      - index: blog/p17.md
+      - index: blog/index.md
       - 学期与杂谈:
           - 大一上: blog/p28.md
           - 大一寒假: blog/p30.md

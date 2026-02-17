@@ -2,21 +2,26 @@
 comments: true
 ---
 
-# Welcome to MkDocs
+# 欢迎来到我的个人docs网站
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## 关于我
 
-## Commands
+- 我是shoper，一名24级28届双非本科计算机专业学生。
+- 这是我的个人技术博客，主要分享算法解析、实用工具和csdiy学习笔记还有记录学习历程。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
+## 📬 联系我
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+欢迎交流学习问题或提出建议：
 
+- QQ 群：`963401049`
+
+## 许可协议
+
+博客内容采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可
+代码部分采用 [MIT License](https://license/)
+
+---
+
+**Stay hungry, stay foolish**
+© 2026 Shoper Docs
