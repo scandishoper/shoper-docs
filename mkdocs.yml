@@ -227,3 +227,6 @@ nav:
           - 周记9: blog/p27.md
           - 周记11: blog/p19.md
           - 周记13: blog/p20.md
+  
+  - 友链:
+      - index: link/index.md
