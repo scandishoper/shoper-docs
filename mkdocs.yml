@@ -192,9 +192,12 @@ nav:
 
   - csdiy:
       - index: csdiy/index.md
-      - CSAPP第二章: csdiy/p34.md
-      - CSAPP第三章: csdiy/p55.md
-      - CS106L笔记: csdiy/p54.md
+      - CSAPP:
+          - CSAPP第二章: csdiy/p34.md
+          - CSAPP第三章: csdiy/p55.md
+      - CS106L:
+          - CS106L-assignment1: csdiy/p54.md
+          - CS106L-assignment2: csdiy/p60.md
 
   - 技术:
       - index: technology/index.md
