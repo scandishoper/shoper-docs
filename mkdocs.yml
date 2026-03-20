@@ -6,7 +6,7 @@ repo_name: scandishoper/shoper-docs
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/2026-2-16-3.png
+  logo: assets/2026-3-20-1.jpg
   favicon: assets/2026-2-16-2.png
   language: zh
   palette:
