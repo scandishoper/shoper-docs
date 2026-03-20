@@ -7,7 +7,7 @@ theme:
   name: material
   custom_dir: overrides
   logo: assets/2026-3-20-1.jpg
-  favicon: assets/2026-2-16-2.png
+  favicon: assets/2026-3-20-1.jpg
   language: zh
   palette:
     # Dark Mode
