@@ -147,6 +147,7 @@ copyright: >
   <a href="#__consent">Change cookie settings</a>
 
   
+#62
 
 nav:
   - 主页: index.md
@@ -170,6 +171,7 @@ nav:
           - 并查集: algo/p8.md
           - 二叉树的遍历: algo/p3.md
           - ST表: algo/p56.md
+          - pbds库: algo/p61.md
       - 数论:
           - 数论: algo/p10.md
           - 逆元-取余公式-快速幂算法: algo/p15.md
