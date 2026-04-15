@@ -200,6 +200,8 @@ nav:
       - CS106L:
           - CS106L-assignment1: csdiy/p54.md
           - CS106L-assignment2: csdiy/p60.md
+      - CMU 15-445: 
+          - Lecture 02: csdiy/p62.md
 
   - 技术:
       - index: technology/index.md
