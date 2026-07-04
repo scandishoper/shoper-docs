@@ -4872,7 +4872,7 @@
         <span>创建：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月17日 09:51:37 UTC">2026年2月17日</span></span>
       
       
-        <span style="margin-left: .8rem;">更新：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月6日 01:59:56 UTC">2026年4月6日</span></span>
+        <span style="margin-left: .8rem;">更新：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月4日 15:54:39 UTC">2026年7月4日</span></span>
       
       
         <span style="margin-left: .8rem;">作者：<span class='git-page-authors git-authors'>scandi</span></span>
@@ -5834,17 +5834,18 @@
 <p>等价于：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>rsp -= 8
 </span><span id="__span-103-2"><a id="__codelineno-103-2" name="__codelineno-103-2" href="#__codelineno-103-2"></a>M[rsp] = rax
-</span><span id="__span-103-3"><a id="__codelineno-103-3" name="__codelineno-103-3" href="#__codelineno-103-3"></a>popq %rbx
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>popq %rbx
 </span></code></pre></div>
 <p>等价于：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>rbx = M[rsp]
-</span><span id="__span-104-2"><a id="__codelineno-104-2" name="__codelineno-104-2" href="#__codelineno-104-2"></a>rsp += 8
+<div class="language-text highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>rbx = M[rsp]
+</span><span id="__span-105-2"><a id="__codelineno-105-2" name="__codelineno-105-2" href="#__codelineno-105-2"></a>rsp += 8
 </span></code></pre></div>
 <h3 id="183">18.3 典型函数序言 / 结语</h3>
 <h4 id="prologue">序言（prologue）</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>pushq %rbp
-</span><span id="__span-105-2"><a id="__codelineno-105-2" name="__codelineno-105-2" href="#__codelineno-105-2"></a>movq %rsp, %rbp
-</span><span id="__span-105-3"><a id="__codelineno-105-3" name="__codelineno-105-3" href="#__codelineno-105-3"></a>subq $32, %rsp
+<div class="language-text highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a>pushq %rbp
+</span><span id="__span-106-2"><a id="__codelineno-106-2" name="__codelineno-106-2" href="#__codelineno-106-2"></a>movq %rsp, %rbp
+</span><span id="__span-106-3"><a id="__codelineno-106-3" name="__codelineno-106-3" href="#__codelineno-106-3"></a>subq $32, %rsp
 </span></code></pre></div>
 <p>含义：</p>
 <ol>
@@ -5853,12 +5854,12 @@
 <li>给局部变量留空间</li>
 </ol>
 <h4 id="epilogue">结语（epilogue）</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a>leave
-</span><span id="__span-106-2"><a id="__codelineno-106-2" name="__codelineno-106-2" href="#__codelineno-106-2"></a>ret
+<div class="language-text highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>leave
+</span><span id="__span-107-2"><a id="__codelineno-107-2" name="__codelineno-107-2" href="#__codelineno-107-2"></a>ret
 </span></code></pre></div>
 <p>其中 <code>leave</code> 等价于：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>movq %rbp, %rsp
-</span><span id="__span-107-2"><a id="__codelineno-107-2" name="__codelineno-107-2" href="#__codelineno-107-2"></a>popq %rbp
+<div class="language-text highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>movq %rbp, %rsp
+</span><span id="__span-108-2"><a id="__codelineno-108-2" name="__codelineno-108-2" href="#__codelineno-108-2"></a>popq %rbp
 </span></code></pre></div>
 <h3 id="184-rbp">18.4 现代编译器可能省略 <code>%rbp</code></h3>
 <p>开启优化后，编译器常常不使用帧指针 <code>%rbp</code>，而直接以 <code>%rsp</code> 寻址，腾出一个寄存器可用。</p>
@@ -5879,10 +5880,10 @@
 <h2 id="20">20. 数组的机器级表示</h2>
 <h3 id="201">20.1 一维数组</h3>
 <p>设：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>long a[10];
+<div class="language-text highlight"><pre><span></span><code><span id="__span-109-1"><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>long a[10];
 </span></code></pre></div>
 <p>则：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-109-1"><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>&amp;a[i] = base + i * 8
+<div class="language-text highlight"><pre><span></span><code><span id="__span-110-1"><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>&amp;a[i] = base + i * 8
 </span></code></pre></div>
 <p>因为 <code>sizeof(long)=8</code></p>
 <p>访问 <code>a[i]</code> 本质是：</p>
@@ -5892,11 +5893,11 @@
 </ul>
 <h3 id="202">20.2 二维数组</h3>
 <p>设：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-110-1"><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>int A[R][C];
+<div class="language-text highlight"><pre><span></span><code><span id="__span-111-1"><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>int A[R][C];
 </span></code></pre></div>
 <p>按 <strong>行优先（row-major）</strong> 存储。</p>
 <p>地址公式：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-111-1"><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>&amp;A[i][j] = base + (i*C + j) * sizeof(int)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-112-1"><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>&amp;A[i][j] = base + (i*C + j) * sizeof(int)
 </span></code></pre></div>
 <p>这个式子特别重要。</p>
 <h3 id="203">20.3 多维数组本质</h3>
@@ -5904,11 +5905,11 @@
 <h2 id="21">21. 结构体与联合体</h2>
 <h3 id="211">21.1 结构体字段偏移</h3>
 <p>例：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-112-1"><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>struct S {
-</span><span id="__span-112-2"><a id="__codelineno-112-2" name="__codelineno-112-2" href="#__codelineno-112-2"></a>    int x;     // 4
-</span><span id="__span-112-3"><a id="__codelineno-112-3" name="__codelineno-112-3" href="#__codelineno-112-3"></a>    char c;    // 1
-</span><span id="__span-112-4"><a id="__codelineno-112-4" name="__codelineno-112-4" href="#__codelineno-112-4"></a>    long y;    // 8
-</span><span id="__span-112-5"><a id="__codelineno-112-5" name="__codelineno-112-5" href="#__codelineno-112-5"></a>};
+<div class="language-text highlight"><pre><span></span><code><span id="__span-113-1"><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>struct S {
+</span><span id="__span-113-2"><a id="__codelineno-113-2" name="__codelineno-113-2" href="#__codelineno-113-2"></a>    int x;     // 4
+</span><span id="__span-113-3"><a id="__codelineno-113-3" name="__codelineno-113-3" href="#__codelineno-113-3"></a>    char c;    // 1
+</span><span id="__span-113-4"><a id="__codelineno-113-4" name="__codelineno-113-4" href="#__codelineno-113-4"></a>    long y;    // 8
+</span><span id="__span-113-5"><a id="__codelineno-113-5" name="__codelineno-113-5" href="#__codelineno-113-5"></a>};
 </span></code></pre></div>
 <p>结构体里字段不是简单紧凑排的，要考虑 <strong>对齐（alignment）</strong>。</p>
 <h3 id="212">21.2 对齐规则</h3>
@@ -5921,12 +5922,12 @@
 <p>因此中间可能会插入 padding。</p>
 <h3 id="213">21.3 例子分析</h3>
 <p>上面这个结构体：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-113-1"><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>struct S {
-</span><span id="__span-113-2"><a id="__codelineno-113-2" name="__codelineno-113-2" href="#__codelineno-113-2"></a>    int x;     // offset 0
-</span><span id="__span-113-3"><a id="__codelineno-113-3" name="__codelineno-113-3" href="#__codelineno-113-3"></a>    char c;    // offset 4
-</span><span id="__span-113-4"><a id="__codelineno-113-4" name="__codelineno-113-4" href="#__codelineno-113-4"></a>    // padding 3 bytes
-</span><span id="__span-113-5"><a id="__codelineno-113-5" name="__codelineno-113-5" href="#__codelineno-113-5"></a>    long y;    // offset 8
-</span><span id="__span-113-6"><a id="__codelineno-113-6" name="__codelineno-113-6" href="#__codelineno-113-6"></a>};
+<div class="language-text highlight"><pre><span></span><code><span id="__span-114-1"><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>struct S {
+</span><span id="__span-114-2"><a id="__codelineno-114-2" name="__codelineno-114-2" href="#__codelineno-114-2"></a>    int x;     // offset 0
+</span><span id="__span-114-3"><a id="__codelineno-114-3" name="__codelineno-114-3" href="#__codelineno-114-3"></a>    char c;    // offset 4
+</span><span id="__span-114-4"><a id="__codelineno-114-4" name="__codelineno-114-4" href="#__codelineno-114-4"></a>    // padding 3 bytes
+</span><span id="__span-114-5"><a id="__codelineno-114-5" name="__codelineno-114-5" href="#__codelineno-114-5"></a>    long y;    // offset 8
+</span><span id="__span-114-6"><a id="__codelineno-114-6" name="__codelineno-114-6" href="#__codelineno-114-6"></a>};
 </span></code></pre></div>
 <p>总大小通常为 16。</p>
 <h3 id="214">21.4 访问结构体字段</h3>
@@ -5938,10 +5939,10 @@
 </ul>
 <h3 id="215-union">21.5 联合体（union）</h3>
 <p>联合体所有字段共享同一块内存。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-114-1"><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>union U {
-</span><span id="__span-114-2"><a id="__codelineno-114-2" name="__codelineno-114-2" href="#__codelineno-114-2"></a>    int x;
-</span><span id="__span-114-3"><a id="__codelineno-114-3" name="__codelineno-114-3" href="#__codelineno-114-3"></a>    char c[4];
-</span><span id="__span-114-4"><a id="__codelineno-114-4" name="__codelineno-114-4" href="#__codelineno-114-4"></a>};
+<div class="language-text highlight"><pre><span></span><code><span id="__span-115-1"><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>union U {
+</span><span id="__span-115-2"><a id="__codelineno-115-2" name="__codelineno-115-2" href="#__codelineno-115-2"></a>    int x;
+</span><span id="__span-115-3"><a id="__codelineno-115-3" name="__codelineno-115-3" href="#__codelineno-115-3"></a>    char c[4];
+</span><span id="__span-115-4"><a id="__codelineno-115-4" name="__codelineno-115-4" href="#__codelineno-115-4"></a>};
 </span></code></pre></div>
 <ul>
 <li>所有字段起始地址相同</li>
@@ -5949,10 +5950,10 @@
 </ul>
 <h2 id="22">22. 指针、数组、地址运算</h2>
 <h3 id="221">22.1 指针加法</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-115-1"><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>p + i
+<div class="language-text highlight"><pre><span></span><code><span id="__span-116-1"><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>p + i
 </span></code></pre></div>
 <p>不是字节相加，而是：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-116-1"><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>地址 + i * sizeof(*p)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-117-1"><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>地址 + i * sizeof(*p)
 </span></code></pre></div>
 <p>所以编译器常用 <code>lea</code> 或带比例因子的寻址来实现。</p>
 <h3 id="222-p">22.2 <code>*p</code></h3>
@@ -5988,7 +5989,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月6日 01:59:56 UTC">2026年4月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月4日 15:54:39 UTC">2026年7月4日</span>
   </span>
 
     
