@@ -147,7 +147,7 @@ copyright: >
   <a href="#__consent">Change cookie settings</a>
 
   
-#62
+#65
 
 nav:
   - 主页: index.md
@@ -219,6 +219,8 @@ nav:
       - 在武科大中如何真正学习: views/p50.md
       - EP56《亲密关系》：在一起的意义是照见自己: views/p48.md
       - 《囧妈》观后感: views/p49.md
+      - 退役算法竞赛: views/p63.md
+      - 《我，许可》观后感: views/p64.md
 
   - 博客:
       - index: blog/index.md
@@ -229,6 +231,7 @@ nav:
           - 我的大一下: blog/p33.md
           - 大一下暑假杂谈: blog/p29.md
           - 大二上随笔: blog/p32.md
+          - 退役算法竞赛: blog/p65.md
       - 周记:
           - 周记1: blog/p18.md
           - 周记2: blog/p21.md
