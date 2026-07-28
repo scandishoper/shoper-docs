@@ -147,7 +147,7 @@ copyright: >
   <a href="#__consent">Change cookie settings</a>
 
   
-#65
+#66
 
 nav:
   - 主页: index.md
@@ -197,6 +197,7 @@ nav:
       - CSAPP:
           - CSAPP第二章: csdiy/p34.md
           - CSAPP第三章: csdiy/p55.md
+          - CSAPP第四章: csdiy/p66.md
       - CS106L:
           - CS106L-assignment1: csdiy/p54.md
           - CS106L-assignment2: csdiy/p60.md
