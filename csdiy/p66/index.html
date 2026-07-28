@@ -1,0 +1,3134 @@
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://scandishoper.github.io/shoper-docs/csdiy/p66/">
+      
+      
+        <link rel="prev" href="../p55/">
+      
+      
+        <link rel="next" href="../p54/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/2026-3-20-1.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CSAPP第四章 - shoper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-8JQ8PJF435"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-8JQ8PJF435",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-8JQ8PJF435",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#csapp-4-y86-64" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="shoper" class="md-header__button md-logo" aria-label="shoper" data-md-component="logo">
+      
+  <img src="../../assets/2026-3-20-1.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            shoper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CSAPP第四章
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/scandishoper/shoper-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scandishoper/shoper-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../solutions/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  题解
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  csdiy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technology/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../views/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  看法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  博客
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../link/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  友链
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="shoper" class="md-nav__button md-logo" aria-label="shoper" data-md-component="logo">
+      
+  <img src="../../assets/2026-3-20-1.jpg" alt="logo">
+
+    </a>
+    shoper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/scandishoper/shoper-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    scandishoper/shoper-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../algo/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../solutions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    题解
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    csdiy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    csdiy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSAPP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSAPP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p34/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSAPP第二章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p55/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSAPP第三章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSAPP第四章
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSAPP第四章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. 整章知识地图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. 整章知识地图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章最重要的三个问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS106L
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CS106L
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p54/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS106L-assignment1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p60/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS106L-assignment2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMU 15-445
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CMU 15-445
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p62/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../views/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    看法
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    博客
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../link/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    友链
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. 整章知识地图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. 整章知识地图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章最重要的三个问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    csdiy
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../p34/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    CSAPP
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+    <div class="md-meta" style="margin: .6rem 0 1.2rem 0; font-size: 0.85rem; opacity: .8;">
+      
+        <span>创建：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月28日 11:47:49 UTC">2026年7月28日</span></span>
+      
+      
+        <span style="margin-left: .8rem;">更新：<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月28日 11:47:49 UTC">2026年7月28日</span></span>
+      
+      
+        <span style="margin-left: .8rem;">作者：<span class='git-page-authors git-authors'>scandi</span></span>
+      
+    </div>
+  
+
+  
+                  
+
+
+  
+    <a href="https://github.com/scandishoper/shoper-docs/edit/master/docs/csdiy/p66.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/scandishoper/shoper-docs/raw/master/docs/csdiy/p66.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="csapp-4-y86-64">CS:APP 第 4 章：Y86-64 处理器体系结构</h1>
+<blockquote>
+<p>主线：<strong>先定义软件能看到的 ISA，再把每条指令拆成固定阶段构造 SEQ，最后在阶段之间插入流水线寄存器得到 PIPE，并通过转发、暂停和气泡保证并行执行仍与顺序语义一致。</strong></p>
+</blockquote>
+<hr />
+<h2 id="0">0. 整章知识地图</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>软件程序
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   ▼
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>ISA：规定“机器应该表现成什么样”
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   │  Y86-64 状态、指令、编码、异常
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   ▼
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>SEQ：一次完整执行一条指令
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   │  Fetch → Decode → Execute → Memory → Write Back → Update PC
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>   ▼
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>PIPE：多条指令重叠执行
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>   │  F/D/E/M/W 流水线寄存器
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   ▼
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>冒险处理
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>   ├─ 数据冒险：forward / stall / bubble
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>   └─ 控制冒险：branch prediction / recovery / ret stall
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>   ▼
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>性能分析：CPI、吞吐量、气泡代价
+</span></code></pre></div>
+<h3 id="_1">本章最重要的三个问题</h3>
+<ol>
+<li><strong>一条机器指令需要哪些硬件动作？</strong></li>
+<li><strong>不同指令怎样复用同一套数据通路？</strong></li>
+<li><strong>多条指令重叠执行时，怎样维持原本的顺序语义？</strong></li>
+</ol>
+<hr />
+<h1 id="1-isa">1. ISA：软件与硬件之间的接口</h1>
+<h2 id="11-isa">1.1 什么是 ISA</h2>
+<p>ISA（Instruction Set Architecture，指令集体系结构）位于软件和硬件之间：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>软件：只依赖 ISA 规定的行为
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>──────── ISA ────────
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>硬件：可以用不同电路实现同一 ISA
+</span></code></pre></div>
+<p>ISA 规定的是<strong>机器对程序员可见的行为</strong>，例如：</p>
+<ul>
+<li>有哪些寄存器；</li>
+<li>指令能够完成什么操作；</li>
+<li>指令如何编码；</li>
+<li>条件码如何变化；</li>
+<li>PC 如何更新；</li>
+<li>出错或停止时机器处于什么状态。</li>
+</ul>
+<p>ISA <strong>不规定</strong>处理器内部必须使用 SEQ、五级流水线、几条转发线或哪一种晶体管。</p>
+<blockquote>
+<p>同一份 Y86-64 程序可以在 SEQ 和 PIPE 上运行，因为二者实现相同的 ISA。</p>
+</blockquote>
+<hr />
+<h2 id="12-y86-64">1.2 Y86-64 的程序员可见状态</h2>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15 个 64 位程序寄存器</td>
+<td>保存整数、地址、栈指针等；没有 <code>%r15</code></td>
+</tr>
+<tr>
+<td><code>PC</code></td>
+<td>当前/下一条指令地址</td>
+</tr>
+<tr>
+<td>条件码 <code>ZF/SF/OF</code></td>
+<td>供条件传送和条件跳转判断</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>保存指令、数据和栈</td>
+</tr>
+<tr>
+<td><code>Stat</code></td>
+<td>处理器运行状态</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">条件码</h3>
+<ul>
+<li><code>ZF</code>（Zero Flag）：结果是否为 0；</li>
+<li><code>SF</code>（Sign Flag）：结果最高位是否为 1；</li>
+<li><code>OF</code>（Overflow Flag）：有符号运算是否溢出。</li>
+</ul>
+<p>通常只有 <code>OPq</code> 算术/逻辑指令更新条件码。</p>
+<h3 id="_3">状态码</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">值</th>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td><code>AOK</code></td>
+<td>正常运行</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>HLT</code></td>
+<td>遇到 <code>halt</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><code>ADR</code></td>
+<td>非法内存地址</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td><code>INS</code></td>
+<td>非法指令编码</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="2-y86-64">2. Y86-64 指令集</h1>
+<h2 id="21">2.1 数据传送指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>语义</th>
+<th>数据方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rrmovq rA, rB</code></td>
+<td><code>R[rB] ← R[rA]</code></td>
+<td>寄存器 → 寄存器</td>
+</tr>
+<tr>
+<td><code>irmovq V, rB</code></td>
+<td><code>R[rB] ← V</code></td>
+<td>立即数 → 寄存器</td>
+</tr>
+<tr>
+<td><code>rmmovq rA, D(rB)</code></td>
+<td><code>M[R[rB]+D] ← R[rA]</code></td>
+<td>寄存器 → 内存</td>
+</tr>
+<tr>
+<td><code>mrmovq D(rB), rA</code></td>
+<td><code>R[rA] ← M[R[rB]+D]</code></td>
+<td>内存 → 寄存器</td>
+</tr>
+</tbody>
+</table>
+<p>Y86-64 不支持一般形式的“内存直接到内存”，也没有 x86-64 那样丰富的寻址方式。</p>
+<hr />
+<h2 id="22-opq">2.2 算术和逻辑指令 <code>OPq</code></h2>
+<p>统一形式：</p>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">OPq</span><span class="w"> </span><span class="no">rA</span><span class="p">,</span><span class="w"> </span><span class="no">rB</span>
+</span></code></pre></div>
+<p>语义：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>R[rB] ← R[rB] OP R[rA]
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>ifun</code></th>
+<th>指令</th>
+<th>运算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td><code>addq</code></td>
+<td>加法</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td><code>subq</code></td>
+<td><code>rB - rA</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>andq</code></td>
+<td>按位与</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><code>xorq</code></td>
+<td>按位异或</td>
+</tr>
+</tbody>
+</table>
+<p>这些指令会根据结果设置 <code>ZF/SF/OF</code>。</p>
+<hr />
+<h2 id="23">2.3 条件传送和条件跳转</h2>
+<h3 id="_4">条件传送</h3>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">cmovXX</span><span class="w"> </span><span class="no">rA</span><span class="p">,</span><span class="w"> </span><span class="no">rB</span>
+</span></code></pre></div>
+<p>条件成立时：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>R[rB] ← R[rA]
+</span></code></pre></div>
+<p>条件不成立时：不写寄存器。</p>
+<h3 id="_5">条件跳转</h3>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">jXX</span><span class="w"> </span><span class="no">Dest</span>
+</span></code></pre></div>
+<p>条件成立：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>PC ← Dest
+</span></code></pre></div>
+<p>条件不成立：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PC ← valP
+</span></code></pre></div>
+<h3 id="ifun"><code>ifun</code> 条件编码</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>ifun</code></th>
+<th>无条件/条件</th>
+<th>条件表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td><code>rrmovq</code> / <code>jmp</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td><code>cmovle</code> / <code>jle</code></td>
+<td><code>(SF xor OF) or ZF</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>cmovl</code> / <code>jl</code></td>
+<td><code>SF xor OF</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><code>cmove</code> / <code>je</code></td>
+<td><code>ZF</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td><code>cmovne</code> / <code>jne</code></td>
+<td><code>not ZF</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td><code>cmovge</code> / <code>jge</code></td>
+<td><code>not(SF xor OF)</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td><code>cmovg</code> / <code>jg</code></td>
+<td><code>not(SF xor OF) and not ZF</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>为什么有符号大小比较必须使用 <code>SF xor OF</code>？因为发生有符号溢出时，结果符号位不能单独代表真实大小关系，<code>OF</code> 用来修正 <code>SF</code>。</p>
+</blockquote>
+<hr />
+<h1 id="24">2.4 栈和过程控制</h1>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>核心语义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pushq rA</code></td>
+<td><code>%rsp -= 8; M[%rsp] = R[rA]</code></td>
+</tr>
+<tr>
+<td><code>popq rA</code></td>
+<td><code>R[rA] = M[%rsp]; %rsp += 8</code></td>
+</tr>
+<tr>
+<td><code>call Dest</code></td>
+<td><code>%rsp -= 8; M[%rsp] = valP; PC = Dest</code></td>
+</tr>
+<tr>
+<td><code>ret</code></td>
+<td><code>PC = M[%rsp]; %rsp += 8</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="call-valp"><code>call</code> 为什么把 <code>valP</code> 写入内存</h3>
+<p><code>valP</code> 是 <code>call</code> 后一条指令的地址，即返回地址：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>M[%rsp - 8] ← valP
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>PC           ← valC / Dest
+</span></code></pre></div>
+<h3 id="ret"><code>ret</code> 为什么比较特殊</h3>
+<p><code>ret</code> 的目标 PC 存在栈内存中：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>PC ← M[%rsp]
+</span></code></pre></div>
+<p>只有访存阶段完成后才知道返回地址，因此它会在流水线中引发控制冒险。</p>
+<hr />
+<h1 id="3">3. 指令编码</h1>
+<h2 id="31">3.1 基本格式</h2>
+<p>第一字节固定为：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>高 4 位：icode（指令类别）
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>低 4 位：ifun （同类指令中的具体功能）
+</span></code></pre></div>
+<p>后面可能包含：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>寄存器字节：rA | rB
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>8 字节常数：valC
+</span></code></pre></div>
+<h3 id="icode"><code>icode</code> 总表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>icode</code></th>
+<th>指令类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>0</code></td>
+<td><code>halt</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>1</code></td>
+<td><code>nop</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2</code></td>
+<td><code>rrmovq / cmovXX</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3</code></td>
+<td><code>irmovq</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>4</code></td>
+<td><code>rmmovq</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>5</code></td>
+<td><code>mrmovq</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>6</code></td>
+<td><code>OPq</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>7</code></td>
+<td><code>jXX</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>8</code></td>
+<td><code>call</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>9</code></td>
+<td><code>ret</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>A</code></td>
+<td><code>pushq</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>B</code></td>
+<td><code>popq</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="32">3.2 寄存器编码</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">编号</th>
+<th>寄存器</th>
+<th style="text-align: right;">编号</th>
+<th>寄存器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td><code>%rax</code></td>
+<td style="text-align: right;">8</td>
+<td><code>%r8</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td><code>%rcx</code></td>
+<td style="text-align: right;">9</td>
+<td><code>%r9</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>%rdx</code></td>
+<td style="text-align: right;">A</td>
+<td><code>%r10</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><code>%rbx</code></td>
+<td style="text-align: right;">B</td>
+<td><code>%r11</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td><code>%rsp</code></td>
+<td style="text-align: right;">C</td>
+<td><code>%r12</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td><code>%rbp</code></td>
+<td style="text-align: right;">D</td>
+<td><code>%r13</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td><code>%rsi</code></td>
+<td style="text-align: right;">E</td>
+<td><code>%r14</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td><code>%rdi</code></td>
+<td style="text-align: right;">F</td>
+<td><code>RNONE</code>（无寄存器）</td>
+</tr>
+</tbody>
+</table>
+<p><code>F</code> 不是 <code>%r15</code>，而是“这个位置不需要寄存器”。</p>
+<p>例如：</p>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nf">irmovq</span><span class="w"> </span><span class="no">$8</span><span class="p">,</span><span class="w"> </span><span class="nv">%r8</span>
+</span></code></pre></div>
+<p>寄存器字节为：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>F8
+</span></code></pre></div>
+<p>因为该指令没有源寄存器，<code>rA = F</code>，目标寄存器 <code>%r8</code> 编号为 8。</p>
+<hr />
+<h2 id="33">3.3 指令长度</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th style="text-align: right;">长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>halt</code>、<code>nop</code>、<code>ret</code></td>
+<td style="text-align: right;">1 字节</td>
+</tr>
+<tr>
+<td><code>rrmovq/cmovXX</code>、<code>OPq</code>、<code>pushq</code>、<code>popq</code></td>
+<td style="text-align: right;">2 字节</td>
+</tr>
+<tr>
+<td><code>jXX</code>、<code>call</code></td>
+<td style="text-align: right;">9 字节</td>
+</tr>
+<tr>
+<td><code>irmovq</code>、<code>rmmovq</code>、<code>mrmovq</code></td>
+<td style="text-align: right;">10 字节</td>
+</tr>
+</tbody>
+</table>
+<p>处理器根据 <code>icode</code> 判断是否存在：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>need_regids：是否需要寄存器字节
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>need_valC：是否需要 8 字节常数
+</span></code></pre></div>
+<p>然后计算：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>valP = PC + 指令长度
+</span></code></pre></div>
+<hr />
+<h1 id="4">4. 硬件基础：组合逻辑与时序逻辑</h1>
+<h2 id="41">4.1 组合逻辑</h2>
+<p>输出只由当前输入决定，没有历史状态：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>逻辑门、加法器、ALU、多路选择器、条件判断逻辑
+</span></code></pre></div>
+<p>多路选择器可理解为：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>select = 0 → 输出 a
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>select = 1 → 输出 b
+</span></code></pre></div>
+<p>HCL 中的写法类似：</p>
+<div class="language-hcl highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="err">word</span><span class="w"> </span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="err">condition</span><span class="m">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">value</span><span class="m">1</span><span class="err">;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="err">condition</span><span class="m">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">value</span><span class="m">2</span><span class="err">;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="m">1</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="err">default;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">]</span><span class="err">;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="42">4.2 时序逻辑</h2>
+<p>输出不仅与当前输入有关，还保存历史状态：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>PC、程序寄存器、条件码、流水线寄存器、存储器
+</span></code></pre></div>
+<p>D 触发器在时钟边沿把输入 <code>D</code> 保存到输出 <code>Q</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>时钟上升沿：Q ← D
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>其余时间：Q 保持不变
+</span></code></pre></div>
+<h3 id="verilog">Verilog 对应关系</h3>
+<ul>
+<li><code>assign</code>：描述组合逻辑；</li>
+<li><code>always @(posedge clock)</code>：描述时钟边沿发生的状态更新；</li>
+<li>模块实例化：复用已有硬件模块。</li>
+</ul>
+<h3 id="_6">为什么需要区分</h3>
+<p>在一个周期内：</p>
+<ol>
+<li>组合逻辑根据旧状态不断传播并稳定；</li>
+<li>到达时钟边沿时，状态元件一次性保存新值；</li>
+<li>下一周期再根据新状态计算。</li>
+</ol>
+<p>这保证了处理器不会在同一周期内“边算边覆盖”导致混乱。</p>
+<hr />
+<h1 id="5-seqy86-64">5. SEQ：Y86-64 的顺序实现</h1>
+<h2 id="51">5.1 六个逻辑阶段</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Fetch → Decode → Execute → Memory → Write Back → Update PC
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a> 取指      译码       执行       访存        写回        更新 PC
+</span></code></pre></div>
+<p>虽然逻辑上分成六个阶段，但 SEQ 中一条指令的这些阶段在<strong>一个很长的时钟周期</strong>内依次经过组合逻辑，周期末统一更新状态。</p>
+<hr />
+<h2 id="52">5.2 各阶段的职责</h2>
+<h3 id="fetch">Fetch：取指</h3>
+<p>输入：<code>PC</code></p>
+<p>输出：</p>
+<ul>
+<li><code>icode</code>、<code>ifun</code>；</li>
+<li>可选的 <code>rA</code>、<code>rB</code>；</li>
+<li>可选的 8 字节常数 <code>valC</code>；</li>
+<li>顺序下一条地址 <code>valP</code>；</li>
+<li>指令是否合法、取指地址是否有效。</li>
+</ul>
+<p>关键硬件：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Instruction Memory
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Split：拆出 icode/ifun
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Align：对齐并取出 rA/rB/valC
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>PC Increment：计算 valP
+</span></code></pre></div>
+<hr />
+<h3 id="decode">Decode：译码和读寄存器</h3>
+<p>先根据 <code>icode</code> 选择：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>srcA、srcB：需要读取哪些寄存器
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>dstE、dstM：之后会写哪些寄存器
+</span></code></pre></div>
+<p>寄存器文件支持：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>两个读端口 A/B
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>两个写端口 E/M
+</span></code></pre></div>
+<p>读出的值记为：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>valA = R[srcA]
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>valB = R[srcB]
+</span></code></pre></div>
+<hr />
+<h3 id="execute">Execute：执行</h3>
+<p>ALU 主要完成三类任务：</p>
+<ol>
+<li>算术/逻辑运算；</li>
+<li>计算有效地址；</li>
+<li>栈指针加减 8。</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>valE = ALU(aluA, aluB, alufun)
+</span></code></pre></div>
+<p>同时可能：</p>
+<ul>
+<li>更新条件码 <code>CC</code>；</li>
+<li>根据 <code>CC + ifun</code> 计算条件是否成立 <code>Cnd</code>；</li>
+<li>条件传送失败时把 <code>dstE</code> 改为 <code>RNONE</code>。</li>
+</ul>
+<hr />
+<h3 id="memory">Memory：访存</h3>
+<p>决定三个问题：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>是否读/写？
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>地址是什么？
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>写入的数据是什么？
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>内存地址</th>
+<th>写入数据/读出数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rmmovq</code></td>
+<td><code>valE</code></td>
+<td>写 <code>valA</code></td>
+</tr>
+<tr>
+<td><code>mrmovq</code></td>
+<td><code>valE</code></td>
+<td>读出 <code>valM</code></td>
+</tr>
+<tr>
+<td><code>pushq</code></td>
+<td><code>valE</code></td>
+<td>写 <code>valA</code></td>
+</tr>
+<tr>
+<td><code>popq</code></td>
+<td><code>valA</code>（旧 <code>%rsp</code>）</td>
+<td>读出 <code>valM</code></td>
+</tr>
+<tr>
+<td><code>call</code></td>
+<td><code>valE</code></td>
+<td>写 <code>valP</code></td>
+</tr>
+<tr>
+<td><code>ret</code></td>
+<td><code>valA</code>（旧 <code>%rsp</code>）</td>
+<td>读出返回地址 <code>valM</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="write-back">Write Back：写回</h3>
+<p>最多执行两次寄存器写入：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>R[dstE] ← valE
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>R[dstM] ← valM
+</span></code></pre></div>
+<p>例如 <code>popq %rsp</code> 可能同时写 <code>%rsp</code>：</p>
+<ul>
+<li><code>dstE=%rsp</code>，写入更新后的栈指针 <code>valE</code>；</li>
+<li><code>dstM=%rsp</code>，写入弹出的值 <code>valM</code>。</li>
+</ul>
+<p>在寄存器文件实现中需要明确两个写端口的优先级，以匹配 ISA 语义。</p>
+<hr />
+<h3 id="update-pc-pc">Update PC：更新 PC</h3>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>新 PC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>call</code></td>
+<td><code>valC</code></td>
+</tr>
+<tr>
+<td>条件跳转且 <code>Cnd=1</code></td>
+<td><code>valC</code></td>
+</tr>
+<tr>
+<td><code>ret</code></td>
+<td><code>valM</code></td>
+</tr>
+<tr>
+<td>其他情况</td>
+<td><code>valP</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>newPC =
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    call              ? valC :
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    jxx &amp;&amp; Cnd        ? valC :
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    ret               ? valM :
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>                        valP
+</span></code></pre></div>
+<hr />
+<h1 id="6">6. 常见指令的阶段级语义</h1>
+<h2 id="61">6.1 总表</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>Decode</th>
+<th>Execute</th>
+<th>Memory</th>
+<th>Write Back</th>
+<th>PC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rrmovq/cmovXX</code></td>
+<td><code>valA=R[rA]</code></td>
+<td><code>valE=valA</code>，判断 <code>Cnd</code></td>
+<td>-</td>
+<td>条件成立时 <code>R[rB]=valE</code></td>
+<td><code>valP</code></td>
+</tr>
+<tr>
+<td><code>irmovq</code></td>
+<td>-</td>
+<td><code>valE=valC</code></td>
+<td>-</td>
+<td><code>R[rB]=valE</code></td>
+<td><code>valP</code></td>
+</tr>
+<tr>
+<td><code>rmmovq</code></td>
+<td><code>valA=R[rA]</code>,<code>valB=R[rB]</code></td>
+<td><code>valE=valB+valC</code></td>
+<td><code>M[valE]=valA</code></td>
+<td>-</td>
+<td><code>valP</code></td>
+</tr>
+<tr>
+<td><code>mrmovq</code></td>
+<td><code>valB=R[rB]</code></td>
+<td><code>valE=valB+valC</code></td>
+<td><code>valM=M[valE]</code></td>
+<td><code>R[rA]=valM</code></td>
+<td><code>valP</code></td>
+</tr>
+<tr>
+<td><code>OPq</code></td>
+<td><code>valA=R[rA]</code>,<code>valB=R[rB]</code></td>
+<td><code>valE=valB OP valA</code>，更新 CC</td>
+<td>-</td>
+<td><code>R[rB]=valE</code></td>
+<td><code>valP</code></td>
+</tr>
+<tr>
+<td><code>jXX</code></td>
+<td>-</td>
+<td>根据 CC 得到 <code>Cnd</code></td>
+<td>-</td>
+<td>-</td>
+<td><code>Cnd?valC:valP</code></td>
+</tr>
+<tr>
+<td><code>call</code></td>
+<td><code>valB=R[%rsp]</code></td>
+<td><code>valE=valB-8</code></td>
+<td><code>M[valE]=valP</code></td>
+<td><code>R[%rsp]=valE</code></td>
+<td><code>valC</code></td>
+</tr>
+<tr>
+<td><code>ret</code></td>
+<td><code>valA=valB=R[%rsp]</code></td>
+<td><code>valE=valB+8</code></td>
+<td><code>valM=M[valA]</code></td>
+<td><code>R[%rsp]=valE</code></td>
+<td><code>valM</code></td>
+</tr>
+<tr>
+<td><code>pushq</code></td>
+<td><code>valA=R[rA]</code>,<code>valB=R[%rsp]</code></td>
+<td><code>valE=valB-8</code></td>
+<td><code>M[valE]=valA</code></td>
+<td><code>R[%rsp]=valE</code></td>
+<td><code>valP</code></td>
+</tr>
+<tr>
+<td><code>popq</code></td>
+<td><code>valA=valB=R[%rsp]</code></td>
+<td><code>valE=valB+8</code></td>
+<td><code>valM=M[valA]</code></td>
+<td><code>%rsp=valE</code>,<code>R[rA]=valM</code></td>
+<td><code>valP</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="62">6.2 关键控制信号速查</h2>
+<h3 id="_7">源寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>srcA =
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>  rA   for rrmovq/cmovXX, rmmovq, OPq, pushq
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>  %rsp for popq, ret
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>  RNONE otherwise
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>srcB =
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>  rB   for OPq, rmmovq, mrmovq
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>  %rsp for pushq, popq, call, ret
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>  RNONE otherwise
+</span></code></pre></div>
+<h3 id="_8">目的寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>dstE =
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>  rB   for rrmovq/cmovXX, irmovq, OPq
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>  %rsp for pushq, popq, call, ret
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>  RNONE otherwise
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>dstM =
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>  rA   for mrmovq, popq
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>  RNONE otherwise
+</span></code></pre></div>
+<h3 id="alu">ALU 输入</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>aluA =
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>  valA for rrmovq/cmovXX, OPq
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>  valC for irmovq, rmmovq, mrmovq
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>  -8   for call, pushq
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>  +8   for ret, popq
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>aluB =
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>  valB for rmmovq, mrmovq, OPq, call, pushq, ret, popq
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>  0    for rrmovq/cmovXX, irmovq
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>alufun = ifun 仅用于 OPq
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>alufun = ADD  用于其他指令
+</span></code></pre></div>
+<h3 id="_9">内存控制</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>mem_read  = mrmovq || popq || ret
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>mem_write = rmmovq || pushq || call
+</span></code></pre></div>
+<h3 id="_10">为什么统一成多路选择器</h3>
+<p>处理器不是给每一条指令单独造一套电路，而是让所有指令共享：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>一套寄存器文件
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>一套 ALU
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>一套数据内存
+</span></code></pre></div>
+<p><code>icode/ifun</code> 产生控制信号，决定本周期数据走哪条路径。</p>
+<hr />
+<h1 id="7-seq">7. 从 SEQ 到流水线</h1>
+<h2 id="71">7.1 为什么做流水线</h2>
+<p>SEQ 的时钟周期必须覆盖整条最长组合逻辑路径：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>取指 + 读寄存器 + ALU + 访存 + 写回控制 + 寄存器开销
+</span></code></pre></div>
+<p>即使当前指令只用其中一部分，也必须等待最长路径结束。</p>
+<p>流水线把大任务切成多个较短阶段，在阶段之间加入时钟寄存器：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>F | D | E | M | W
+</span></code></pre></div>
+<p>不同指令可以同时占据不同阶段。</p>
+<hr />
+<h2 id="72">7.2 吞吐量与延迟</h2>
+<h3 id="_11">不流水化示例</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>组合逻辑延迟：300 ps
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>寄存器开销： 20 ps
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>时钟周期：   320 ps
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>吞吐量：约 1/320ps = 3.12 GIPS
+</span></code></pre></div>
+<h3 id="100-ps">分成三级，每级 100 ps</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>每级时钟周期：100 + 20 = 120 ps
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>稳态吞吐量：约 1/120ps = 8.33 GIPS
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>单条指令延迟：3 × 120 = 360 ps
+</span></code></pre></div>
+<p>结论：</p>
+<ul>
+<li>流水线主要提高<strong>吞吐量</strong>；</li>
+<li>单条指令的端到端<strong>延迟不一定下降</strong>，甚至会增加；</li>
+<li>启动和排空流水线需要额外周期。</li>
+</ul>
+<hr />
+<h2 id="73">7.3 非均匀划分与深流水线</h2>
+<p>若阶段延迟是：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>50 ps、150 ps、100 ps
+</span></code></pre></div>
+<p>时钟周期由最慢阶段决定：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>150 + 20 = 170 ps
+</span></code></pre></div>
+<p>因此流水线分段越均衡，效率越高。</p>
+<p>继续把阶段切得更细，理论频率提高，但每一级都有寄存器开销：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>级数越深
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>→ 寄存器开销占比越大
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>→ 冒险惩罚的周期数可能增加
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>→ 性能收益递减
+</span></code></pre></div>
+<p>这就是深流水线的 diminishing returns（收益递减）。</p>
+<hr />
+<h1 id="8-pipe">8. PIPE：五级流水线硬件结构</h1>
+<h2 id="81">8.1 流水线寄存器</h2>
+<p>阶段之间必须保存当前指令下一阶段所需的信息：</p>
+<h3 id="f"><code>F</code> 寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>predPC
+</span></code></pre></div>
+<h3 id="d"><code>D</code> 寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>stat, icode, ifun, rA, rB, valC, valP
+</span></code></pre></div>
+<h3 id="e"><code>E</code> 寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>stat, icode, ifun, valC, valA, valB,
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>dstE, dstM, srcA, srcB
+</span></code></pre></div>
+<h3 id="m"><code>M</code> 寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>stat, icode, Cnd, valE, valA, dstE, dstM
+</span></code></pre></div>
+<h3 id="w"><code>W</code> 寄存器</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>stat, icode, valE, valM, dstE, dstM
+</span></code></pre></div>
+<h3 id="srcasrcbdstedstm">为什么要把 <code>srcA/srcB/dstE/dstM</code> 一起传下去</h3>
+<p>流水线后续需要知道：</p>
+<ul>
+<li>当前指令读取了谁；</li>
+<li>当前指令准备写谁；</li>
+<li>转发和冒险检测该比较哪些寄存器编号。</li>
+</ul>
+<p>只保存数值而不保存寄存器编号，控制逻辑无法判断数据关系。</p>
+<hr />
+<h2 id="82">8.2 流水线寄存器的三种操作</h2>
+<h3 id="_12">正常加载</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>下一个状态 ← 当前组合逻辑输出
+</span></code></pre></div>
+<h3 id="stall">Stall（暂停）</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>下一个状态 ← 保持旧状态
+</span></code></pre></div>
+<p>含义：当前指令留在该阶段，不向前移动。</p>
+<h3 id="bubble">Bubble（气泡）</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>下一个状态 ← nop 状态
+</span></code></pre></div>
+<p>典型做法是把：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>icode = INOP
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>dstE = dstM = RNONE
+</span></code></pre></div>
+<p>使该流水线槽位不会写寄存器、写内存或修改条件码。</p>
+<blockquote>
+<p><code>stall</code> 是把原指令按住；<code>bubble</code> 是让某个本应进入的槽位变成无副作用的空操作。</p>
+</blockquote>
+<hr />
+<h1 id="9">9. 数据依赖、数据冒险和转发</h1>
+<h2 id="91">9.1 依赖与冒险不是一回事</h2>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nf">irmovq</span><span class="w"> </span><span class="no">$10</span><span class="p">,</span><span class="w"> </span><span class="nv">%rdx</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="nf">irmovq</span><span class="w"> </span><span class="no">$3</span><span class="p">,</span><span class="w">  </span><span class="nv">%rax</span>
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="nf">addq</span><span class="w">   </span><span class="nv">%rdx</span><span class="p">,</span><span class="w"> </span><span class="nv">%rax</span>
+</span></code></pre></div>
+<p><code>addq</code> 需要前两条指令产生的数据，因此存在 RAW（Read After Write）数据依赖。</p>
+<ul>
+<li><strong>数据依赖</strong>：程序语义关系，即后指令必须使用前指令的结果；</li>
+<li><strong>数据冒险</strong>：流水线执行时，消费者读取数据的时间早于生产者写回数据的时间。</li>
+</ul>
+<p>顺序处理器也有依赖，但通常没有流水线时间冲突。</p>
+<hr />
+<h2 id="92">9.2 为什么等待写回很浪费</h2>
+<p>若完全不转发，消费者必须等生产者到 <code>W</code> 阶段写回寄存器文件，期间插入多个气泡。</p>
+<p>但很多结果更早已经出现：</p>
+<ul>
+<li>ALU 结果在 <code>E</code> 阶段末得到 <code>e_valE</code>；</li>
+<li>更早指令的结果位于 <code>M_valE</code>、<code>W_valE</code>；</li>
+<li>内存读结果在 <code>M</code> 阶段末得到 <code>m_valM</code>，之后有 <code>W_valM</code>。</li>
+</ul>
+<p>所以可以直接把这些值送到 Decode 阶段，而不必等寄存器文件更新。</p>
+<hr />
+<h2 id="93-forwarding-bypassing">9.3 转发（Forwarding / Bypassing）</h2>
+<p>Decode 产生 <code>d_valA/d_valB</code> 时，不一定使用寄存器文件原值，而是在多个来源中选择最新值。</p>
+<p>优先级的思想：<strong>离当前指令越近的生产者越新，应优先。</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>d_valA：
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>1. call/jXX 特殊取 D_valP
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>2. d_srcA == e_dstE → e_valE
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>3. d_srcA == M_dstM → m_valM
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>4. d_srcA == M_dstE → M_valE
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>5. d_srcA == W_dstM → W_valM
+</span><span id="__span-54-7"><a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a>6. d_srcA == W_dstE → W_valE
+</span><span id="__span-54-8"><a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a>7. 否则读取寄存器文件
+</span></code></pre></div>
+<p><code>d_valB</code> 采用同类比较，但没有 <code>call/jXX → valP</code> 的特殊规则。</p>
+<h3 id="jxxcall-vala-valp">为什么 <code>jXX/call</code> 的 <code>valA</code> 保存 <code>valP</code></h3>
+<ul>
+<li><code>call</code> 需要把 <code>valP</code> 压栈；</li>
+<li>预测跳转失败时，流水线需要 <code>valP</code> 恢复到顺序路径。</li>
+</ul>
+<hr />
+<h1 id="10-loaduse">10. Load/Use 冒险</h1>
+<h2 id="101">10.1 典型代码</h2>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nf">mrmovq</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nv">%rdx</span><span class="p">),</span><span class="w"> </span><span class="nv">%rax</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="nf">addq</span><span class="w">   </span><span class="nv">%rbx</span><span class="p">,</span><span class="w"> </span><span class="nv">%rax</span>
+</span></code></pre></div>
+<p>第一条指令从内存产生 <code>%rax</code>，第二条立即使用 <code>%rax</code>。</p>
+<h3 id="_13">为什么普通转发仍来不及</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>mrmovq 的数据：到 M 阶段末才得到 m_valM
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>addq 的输入：进入 E 阶段时已经必须准备好
+</span></code></pre></div>
+<p>如果两条指令紧邻：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>周期 T+1：mrmovq 在 M，addq 已经在 E
+</span></code></pre></div>
+<p>两者处于同一周期，内存值在周期末才出现，无法在周期开始前作为 <code>addq</code> 的 E 阶段输入。</p>
+<hr />
+<h2 id="102">10.2 正确控制</h2>
+<p>检测条件：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>E_icode ∈ { IMRMOVQ, IPOPQ }
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>and E_dstM ∈ { d_srcA, d_srcB }
+</span></code></pre></div>
+<p>控制动作：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>F_stall  = 1
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>D_stall  = 1
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>E_bubble = 1
+</span></code></pre></div>
+<p>时序变化：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>周期 T：
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>D = addq
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>E = mrmovq
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>时钟边沿后：
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>D = addq      （被 stall，原地等待）
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a>E = nop       （插入 bubble）
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a>M = mrmovq    （正常向前，去读取内存）
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a>
+</span><span id="__span-60-10"><a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a>下一周期：
+</span><span id="__span-60-11"><a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a>m_valM 可以转发给仍在 D 的 addq
+</span></code></pre></div>
+<hr />
+<h1 id="11">11. 控制冒险</h1>
+<h2 id="111">11.1 根源</h2>
+<p>取指阶段每个周期都必须知道下一个 PC，但分支或返回指令的真实目标可能尚未确定。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>数据冒险：下一条是谁已经知道，但数据还没准备好。
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>控制冒险：连下一条应该取谁都不知道。
+</span></code></pre></div>
+<hr />
+<h2 id="112">11.2 条件跳转与分支预测</h2>
+<p>Y86 PIPE 使用简单策略：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>遇到 jXX：预测 Taken，F_predPC = valC
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>遇到 call：F_predPC = valC
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>其他指令：F_predPC = valP
+</span></code></pre></div>
+<p>条件跳转到 <code>E</code> 阶段才能根据 CC 得到 <code>e_Cnd</code>。</p>
+<h3 id="_14">预测正确</h3>
+<p>预测路径继续执行，无额外代价。</p>
+<h3 id="_15">预测错误</h3>
+<p>由于默认预测 Taken，错误情况通常是：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>E_icode == IJXX &amp;&amp; !e_Cnd
+</span></code></pre></div>
+<p>此时：</p>
+<ul>
+<li>分支后的错误路径指令已经进入 <code>D</code>；</li>
+<li>另一条错误指令正在 <code>F</code>；</li>
+<li>必须把它们清成气泡。</li>
+</ul>
+<p>控制动作：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>D_bubble = 1
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>E_bubble = 1
+</span></code></pre></div>
+<p>错误预测通常产生 <strong>2 个气泡</strong>。</p>
+<p>正确 PC 从流水线中的分支携带回来：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>M_icode == IJXX &amp;&amp; !M_Cnd → f_pc = M_valA
+</span></code></pre></div>
+<p>这里 <code>M_valA</code> 保存的就是该分支的 <code>valP</code>，即不跳转时的顺序地址。</p>
+<hr />
+<h2 id="113-ret">11.3 <code>ret</code> 冒险</h2>
+<p><code>ret</code> 的返回目标：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>valM = M[%rsp]
+</span></code></pre></div>
+<p>直到 <code>ret</code> 进入 M 阶段并访问内存，下一 PC 才知道。</p>
+<p>当 <code>ret</code> 位于：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>D、E 或 M 阶段
+</span></code></pre></div>
+<p>Fetch 暂停：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>F_stall = 1
+</span></code></pre></div>
+<p>同时不断向 D 插入 bubble，防止错误指令进入流水线。</p>
+<p>当 <code>ret</code> 到达 W 阶段：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>f_pc = W_valM
+</span></code></pre></div>
+<p>从返回地址恢复取指。</p>
+<p>典型返回惩罚为 <strong>3 个气泡</strong>。</p>
+<h3 id="call">为什么 <code>call</code> 没有同样的问题</h3>
+<p><code>call</code> 的目标地址 <code>valC</code> 在取指阶段已从指令中读出，因此可以立即预测下一 PC；不确定的是 <code>ret</code>，因为目标藏在运行时栈内存中。</p>
+<hr />
+<h1 id="12">12. 流水线控制信号总表</h1>
+<p>先定义三个事件：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>load_use =
+</span><span id="__span-70-2"><a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>    E_icode ∈ { IMRMOVQ, IPOPQ }
+</span><span id="__span-70-3"><a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a>    &amp;&amp; E_dstM ∈ { d_srcA, d_srcB }
+</span><span id="__span-70-4"><a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a>
+</span><span id="__span-70-5"><a id="__codelineno-70-5" name="__codelineno-70-5" href="#__codelineno-70-5"></a>mispredict =
+</span><span id="__span-70-6"><a id="__codelineno-70-6" name="__codelineno-70-6" href="#__codelineno-70-6"></a>    E_icode == IJXX &amp;&amp; !e_Cnd
+</span><span id="__span-70-7"><a id="__codelineno-70-7" name="__codelineno-70-7" href="#__codelineno-70-7"></a>
+</span><span id="__span-70-8"><a id="__codelineno-70-8" name="__codelineno-70-8" href="#__codelineno-70-8"></a>ret_in_pipe =
+</span><span id="__span-70-9"><a id="__codelineno-70-9" name="__codelineno-70-9" href="#__codelineno-70-9"></a>    IRET ∈ { D_icode, E_icode, M_icode }
+</span></code></pre></div>
+<p>经典控制逻辑：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>F_stall  = load_use || ret_in_pipe
+</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>
+</span><span id="__span-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>D_stall  = load_use
+</span><span id="__span-71-4"><a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>
+</span><span id="__span-71-5"><a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a>D_bubble = mispredict
+</span><span id="__span-71-6"><a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a>           || (!load_use &amp;&amp; ret_in_pipe)
+</span><span id="__span-71-7"><a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>
+</span><span id="__span-71-8"><a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a>E_bubble = mispredict || load_use
+</span></code></pre></div>
+<h2 id="121-d_bubble-load_use">12.1 为什么 <code>D_bubble</code> 中有 <code>!load_use</code></h2>
+<p>同一个流水线寄存器不能同时：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>stall：保留旧指令
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>bubble：改成 nop
+</span></code></pre></div>
+<p>当 Load/Use 和 <code>ret</code> 条件同时出现时，D 必须优先 stall，保留正在等待数据的指令。因此：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>D_bubble 只有在“不是 load/use”时才因 ret 生效
+</span></code></pre></div>
+<p>这体现了控制条件组合时必须明确优先级。</p>
+<hr />
+<h2 id="122-pc">12.2 PC 选择优先级</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>f_pc =
+</span><span id="__span-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>1. 分支预测失败恢复：M_valA
+</span><span id="__span-74-3"><a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a>2. ret 返回地址：W_valM
+</span><span id="__span-74-4"><a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>3. 正常预测地址：F_predPC
+</span></code></pre></div>
+<p>优先级不能随意交换，因为较老指令对真实控制流拥有更高权威。</p>
+<hr />
+<h1 id="13">13. 异常在流水线中的处理思路</h1>
+<p>异常指令不能让比它更新的指令先修改体系结构状态。</p>
+<p>因此状态码 <code>stat</code> 会随指令沿流水线传播，通常在较后阶段统一决定是否停止。</p>
+<p>核心原则：</p>
+<ol>
+<li>发生异常的指令之前的老指令允许完成；</li>
+<li>异常指令及其之后的新指令不能产生错误副作用；</li>
+<li>一旦异常到达提交位置，处理器停止或报告状态。</li>
+</ol>
+<p>完整 PIPE 控制中还会涉及：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>M_bubble：阻止异常后的指令继续提交
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>W_stall：异常到达 W 后冻结最终状态
+</span></code></pre></div>
+<hr />
+<h1 id="14-cpi">14. 性能分析：CPI</h1>
+<h2 id="141">14.1 基本定义</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>CPI = Cycles Per Instruction
+</span><span id="__span-76-2"><a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>    = 执行一条指令平均需要的时钟周期数
+</span></code></pre></div>
+<p>理想流水线稳态：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>CPI ≈ 1
+</span></code></pre></div>
+<p>设：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>实际指令数 = Ci
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>气泡数     = Cb
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>总周期数   ≈ Ci + Cb 
+</span></code></pre></div>
+<p>则：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>CPI = (Ci + Cb) / Ci
+</span><span id="__span-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>    = 1 + Cb / Ci
+</span></code></pre></div>
+<p>将主要气泡来源分开：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>CPI = 1 + lp + mp + rp
+</span></code></pre></div>
+<p>其中：</p>
+<ul>
+<li><code>lp</code>：Load/Use penalty；</li>
+<li><code>mp</code>：Mispredicted branch penalty；</li>
+<li><code>rp</code>：Return penalty。</li>
+</ul>
+<hr />
+<h2 id="142">14.2 惩罚项计算</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>某类 penalty
+</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>= 该类指令频率
+</span><span id="__span-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>× 触发冒险的条件概率
+</span><span id="__span-81-4"><a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>× 每次触发产生的气泡数
+</span></code></pre></div>
+<p>示例：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align: right;">指令频率</th>
+<th style="text-align: right;">条件频率</th>
+<th style="text-align: right;">每次气泡</th>
+<th style="text-align: right;">贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load/Use</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><code>0.25×0.20×1=0.05</code></td>
+</tr>
+<tr>
+<td>分支误预测</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><code>0.20×0.40×2=0.16</code></td>
+</tr>
+<tr>
+<td><code>ret</code></td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"><code>0.02×1×3=0.06</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>总 penalty = 0.05 + 0.16 + 0.06 = 0.27
+</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>CPI = 1.27
+</span></code></pre></div>
+<p>该例中最大的性能损失来自分支误预测。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月28日 11:47:49 UTC">2026年7月28日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月28日 11:47:49 UTC">2026年7月28日</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="贡献者">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      scandi
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面对你有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢你的反馈！欢迎通过 <a href="..." target="_blank" rel="noopener">反馈表单</a> 告诉我哪里可以做得更好。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+
+<h2 id="__comments">评论</h2>
+
+<!-- Giscus（把你从 giscus.app 生成的 snippet 粘贴/替换到这里） -->
+<script src="https://giscus.app/client.js"
+        data-repo="scandishoper/shoper-docs"
+        data-repo-id="R_kgDORRSjbg"
+        data-category="General"
+        data-category-id="DIC_kwDORRSjbs4C2iWN"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- 同步 giscus 主题（跟随 Material 的浅色/深色切换） -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  // 初次加载：根据当前配色设置 giscus theme
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate"
+      ? "transparent_dark"
+      : "light"
+    giscus.setAttribute("data-theme", theme)
+  }
+
+  // 监听主题切换：通知 iframe 更新 theme
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+          ? "transparent_dark"
+          : "light"
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../p55/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CSAPP第三章">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                CSAPP第三章
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../p54/" class="md-footer__link md-footer__link--next" aria-label="下一页: CS106L-assignment1">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                CS106L-assignment1
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 shoper – <a href="#__consent">Change cookie settings</a>
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/scandishoper" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie consent</h4>
+<p>我使用 cookies 来识别您的重复访问和偏好，以及其他信息 以评估我的文档的有效性以及用户是否 找到他们正在寻找的东西。在你同意的情况下，你正在帮助我实现目标。 让我的文档更好。</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Custom name
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "content.action.edit", "content.action.view", "search.suggest", "search.highlight", "search.share", "navigation.footer", "navigation.expand", "navigation.path", "navigation.prune", "header.autohide", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/consent.js"></script>
+      
+    
+  </body>
+</html>
