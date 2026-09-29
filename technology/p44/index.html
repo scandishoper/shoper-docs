@@ -1581,6 +1581,8 @@
       
         
       
+        
+      
     
     
     
@@ -2493,7 +2495,7 @@
 <img alt="1111" src="/assets/1111.png" /></p>
 <h3 id="33-github">3.3 配置公钥连接 Github</h3>
 <h4 id="331-ssh-github">3.3.1 执行以下命令生成 ssh 公钥，此公钥用于你的计算机连接 Github</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;你的邮箱&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">"你的邮箱"</span>
 </span></code></pre></div>
 <p>提示 【Enter file in which to save the key】 直接一路回车即可。</p>
 <p>之后打开 C 盘下用户文件夹下的.ssh 的文件夹，会看到以下文件
@@ -2630,7 +2632,7 @@
 等你觉得修改没问题，想要上线完成修改，再运行【hexo cl; hexo g; hexo d】命令，推送更新上线。</p>
 <h3 id="92">9.2 新建一篇博文</h3>
 <p>终端中输入下面命令</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>hexo<span class="w"> </span>new<span class="w"> </span><span class="s2">&quot;博文名称&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>hexo<span class="w"> </span>new<span class="w"> </span><span class="s2">"博文名称"</span>
 </span></code></pre></div>
 <p>回车确认后，在总文件夹中的 source 文件夹的 _posts 文件夹中出现一个新的博文文件（markdown 格式）这样就可以直接对博文进行编辑</p>
 <h3 id="93-scaffolds-postmd">9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板</h3>
@@ -2664,7 +2666,7 @@ post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p
 </span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>swiper_index:<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="c1">#【可选】首页轮播图配置 index 索引，数字越小越靠前</span>
 </span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>top_group_index:<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="c1">#【可选】首页右侧卡片组配置, 数字越小越靠前</span>
 </span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>ai:<span class="w"> </span><span class="c1">#【可选】文章ai摘要</span>
-</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>background:<span class="w"> </span><span class="s2">&quot;#fff&quot;</span><span class="w"> </span><span class="c1">#【可选】文章主色，必须是16进制颜色且有6位，不可缩减，例如#ffffff 不可写成#fff</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>background:<span class="w"> </span><span class="s2">"#fff"</span><span class="w"> </span><span class="c1">#【可选】文章主色，必须是16进制颜色且有6位，不可缩减，例如#ffffff 不可写成#fff</span>
 </span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>---
 </span></code></pre></div>
 <h3 id="94">9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行</h3>
