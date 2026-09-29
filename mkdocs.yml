@@ -147,7 +147,7 @@ copyright: >
   <a href="#__consent">Change cookie settings</a>
 
   
-#66
+#67
 
 nav:
   - 主页: index.md
@@ -222,6 +222,7 @@ nav:
       - 《囧妈》观后感: views/p49.md
       - 退役算法竞赛: views/p63.md
       - 《我，许可》观后感: views/p64.md
+      - 9.28 | 我 何以自处: views/p67.md
 
   - 博客:
       - index: blog/index.md
