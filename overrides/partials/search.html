@@ -1,0 +1,13 @@
+<div class="md-search" data-md-component="search" role="dialog" aria-modal="true" aria-label="搜索文章">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" aria-controls="paper-search-results" placeholder="搜索文章与内容" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">{% include ".icons/material/magnify.svg" %}{% include ".icons/material/arrow-left.svg" %}</label>
+      <nav class="md-search__options" aria-label="查找"><button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">{% include ".icons/material/backspace-outline.svg" %}</button></nav>
+      <button type="button" class="paper-search-close md-icon" aria-label="关闭搜索" data-paper-search-close>{% include ".icons/material/close.svg" %}</button>
+      {% if 'search.suggest' in features %}<div class="md-search__suggest" data-md-component="search-suggest"></div>{% endif %}
+    </form>
+    <div class="md-search__output"><div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix><div class="md-search-result" data-md-component="search-result" id="paper-search-results"><div class="md-search-result__meta">{{ lang.t('search.result.initializer') }}</div><ol class="md-search-result__list" role="presentation"></ol></div></div></div>
+  </div>
+</div>

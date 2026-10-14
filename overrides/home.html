@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% block paper_content %}
+<div class="paper-list-page" id="paper-content">
+  <header class="paper-intro md-typeset"><span class="paper-eyebrow">SHOPER / 随笔与笔记</span>{{ page.content }}</header>
+  <nav class="paper-topic-line" aria-label="专题入口"><span>专题</span>{% for topic in blog_topics %}<a href="{{ topic.url | url }}">{{ topic.title | e }}</a>{% endfor %}</nav>
+  <div class="paper-section-label"><h2>最近写作</h2><a href="{{ 'archive/' | url }}">全部文章 <span aria-hidden="true">→</span></a></div>
+  {{ post_list(blog_posts[:10], show_year=true) }}
+  <a class="paper-more" href="{{ 'archive/' | url }}">沿着时间读下去 <span aria-hidden="true">→</span></a>
+</div>
+{% endblock %}

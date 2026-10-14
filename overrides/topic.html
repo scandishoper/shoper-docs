@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block paper_content %}
+<div class="paper-list-page" id="paper-content">
+  <header class="paper-page-heading md-typeset"><a class="paper-eyebrow" href="{{ 'topics/' | url }}">专题</a><h1>{{ blog_topic.title | e }}</h1><p>{{ blog_topic.description | e }}</p></header>
+  {% if blog_topic.groups %}<nav class="paper-topic-line" aria-label="专题分类">{% for group in blog_topic.groups %}<a href="#group-{{ loop.index }}">{{ group.title | e }}</a>{% endfor %}</nav>{% endif %}
+  {% if blog_topic.groups %}
+    {% for group in blog_topic.groups %}<section class="paper-post-group" id="group-{{ loop.index }}"><div class="paper-section-label"><h2>{{ group.title | e }}</h2><span>{{ group.posts | length }} 篇</span></div>{{ post_list(group.posts, show_year=true) }}</section>{% endfor %}
+  {% else %}
+    <div class="paper-section-label"><h2>全部文章</h2><span>{{ blog_topic.posts | length }} 篇</span></div>{{ post_list(blog_topic.posts, show_year=true) }}
+  {% endif %}
+</div>
+{% endblock %}

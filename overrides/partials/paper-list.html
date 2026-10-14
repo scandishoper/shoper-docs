@@ -1,0 +1,13 @@
+{% macro post_list(posts, show_year=false) %}
+<div class="paper-posts">
+{% for post in posts %}
+  <article class="paper-post-row">
+    <time datetime="{{ post.date | e }}">{% if show_year %}{{ post.date | e }}{% else %}{{ post.date_short | e }}{% endif %}</time>
+    <div><h2><a href="{{ post.url | url }}">{{ post.title | e }}</a></h2>
+      {% if post.summary %}<p class="paper-post-summary">{{ post.summary | e }}</p>{% endif %}
+      <div class="paper-post-meta"><a href="{{ post.category_url | url }}">{{ post.category | e }}</a>{% if post.series %}<span aria-hidden="true">·</span><span>{{ post.series | e }}</span>{% endif %}</div>
+    </div>
+  </article>
+{% else %}<p class="paper-empty">还没有文章，慢慢写。</p>{% endfor %}
+</div>
+{% endmacro %}

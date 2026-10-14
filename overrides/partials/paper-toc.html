@@ -1,0 +1,9 @@
+{% macro contents(items) %}
+<ul class="paper-toc-list">
+{% for item in items %}
+  <li><a href="{{ item.url | e }}">{{ item.title | striptags | truncate(42, true) | e }}</a>
+    {% if item.children %}<ul class="paper-toc-sub">{% for child in item.children %}<li><a href="{{ child.url | e }}">{{ child.title | striptags | truncate(42, true) | e }}</a></li>{% endfor %}</ul>{% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endmacro %}

@@ -1,0 +1,25 @@
+{% macro comment_list(comments, replies=false) %}
+<ul class="{% if replies %}paper-legacy-replies{% else %}paper-legacy-list{% endif %}" role="list">
+  {% for comment in comments %}
+  <li>
+    {% if page.meta.get('legacy_archive', false) and not replies %}<p class="paper-legacy-source">来自 <a href="{{ comment.source_url | e }}">{{ comment.source_title | e }}</a></p>{% endif %}
+    <article class="paper-legacy-comment" id="legacy-comment-{{ comment.id | e }}">
+      <header class="paper-legacy-meta">
+        <strong>{{ comment.author | e }}</strong>
+        <time datetime="{{ comment.created_at | e }}">{{ comment.date_display | e }}</time>
+      </header>
+      {% if comment.reply_to %}<p class="paper-legacy-reply-to">回复 {{ comment.reply_to | e }}</p>{% endif %}
+      <div class="paper-legacy-body">{{ comment.body_html }}</div>
+    </article>
+    {% if comment.children %}{{ comment_list(comment.children, true) }}{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+{% if legacy_comment_count %}
+<section class="paper-legacy-comments" id="legacy-comments" aria-labelledby="legacy-comments-title">
+  <h2 id="legacy-comments-title">过往留言</h2>
+  <p class="paper-legacy-note">旧站存档 · {{ legacy_comment_count }} 条 · 时间为北京时间</p>
+  {{ comment_list(legacy_comments) }}
+</section>
+{% endif %}

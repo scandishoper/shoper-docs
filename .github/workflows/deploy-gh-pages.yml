@@ -11,11 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: "true"
-      # ✅ GitHub Pages 的 site_url 应该是“网页地址”，不是仓库地址
-      #    你的仓库：scandishoper/shoper-docs
-      #    GitHub Pages 默认地址通常是：
-      #    https://scandishoper.github.io/shoper-docs/
-      SITE_URL: "https://scandishoper.github.io/shoper-docs/"
+      # 与现有 CNAME 一致，保证 canonical 和 RSS 使用实际博客网址。
+      SITE_URL: "https://docs.scandidreams.top/"
 
       # ✅ 默认不启用私密加密（需要时改 true，或在 Actions env/secret 控制）
       ENABLE_PRIVATE: "false"
@@ -42,14 +39,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ✅ 构建（你想严格检查就把 --strict 加回去）
-      - name: Build
-        run: mkdocs build
+      - name: Test automatic article discovery
+        run: python -m unittest discover -s tests
 
-      # ✅ 如果你“真的”有自定义域名才保留这一步；没有就删掉或注释掉
-      #    例如你想用 docs.scandidreams.top 指向 GitHub Pages
-      - name: Write CNAME
-        run: echo "docs.scandidreams.top" > site/CNAME
+      - name: Build
+        run: mkdocs build --strict
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force

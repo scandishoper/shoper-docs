@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+{% block paper_content %}
+<div class="paper-list-page" id="paper-content">
+  <header class="paper-page-heading md-typeset"><span class="paper-eyebrow">ARCHIVE / 归档</span><h1>写过的，都在这里。</h1><p>{{ blog_posts | length }} 篇文章，沿着时间慢慢积累。</p></header>
+  <nav class="paper-topic-line" aria-label="按年份浏览">{% for archive in blog_archives %}<a href="#year-{{ archive.year }}">{{ archive.year }}</a>{% endfor %}</nav>
+  {% for archive in blog_archives %}<section class="paper-archive-year" id="year-{{ archive.year }}"><div class="paper-section-label"><h2>{{ archive.year }}</h2><span>{{ archive.posts | length }} 篇</span></div>{{ post_list(archive.posts) }}</section>{% endfor %}
+</div>
+{% endblock %}

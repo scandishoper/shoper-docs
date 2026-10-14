@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+{% block paper_content %}
+<div class="paper-list-page" id="paper-content">
+  <header class="paper-page-heading md-typeset"><span class="paper-eyebrow">TOPICS / 专题</span><h1>沿着一个主题读下去。</h1><p>一些持续学习的线索，一些慢慢积累的想法。</p></header>
+  <div class="paper-topics">{% for topic in blog_topics %}
+    <section class="paper-topic-section"><div class="paper-topic-number">{{ '%02d' | format(loop.index) }}</div><div><h2><a href="{{ topic.url | url }}">{{ topic.title | e }} <span aria-hidden="true">↗</span></a></h2><p>{{ topic.description | e }}</p><div class="paper-topic-latest">{% for post in topic.posts[:3] %}<a href="{{ post.url | url }}">{{ post.title | e }}</a>{% endfor %}</div><a class="paper-topic-all" href="{{ topic.url | url }}">查看 {{ topic.posts | length }} 篇文章 <span aria-hidden="true">→</span></a></div></section>
+  {% endfor %}</div>
+</div>
+{% endblock %}

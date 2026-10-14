@@ -1,21 +1,53 @@
-{# overrides/main.html #}
 {% extends "base.html" %}
-
-{% block content %}
-  {# 元信息块：标题下方（正文前） #}
-  {% if page and page.meta %}
-    <div class="md-meta" style="margin: .6rem 0 1.2rem 0; font-size: 0.85rem; opacity: .8;">
-      {% if page.meta.git_creation_date_localized %}
-        <span>创建：{{ page.meta.git_creation_date_localized }}</span>
-      {% endif %}
-      {% if page.meta.git_revision_date_localized %}
-        <span style="margin-left: .8rem;">更新：{{ page.meta.git_revision_date_localized }}</span>
-      {% endif %}
-      {% if git_page_authors %}
-        <span style="margin-left: .8rem;">作者：{{ git_page_authors }}</span>
-      {% endif %}
+{% from "partials/paper-list.html" import post_list with context %}
+{% from "partials/paper-toc.html" import contents with context %}
+{% block htmltitle %}{% if page and page.is_homepage %}<title>{{ config.site_name | e }} · 随笔与笔记</title>{% else %}{{ super() }}{% endif %}{% endblock %}
+{% block tabs %}{% endblock %}
+{% block site_nav %}{% endblock %}
+{% block container %}
+<div class="md-content paper-shell" data-md-component="content">
+  {% block paper_content %}
+    {% set toc = page.toc | list %}
+    {% if toc | length == 1 and toc[0].level == 1 %}{% set toc = toc[0].children %}{% endif %}
+    {% set has_toc = blog_post and toc | length >= 3 %}
+    <div class="paper-reading{% if has_toc %} paper-reading--with-toc{% endif %}">
+      <article class="paper-article md-typeset" id="paper-content">
+        {% if blog_post %}
+          {% set starts_with_title = page.content.lstrip().startswith('<h1') %}
+          <header class="paper-article-header">
+            <a class="paper-eyebrow" href="{{ blog_post.topic_url | url }}">{{ blog_post.topic | e }}</a>
+            {% if blog_post.series %}<span class="paper-breadcrumb"> / {{ blog_post.series | e }}</span>{% endif %}
+            <h1{% if starts_with_title and page.toc %} id="{{ (page.toc | first).id | e }}"{% endif %}>{{ blog_post.title | e }}</h1>
+            <div class="paper-meta"><time datetime="{{ blog_post.date | e }}">{{ blog_post.date_display | e }}</time><span aria-hidden="true">·</span><a href="{{ blog_post.category_url | url }}">{{ blog_post.category | e }}</a></div>
+            {% if blog_post.summary %}<p class="paper-lead">{{ blog_post.summary | e }}</p>{% endif %}
+          </header>
+          {% if has_toc %}<details class="paper-mobile-toc"><summary>本文目录</summary>{{ contents(toc) }}</details>{% endif %}
+          <div class="paper-body">
+            {% if starts_with_title %}{{ page.content.split('</h1>', 1)[-1] }}{% else %}{{ page.content }}{% endif %}
+          </div>
+          {% if blog_series_posts | length > 1 %}
+          <details class="paper-series"><summary>{{ blog_post.series | e }} · 共 {{ blog_series_posts | length }} 篇</summary><ol>{% for post in blog_series_posts %}<li><a href="{{ post.url | url }}"{% if post.url == blog_post.url %} aria-current="page"{% endif %}>{{ post.title | e }}</a></li>{% endfor %}</ol></details>
+          {% endif %}
+          <nav class="paper-pagination" aria-label="继续阅读">
+            {% if blog_prev %}<a href="{{ blog_prev.url | url }}"><span>上一篇{% if blog_post.series %} · {{ blog_post.series | e }}{% endif %}</span>{{ blog_prev.title | e }}</a>{% endif %}
+            {% if blog_next %}<a href="{{ blog_next.url | url }}"><span>下一篇{% if blog_post.series %} · {{ blog_post.series | e }}{% endif %}</span>{{ blog_next.title | e }}</a>{% endif %}
+          </nav>
+          {% include "partials/comments.html" %}
+        {% else %}
+          {% if '<h1' not in page.content %}<h1>{{ page.title | e }}</h1>{% endif %}
+          <div class="paper-body">{{ page.content }}</div>
+          {% if legacy_comment_count or page.meta.get('comments', false) == true %}{% include "partials/comments.html" %}{% endif %}
+        {% endif %}
+      </article>
+      {% if has_toc %}<aside class="paper-toc" aria-label="本文目录"><div class="paper-toc__inner"><span class="paper-toc__label">本文目录</span>{{ contents(toc) }}</div></aside>{% endif %}
     </div>
-  {% endif %}
-
-  {{ super() }}
+  {% endblock %}
+</div>
+{% endblock %}
+{% block footer %}
+<footer class="paper-footer md-grid">
+  <a href="{{ '' | url }}">shoper<span aria-hidden="true">.</span></a>
+  <nav aria-label="页脚"><a href="{{ 'archive/' | url }}">归档</a><a href="{{ 'link/' | url }}">友链</a><a href="{{ 'comments/' | url }}">留言</a><a href="https://github.com/scandishoper">GitHub</a>{% if 'rss' in config.plugins and config.plugins['rss'].config.enabled %}<a href="{{ 'feed_rss_created.xml' | url }}">RSS</a>{% endif %}{% if config.extra.consent %}<a href="#__consent">隐私偏好</a>{% endif %}</nav>
+  <span class="paper-footer-note">学习 / 记录 / 思考</span>
+</footer>
 {% endblock %}

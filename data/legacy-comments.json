@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "comments": [
+    {
+      "id": "69776e428f09280655644086",
+      "author": "Anonymous",
+      "body": "按高度合并 看别的题解半天没看懂qwq\n“每次查找某个节点的根时，在结束时**顺便将这个节点直接指向根**”\n瞬间清楚了（（（（",
+      "created_at": "2026-01-26T13:38:10.288Z",
+      "published_at": "2026-01-26T13:38:10.228Z",
+      "source": "algo/p8.md",
+      "original_path": "/2025/03/12/并查集/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "69924fed807d4d3fd7f0a61f",
+      "author": "scandi",
+      "body": "！！！哈哈哈才看到，能帮助到你真的非常开心😋",
+      "created_at": "2026-02-15T22:59:57.222Z",
+      "published_at": "2026-02-15T22:59:56.969Z",
+      "source": "algo/p8.md",
+      "original_path": "/2025/03/12/并查集/",
+      "parent_id": "69776e428f09280655644086",
+      "root_id": "69776e428f09280655644086"
+    },
+    {
+      "id": "6846f3febf6625518c44916b",
+      "author": "Anonymous",
+      "body": "之前在micro_frank看的一段话，现在觉得你也需要\n学校不能为天才提供任何帮助，它只能制造阻碍，什么时候一个人能意识到学校永远都无法学到东西，他就彻底开始了真正的学习；\n与此同时，学校也不能为培养人才提供任何帮助，其原因是人才不是通过培养的，人才没有固定路线和计划，人才是在社会中随机历练的。 \n\n出校，出国，并历练。",
+      "created_at": "2025-06-09T14:47:26.731Z",
+      "published_at": "2025-06-09T14:47:19.686Z",
+      "source": "blog/p19.md",
+      "original_path": "/2025/05/11/周记11/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "68660906b9570274df8c23b2",
+      "author": "scandi",
+      "body": "啊啊啊啊啊！我竟然才看到。谢谢你的阅读。一年下来，也算是终于看清了这些所谓的学校课程与工作。现在非常认同你所说的。起码在双非院校中普遍都是如此。现在算是真正看淡学校的一切批判体系。。。能旷课旷课，期末能少复习就少复习。也是对这样的教育彻底失了希望。谢谢评论！！！",
+      "created_at": "2025-07-03T04:37:26.311Z",
+      "published_at": "2025-07-03T04:37:26.706Z",
+      "source": "blog/p19.md",
+      "original_path": "/2025/05/11/周记11/",
+      "parent_id": "6846f3febf6625518c44916b",
+      "root_id": "6846f3febf6625518c44916b"
+    },
+    {
+      "id": "683c7dfcd3496c4246e848e5",
+      "author": "Anonymous",
+      "body": "火钳刘明 :tv_doge:",
+      "created_at": "2025-06-01T16:21:16.688Z",
+      "published_at": "2025-06-01T16:21:16.514Z",
+      "source": "blog/p20.md",
+      "original_path": "/2025/05/26/周记13/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "68660974fbbb215be8ce4443",
+      "author": "Anonymous",
+      "body": "火钳刘明 tv_doge",
+      "created_at": "2025-07-03T04:39:16.319Z",
+      "published_at": "2025-07-03T04:39:16.832Z",
+      "source": "blog/p20.md",
+      "original_path": "/2025/05/26/周记13/",
+      "parent_id": "683c7dfcd3496c4246e848e5",
+      "root_id": "683c7dfcd3496c4246e848e5"
+    },
+    {
+      "id": "693a66f5a54da130be078df3",
+      "author": "Anonymous",
+      "body": "让你用乌邦图了吗",
+      "created_at": "2025-12-11T06:38:45.200Z",
+      "published_at": "2025-12-11T06:38:27.702Z",
+      "source": "blog/p29.md",
+      "original_path": "/2025/09/12/大一下暑假杂谈/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "6949027a448e7823610db9a6",
+      "author": "scandi",
+      "body": "嘻嘻 现在用endeavouros",
+      "created_at": "2025-12-22T08:34:02.999Z",
+      "published_at": "2025-12-22T08:33:48.124Z",
+      "source": "blog/p29.md",
+      "original_path": "/2025/09/12/大一下暑假杂谈/",
+      "parent_id": "693a66f5a54da130be078df3",
+      "root_id": "693a66f5a54da130be078df3"
+    },
+    {
+      "id": "67b6087e8101ac2f44bca682",
+      "author": "Anonymous",
+      "body": " :longing:",
+      "created_at": "2025-02-19T16:36:14.646Z",
+      "published_at": "2025-02-19T16:36:15.034Z",
+      "source": "blog/p30.md",
+      "original_path": "/2025/02/19/大一寒假/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "67bec9f3c180622876cb1747",
+      "author": "Anonymous",
+      "body": " :tv_亲亲:",
+      "created_at": "2025-02-26T07:59:47.789Z",
+      "published_at": "2025-02-26T07:59:48.986Z",
+      "source": "comments.md",
+      "original_path": "/comments/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "67bec9f9b9b8310c49bae9de",
+      "author": "顽强的芹菜",
+      "body": "66666666 :tv_doge:",
+      "created_at": "2025-02-26T07:59:53.522Z",
+      "published_at": "2025-02-26T07:59:52.545Z",
+      "source": "comments.md",
+      "original_path": "/comments/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "67c11457ed44882e4fc0d2dd",
+      "author": "慎重的石榴",
+      "body": "6666",
+      "created_at": "2025-02-28T01:41:43.833Z",
+      "published_at": "2025-02-28T01:41:43.752Z",
+      "source": "comments.md",
+      "original_path": "/comments/",
+      "parent_id": "67bec9f9b9b8310c49bae9de",
+      "root_id": "67bec9f9b9b8310c49bae9de"
+    },
+    {
+      "id": "692a0488af4f482042a2b1ac",
+      "author": "Anonymous",
+      "body": "handsome!\n",
+      "created_at": "2025-11-28T20:22:32.479Z",
+      "published_at": "2025-11-28T20:22:32.390Z",
+      "source": "comments.md",
+      "original_path": "/comments/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "69354ecbdaee5f72f2828130",
+      "author": "Anonymous",
+      "body": "nb666\n",
+      "created_at": "2025-12-07T09:54:19.357Z",
+      "published_at": "2025-12-07T09:54:19.325Z",
+      "source": "comments.md",
+      "original_path": "/comments/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "69760c19c8f81e5498ea6374",
+      "author": "Anonymous",
+      "body": "tql",
+      "created_at": "2026-01-25T12:27:05.922Z",
+      "published_at": "2026-01-25T12:27:05.849Z",
+      "source": "comments.md",
+      "original_path": "/comments/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "67da8cadb9b8310c491dc266",
+      "author": "Anonymous",
+      "body": "35页",
+      "created_at": "2025-03-19T09:21:49.936Z",
+      "published_at": "2025-03-19T09:21:49.999Z",
+      "source": "legacy-comments.md",
+      "original_path": "/2025/03/02/C++核心编程/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "67ed6fdc685d2315e6a41297",
+      "author": "Anonymous",
+      "body": "搞的比较匆忙 有乱序或者其他问题的话，请指教",
+      "created_at": "2025-04-02T17:11:56.467Z",
+      "published_at": "2025-04-02T17:11:57.032Z",
+      "source": "legacy-comments.md",
+      "original_path": "/2025/04/03/创业课章节测试答案参考/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "68c1133e21dce5113939264d",
+      "author": "有专业素养的土豆",
+      "body": "这是真讲真话哈哈哈",
+      "created_at": "2025-09-10T05:57:18.277Z",
+      "published_at": "2025-09-10T05:57:18.068Z",
+      "source": "legacy-comments.md",
+      "original_path": "/2025/08/01/p0/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "67c08665da7a556c0369028f",
+      "author": "Anonymous",
+      "body": "上面是我舍友的csdn\n",
+      "created_at": "2025-02-27T15:36:05.221Z",
+      "published_at": "2025-02-27T15:36:05.409Z",
+      "source": "link/index.md",
+      "original_path": "/link/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "697628b71c9d68479688387b",
+      "author": "Anonymous",
+      "body": "还得练",
+      "created_at": "2026-01-25T14:29:11.247Z",
+      "published_at": "2026-01-25T14:29:13.382Z",
+      "source": "solutions/p38.md",
+      "original_path": "/2026/01/24/Codeforces Round 1075 (Div. 2) 题解/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "6976813d1c9d684796891da1",
+      "author": "Anonymous",
+      "body": "收到！\n",
+      "created_at": "2026-01-25T20:46:53.189Z",
+      "published_at": "2026-01-25T20:46:53.028Z",
+      "source": "solutions/p38.md",
+      "original_path": "/2026/01/24/Codeforces Round 1075 (Div. 2) 题解/",
+      "parent_id": "697628b71c9d68479688387b",
+      "root_id": "697628b71c9d68479688387b"
+    },
+    {
+      "id": "69768152d4c46d3fcabbab83",
+      "author": "scandi",
+      "body": "收到！",
+      "created_at": "2026-01-25T20:47:14.903Z",
+      "published_at": "2026-01-25T20:47:14.828Z",
+      "source": "solutions/p38.md",
+      "original_path": "/2026/01/24/Codeforces Round 1075 (Div. 2) 题解/",
+      "parent_id": "697628b71c9d68479688387b",
+      "root_id": "697628b71c9d68479688387b"
+    },
+    {
+      "id": "697683d7fc754f151d5a0dda",
+      "author": "Anonymous",
+      "body": "orz",
+      "created_at": "2026-01-25T20:57:59.896Z",
+      "published_at": "2026-01-25T20:57:59.582Z",
+      "source": "solutions/p39.md",
+      "original_path": "/2026/01/26/Codeforces Round 1076 (Div. 3) 题解/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "697755698f0928065563b420",
+      "author": "scandi",
+      "body": "o.O",
+      "created_at": "2026-01-26T11:52:09.489Z",
+      "published_at": "2026-01-26T11:52:09.128Z",
+      "source": "solutions/p39.md",
+      "original_path": "/2026/01/26/Codeforces Round 1076 (Div. 3) 题解/",
+      "parent_id": "697683d7fc754f151d5a0dda",
+      "root_id": "697683d7fc754f151d5a0dda"
+    },
+    {
+      "id": "69354d1d171b217b0ef6b8a0",
+      "author": "Anonymous",
+      "body": " :tv_亲亲: :tv_亲亲: :tv_亲亲: :tv_亲亲:",
+      "created_at": "2025-12-07T09:47:09.729Z",
+      "published_at": "2025-12-07T09:47:09.680Z",
+      "source": "technology/p43.md",
+      "original_path": "/2025/08/31/AI翻译插件配置教程/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "69768194fc754f151d5a0bc8",
+      "author": "scandi",
+      "body": "o.O",
+      "created_at": "2026-01-25T20:48:20.237Z",
+      "published_at": "2026-01-25T20:48:20.155Z",
+      "source": "technology/p43.md",
+      "original_path": "/2025/08/31/AI翻译插件配置教程/",
+      "parent_id": "69354d1d171b217b0ef6b8a0",
+      "root_id": "69354d1d171b217b0ef6b8a0"
+    },
+    {
+      "id": "681a3daf2c0db64bfbee63f5",
+      "author": "scandi",
+      "body": "2025.5.7  更新 3.3.3如果密钥连接失败的解决方法。&& 调整 6.2语序。",
+      "created_at": "2025-05-06T16:49:51.742Z",
+      "published_at": "2025-05-06T16:49:51.643Z",
+      "source": "technology/p44.md",
+      "original_path": "/2025/05/02/hexo博客搭建/",
+      "parent_id": null,
+      "root_id": null
+    },
+    {
+      "id": "69354900f05e621fb19034bb",
+      "author": "Anonymous",
+      "body": "好用，赞",
+      "created_at": "2025-12-07T09:29:36.033Z",
+      "published_at": "2025-12-07T09:29:35.913Z",
+      "source": "technology/p46.md",
+      "original_path": "/2025/02/27/智慧树军事课脚本/",
+      "parent_id": null,
+      "root_id": null
+    }
+  ]
+}
