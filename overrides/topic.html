@@ -1,12 +1,34 @@
 {% extends "main.html" %}
 {% block paper_content %}
 <div class="paper-list-page" id="paper-content">
-  <header class="paper-page-heading md-typeset"><a class="paper-eyebrow" href="{{ 'topics/' | url }}">专题</a><h1>{{ blog_topic.title | e }}</h1><p>{{ blog_topic.description | e }}</p></header>
-  {% if blog_topic.groups %}<nav class="paper-topic-line" aria-label="专题分类">{% for group in blog_topic.groups %}<a href="#group-{{ loop.index }}">{{ group.title | e }}</a>{% endfor %}</nav>{% endif %}
+  {% set series_groups = blog_topic.groups | rejectattr('title', 'equalto', '其他文章') | list %}
+  <header class="paper-page-heading md-typeset">
+    <a class="paper-eyebrow" href="{{ 'topics/' | url }}">专题 / 阅读索引</a>
+    <h1>{{ blog_topic.title | e }}</h1>
+    <p>{{ blog_topic.description | e }}</p>
+    <div class="paper-page-meta"><span>{{ blog_topic.count }} 篇文章</span>{% if series_groups %}<span aria-hidden="true">·</span><span>{{ series_groups | length }} 个系列</span>{% endif %}</div>
+  </header>
+  {% if series_groups or blog_topic.groups | length > 1 %}
+  <nav class="paper-series-index" aria-label="课程与系列目录">
+    {% for group in blog_topic.groups %}
+    <a href="#group-{{ loop.index }}">
+      <span class="paper-series-index__number" aria-hidden="true">{{ '%02d' | format(loop.index) }}</span>
+      <span class="paper-series-index__title">{{ group.title | e }}</span>
+      <span class="paper-series-index__count">{{ group.posts | length }} 篇</span>
+      <span aria-hidden="true">↓</span>
+    </a>
+    {% endfor %}
+  </nav>
+  {% endif %}
   {% if blog_topic.groups %}
-    {% for group in blog_topic.groups %}<section class="paper-post-group" id="group-{{ loop.index }}"><div class="paper-section-label"><h2>{{ group.title | e }}</h2><span>{{ group.posts | length }} 篇</span></div>{{ post_list(group.posts, show_year=true) }}</section>{% endfor %}
+    {% for group in blog_topic.groups %}
+    <section class="paper-post-group" id="group-{{ loop.index }}" aria-labelledby="group-title-{{ loop.index }}">
+      <div class="paper-section-label"><h2 id="group-title-{{ loop.index }}">{% if group.title == '其他文章' and blog_topic.groups | length == 1 %}全部文章{% else %}{{ group.title | e }}{% endif %}</h2><span>{% if group.title != '其他文章' %}按系列顺序 · {% endif %}{{ group.posts | length }} 篇</span></div>
+      {{ post_list(group.posts, show_year=true, heading_level=3, show_summary=false) }}
+    </section>
+    {% endfor %}
   {% else %}
-    <div class="paper-section-label"><h2>全部文章</h2><span>{{ blog_topic.posts | length }} 篇</span></div>{{ post_list(blog_topic.posts, show_year=true) }}
+    <div class="paper-section-label"><h2>全部文章</h2><span>{{ blog_topic.count }} 篇</span></div>{{ post_list(blog_topic.posts, show_year=true, heading_level=3, show_summary=false) }}
   {% endif %}
 </div>
 {% endblock %}

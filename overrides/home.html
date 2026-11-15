@@ -2,9 +2,33 @@
 {% block paper_content %}
 <div class="paper-list-page" id="paper-content">
   <header class="paper-intro md-typeset"><span class="paper-eyebrow">SHOPER / 随笔与笔记</span>{{ page.content }}</header>
-  <nav class="paper-topic-line" aria-label="专题入口"><span>专题</span>{% for topic in blog_topics %}<a href="{{ topic.url | url }}">{{ topic.title | e }}</a>{% endfor %}</nav>
-  <div class="paper-section-label"><h2>最近写作</h2><a href="{{ 'archive/' | url }}">全部文章 <span aria-hidden="true">→</span></a></div>
-  {{ post_list(blog_posts[:10], show_year=true) }}
+  <nav class="paper-topic-shelf" aria-label="专题入口">
+    {% for topic in blog_topics %}
+    <a href="{{ topic.url | url }}">
+      <span class="paper-topic-shelf__number" aria-hidden="true">{{ '%02d' | format(loop.index) }}</span>
+      <span class="paper-topic-shelf__title">{{ topic.title | e }}</span>
+      <span class="paper-topic-shelf__count">{{ topic.count }} 篇</span>
+    </a>
+    {% endfor %}
+  </nav>
+  {% if blog_posts %}
+    {% set latest = blog_posts[0] %}
+    <article class="paper-feature" aria-labelledby="latest-post-title">
+      <span class="paper-eyebrow">最新一篇</span>
+      <h2 id="latest-post-title"><a href="{{ latest.url | url }}">{{ latest.title | e }}</a></h2>
+      <div class="paper-feature__meta">
+        <time datetime="{{ latest.date | e }}">{{ latest.date_display | e }}</time>
+        <span aria-hidden="true">·</span><a href="{{ latest.category_url | url }}">{{ latest.category | e }}</a>
+        <span aria-hidden="true">·</span><span>约 {{ latest.reading_minutes }} 分钟</span>
+      </div>
+      {% if latest.summary %}<p class="paper-feature__summary">{{ latest.summary | e }}</p>{% endif %}
+      <a class="paper-feature__link" href="{{ latest.url | url }}" aria-label="阅读：{{ latest.title | e }}">阅读全文 <span aria-hidden="true">↗</span></a>
+    </article>
+    {% if blog_posts | length > 1 %}
+    <div class="paper-section-label"><h2>最近写作</h2><a href="{{ 'archive/' | url }}">全部 {{ posts_count }} 篇 <span aria-hidden="true">→</span></a></div>
+    {{ post_list(blog_posts[1:10], show_year=true) }}
+    {% endif %}
+  {% else %}<p class="paper-empty">还没有文章，慢慢写。</p>{% endif %}
   <a class="paper-more" href="{{ 'archive/' | url }}">沿着时间读下去 <span aria-hidden="true">→</span></a>
 </div>
 {% endblock %}

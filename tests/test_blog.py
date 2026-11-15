@@ -31,8 +31,13 @@ class PostLinks(HTMLParser):
     def __init__(self, html: str, page_url: str, container_class="paper-post-row"):
         super().__init__()
         self.page_url = page_url
-        self.container_class = container_class
+        # The latest homepage article is featured separately from the list.
+        self.container_classes = (
+            {"paper-post-row", "paper-feature"}
+            if container_class == "paper-post-row" else {container_class}
+        )
         self.links: list[str] = []
+        self.fragments: list[str] = []
         self.titles: dict[str, str] = {}
         self.anchor: tuple[str, list[str]] | None = None
         self.stack: list[tuple[str, bool]] = []
@@ -41,9 +46,12 @@ class PostLinks(HTMLParser):
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
         in_row = any(is_row for _, is_row in self.stack)
-        is_row = self.container_class in attrs.get("class", "").split()
+        is_row = bool(self.container_classes.intersection(attrs.get("class", "").split()))
         if tag == "a" and in_row and "href" in attrs:
-            path = urlsplit(urljoin(self.page_url, attrs["href"])).path
+            target = urlsplit(urljoin(self.page_url, attrs["href"]))
+            path = target.path
+            if target.fragment:
+                self.fragments.append(unquote(target.fragment))
             path = unquote(path).lstrip("/")
             self.links.append(path)
             self.anchor = (path, [])

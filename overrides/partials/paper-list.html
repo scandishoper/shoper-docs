@@ -1,10 +1,10 @@
-{% macro post_list(posts, show_year=false) %}
+{% macro post_list(posts, show_year=false, heading_level=2, show_summary=true) %}
 <div class="paper-posts">
 {% for post in posts %}
   <article class="paper-post-row">
     <time datetime="{{ post.date | e }}">{% if show_year %}{{ post.date | e }}{% else %}{{ post.date_short | e }}{% endif %}</time>
-    <div><h2><a href="{{ post.url | url }}">{{ post.title | e }}</a></h2>
-      {% if post.summary %}<p class="paper-post-summary">{{ post.summary | e }}</p>{% endif %}
+    <div><h{{ heading_level }}><a href="{{ post.url | url }}">{{ post.title | e }}</a></h{{ heading_level }}>
+      {% if show_summary and post.summary %}<p class="paper-post-summary">{{ post.summary | e }}</p>{% endif %}
       <div class="paper-post-meta"><a href="{{ post.category_url | url }}">{{ post.category | e }}</a>{% if post.series %}<span aria-hidden="true">·</span><span>{{ post.series | e }}</span>{% endif %}</div>
     </div>
   </article>
