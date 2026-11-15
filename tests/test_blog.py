@@ -267,10 +267,31 @@ class AutomaticPublishingTests(unittest.TestCase):
         for listing in ("topics/cs/", "csdiy/"):
             self.assertEqual([url for url in self.links(listing) if url in chapters], chapters)
         for chapter in chapters:
-            self.assertEqual(self.links(chapter, "paper-series"), chapters)
+            self.assertEqual(self.links(chapter, "paper-series__list"), chapters)
         self.assertEqual(self.links(chapters[0], "paper-pagination"), [chapters[1]])
         self.assertEqual(self.links(chapters[1], "paper-pagination"), [chapters[0], chapters[2]])
         self.assertEqual(self.links(chapters[2], "paper-pagination"), [chapters[1]])
+
+    def test_single_section_keeps_nested_outline_and_original_heading_anchors(self):
+        long_heading = "A deeper subsection with a long descriptive title that should remain complete"
+        self.write(
+            "csdiy/course/outline.md",
+            "---\ntitle: Metadata article title\nseries: Course\ndate: 2026-03-04\n---\n"
+            "# Original heading\n\nIntro.\n\n## Only section\n\nText.\n\n"
+            f"### {long_heading}\n\nText.\n\n#### Deep detail\n\nText.\n",
+        )
+        self.build()
+        html = self.html("csdiy/course/outline/")
+        expected = ["only-section", long_heading.lower().replace(" ", "-"), "deep-detail"]
+        # Both the mobile and desktop outlines cover the complete hierarchy,
+        # including articles with just one top-level section.
+        outlines = PostLinks(html, "https://example.test/csdiy/course/outline/", "paper-toc-list")
+        self.assertEqual(outlines.fragments, expected * 2)
+        for anchor in ["original-heading", *expected]:
+            self.assertEqual(html.count(f'id="{anchor}"'), 1)
+        self.assertEqual(html.count(f'>{long_heading}</a>'), 2)
+        self.assertIn("第 1 / 1 篇", html)
+        self.assertEqual(self.links("csdiy/course/outline/", "paper-series__list"), ["csdiy/course/outline/"])
 
     def test_enabled_encryption_does_not_expose_body_in_lists_or_search(self):
         configuration = yaml.safe_load(self.config_path.read_text("utf-8"))

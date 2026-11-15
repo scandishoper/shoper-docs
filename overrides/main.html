@@ -9,7 +9,7 @@
   {% block paper_content %}
     {% set toc = page.toc | list %}
     {% if toc | length == 1 and toc[0].level == 1 %}{% set toc = toc[0].children %}{% endif %}
-    {% set has_toc = blog_post and toc | length >= 3 %}
+    {% set has_toc = blog_post and toc | length > 0 %}
     <div class="paper-reading{% if has_toc %} paper-reading--with-toc{% endif %}">
       <article class="paper-article md-typeset" id="paper-content">
         {% if blog_post %}
@@ -18,20 +18,34 @@
             <a class="paper-eyebrow" href="{{ blog_post.topic_url | url }}">{{ blog_post.topic | e }}</a>
             {% if blog_post.series %}<span class="paper-breadcrumb"> / {{ blog_post.series | e }}</span>{% endif %}
             <h1{% if starts_with_title and page.toc %} id="{{ (page.toc | first).id | e }}"{% endif %}>{{ blog_post.title | e }}</h1>
-            <div class="paper-meta"><time datetime="{{ blog_post.date | e }}">{{ blog_post.date_display | e }}</time><span aria-hidden="true">·</span><a href="{{ blog_post.category_url | url }}">{{ blog_post.category | e }}</a></div>
+            <div class="paper-meta"><time datetime="{{ blog_post.date | e }}">{{ blog_post.date_display | e }}</time><span aria-hidden="true">·</span><a href="{{ blog_post.category_url | url }}">{{ blog_post.category | e }}</a><span aria-hidden="true">·</span><span>约 {{ blog_post.reading_minutes }} 分钟</span></div>
             {% if blog_post.summary %}<p class="paper-lead">{{ blog_post.summary | e }}</p>{% endif %}
           </header>
-          {% if has_toc %}<details class="paper-mobile-toc"><summary>本文目录</summary>{{ contents(toc) }}</details>{% endif %}
+          {% if blog_series_posts or has_toc %}
+          <div class="paper-reading-tools">
+            {% if blog_series_posts %}
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · {{ blog_post.series | e }}</span>
+                {% for post in blog_series_posts %}{% if post.url == blog_post.url %}<span class="paper-series__position">第 {{ loop.index }} / {{ blog_series_posts | length }} 篇</span>{% endif %}{% endfor %}
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list">{% for post in blog_series_posts %}<li><a href="{{ post.url | url }}"{% if post.url == blog_post.url %} aria-current="page"{% endif %}>{{ post.title | e }}</a></li>{% endfor %}</ol>
+              <a class="paper-series__all" href="{{ blog_post.category_url | url }}">浏览{{ blog_post.category | e }}全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            {% endif %}
+            {% if has_toc %}<details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">{{ contents(toc) }}</nav></details>{% endif %}
+          </div>
+          {% endif %}
           <div class="paper-body">
             {% if starts_with_title %}{{ page.content.split('</h1>', 1)[-1] }}{% else %}{{ page.content }}{% endif %}
           </div>
-          {% if blog_series_posts | length > 1 %}
-          <details class="paper-series"><summary>{{ blog_post.series | e }} · 共 {{ blog_series_posts | length }} 篇</summary><ol>{% for post in blog_series_posts %}<li><a href="{{ post.url | url }}"{% if post.url == blog_post.url %} aria-current="page"{% endif %}>{{ post.title | e }}</a></li>{% endfor %}</ol></details>
-          {% endif %}
+          {% if blog_prev or blog_next %}
           <nav class="paper-pagination" aria-label="继续阅读">
             {% if blog_prev %}<a href="{{ blog_prev.url | url }}"><span>上一篇{% if blog_post.series %} · {{ blog_post.series | e }}{% endif %}</span>{{ blog_prev.title | e }}</a>{% endif %}
             {% if blog_next %}<a href="{{ blog_next.url | url }}"><span>下一篇{% if blog_post.series %} · {{ blog_post.series | e }}{% endif %}</span>{{ blog_next.title | e }}</a>{% endif %}
           </nav>
+          {% endif %}
           {% include "partials/comments.html" %}
         {% else %}
           {% if '<h1' not in page.content %}<h1>{{ page.title | e }}</h1>{% endif %}
