@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,10 +175,23 @@
             <a class="paper-eyebrow" href="../../topics/algorithms/">算法与题解</a>
             <span class="paper-breadcrumb"> / 基础算法</span>
             <h1>贪心/局部交叉型</h1>
-            <div class="paper-meta"><time datetime="2025-02-18">2025年2月18日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a></div>
+            <div class="paper-meta"><time datetime="2025-02-18">2025年2月18日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a><span aria-hidden="true">·</span><span>约 2 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · 基础算法</span>
+                <span class="paper-series__position">第 7 / 8 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p2/">二分/01分数规划</a></li><li><a href="../p1/">三分</a></li><li><a href="../p5/">位运算笔记 / 贪心例五题解</a></li><li><a href="../p16/">c/c++高精度算法</a></li><li><a href="../p11/">曼哈顿距离与切比雪夫距离的转换</a></li><li><a href="../p9/">排序算法</a></li><li><a href="./" aria-current="page">贪心/局部交叉型</a></li><li><a href="../p6/">六六表/数构造 笔记</a></li></ol>
+              <a class="paper-series__all" href="../">浏览算法笔记全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#_1">贪心算法</a>
@@ -190,11 +203,31 @@
   </li>
 
   <li><a href="#_3">例题</a>
-    <ul class="paper-toc-sub"><li><a href="#n-c-d">题目大意：n 个活动，每个活动有 需要时长 C 和 截止时长 D 两个量，同一...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#n-c-d">题目大意：n 个活动，每个活动有 需要时长 C 和 截止时长 D 两个量，同一时间只能完成一个活动，对于每个活动最后完成时，超出它的截止时长的部分，加入总扣分，问使得总扣分最少的情况是多少？</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_4">分析：</a>
-    <ul class="paper-toc-sub"><li><a href="#c">所以本题的最优策略应该按照 需要时间 C 来排顺序！这就简单啦~</a></li><li><a href="#ac">ac 代码如下：</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c">所以本题的最优策略应该按照 需要时间 C 来排顺序！这就简单啦~</a>
+    
+  </li>
+
+  <li><a href="#ac">ac 代码如下：</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_5">练习题</a>
@@ -202,7 +235,9 @@
   </li>
 
 </ul>
-</details>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             <h2 id="_1">贪心算法<a class="headerlink" href="#_1" title="此章节的链接">&para;</a></h2>
 <p>贪心算法是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。而局部交叉型贪心是其中的一类体型（名字我自己取的</p>
@@ -256,12 +291,11 @@
 <h2 id="_5"><a href="https://ac.nowcoder.com/acm/problem/16561">练习题</a><a class="headerlink" href="#_5" title="此章节的链接">&para;</a></h2>
           </div>
           
-          <details class="paper-series"><summary>基础算法 · 共 8 篇</summary><ol><li><a href="../p2/">二分/01分数规划</a></li><li><a href="../p1/">三分</a></li><li><a href="../p5/">位运算笔记 / 贪心例五题解</a></li><li><a href="../p16/">c/c++高精度算法</a></li><li><a href="../p11/">曼哈顿距离与切比雪夫距离的转换</a></li><li><a href="../p9/">排序算法</a></li><li><a href="./" aria-current="page">贪心/局部交叉型</a></li><li><a href="../p6/">六六表/数构造 笔记</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p9/"><span>上一篇 · 基础算法</span>排序算法</a>
             <a href="../p6/"><span>下一篇 · 基础算法</span>六六表/数构造 笔记</a>
           </nav>
+          
           
 
 
@@ -287,11 +321,31 @@
   </li>
 
   <li><a href="#_3">例题</a>
-    <ul class="paper-toc-sub"><li><a href="#n-c-d">题目大意：n 个活动，每个活动有 需要时长 C 和 截止时长 D 两个量，同一...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#n-c-d">题目大意：n 个活动，每个活动有 需要时长 C 和 截止时长 D 两个量，同一时间只能完成一个活动，对于每个活动最后完成时，超出它的截止时长的部分，加入总扣分，问使得总扣分最少的情况是多少？</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_4">分析：</a>
-    <ul class="paper-toc-sub"><li><a href="#c">所以本题的最优策略应该按照 需要时间 C 来排顺序！这就简单啦~</a></li><li><a href="#ac">ac 代码如下：</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c">所以本题的最优策略应该按照 需要时间 C 来排顺序！这就简单啦~</a>
+    
+  </li>
+
+  <li><a href="#ac">ac 代码如下：</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_5">练习题</a>
@@ -410,10 +464,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

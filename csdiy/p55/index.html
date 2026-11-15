@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,14 +175,47 @@
             <a class="paper-eyebrow" href="../../topics/cs/">CS 自学</a>
             <span class="paper-breadcrumb"> / CSAPP</span>
             <h1 id="csapp-x86-64">CSAPP第三章</h1>
-            <div class="paper-meta"><time datetime="2026-02-17">2026年2月17日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a></div>
+            <div class="paper-meta"><time datetime="2026-02-17">2026年2月17日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a><span aria-hidden="true">·</span><span>约 8 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · CSAPP</span>
+                <span class="paper-series__position">第 2 / 3 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p34/">CSAPP第二章</a></li><li><a href="./" aria-current="page">CSAPP第三章</a></li><li><a href="../p66/">CSAPP第四章</a></li></ol>
+              <a class="paper-series__all" href="../">浏览CS 自学全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#1-c">1. 从 C 到可执行文件：编译过程</a>
-    <ul class="paper-toc-sub"><li><a href="#11-preprocessing">1.1 预处理（Preprocessing）</a></li><li><a href="#12-compilation">1.2 编译（Compilation）</a></li><li><a href="#13-assembly">1.3 汇编（Assembly）</a></li><li><a href="#14-linking">1.4 链接（Linking）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#11-preprocessing">1.1 预处理（Preprocessing）</a>
+    
+  </li>
+
+  <li><a href="#12-compilation">1.2 编译（Compilation）</a>
+    
+  </li>
+
+  <li><a href="#13-assembly">1.3 汇编（Assembly）</a>
+    
+  </li>
+
+  <li><a href="#14-linking">1.4 链接（Linking）</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#2-cpu">2. 机器级程序视角：CPU 到底在干什么</a>
@@ -190,67 +223,579 @@
   </li>
 
   <li><a href="#3">3. 信息存储基础</a>
-    <ul class="paper-toc-sub"><li><a href="#31-endian">3.1 字节序（Endian）</a></li><li><a href="#32-lp64">3.2 基本数据大小（典型 LP64 模型）</a></li><li><a href="#33-word">3.3 机器字（word）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#31-endian">3.1 字节序（Endian）</a>
+    
+  </li>
+
+  <li><a href="#32-lp64">3.2 基本数据大小（典型 LP64 模型）</a>
+    
+  </li>
+
+  <li><a href="#33-word">3.3 机器字（word）</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4-x86-64">4. x86-64 寄存器</a>
-    <ul class="paper-toc-sub"><li><a href="#41-16">4.1 16 个通用寄存器</a></li><li><a href="#42-system-v-amd64-abi">4.2 常见用途（System V AMD64 ABI）</a></li><li><a href="#43-caller-saved-callee-saved">4.3 caller-saved / callee-saved 的含义</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#41-16">4.1 16 个通用寄存器</a>
+    
+  </li>
+
+  <li><a href="#42-system-v-amd64-abi">4.2 常见用途（System V AMD64 ABI）</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#6">参数传递寄存器（前 6 个整数 / 指针参数）</a>
+    
+  </li>
+
+  <li><a href="#_1">返回值</a>
+    
+  </li>
+
+  <li><a href="#_2">栈指针</a>
+    
+  </li>
+
+  <li><a href="#callee-saved">被调用者保存（callee-saved）</a>
+    
+  </li>
+
+  <li><a href="#caller-saved">调用者保存（caller-saved）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#43-caller-saved-callee-saved">4.3 caller-saved / callee-saved 的含义</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#caller-saved_1">caller-saved</a>
+    
+  </li>
+
+  <li><a href="#callee-saved_1">callee-saved</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#5-att-gcc">5. AT&amp;T 汇编语法（gcc 生成的汇编默认这种）</a>
-    <ul class="paper-toc-sub"><li><a href="#51">5.1 基本规则</a></li><li><a href="#52">5.2 操作数顺序</a></li><li><a href="#53">5.3 指令后缀表示操作数大小</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#51">5.1 基本规则</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_3">寄存器</a>
+    
+  </li>
+
+  <li><a href="#_4">立即数</a>
+    
+  </li>
+
+  <li><a href="#_5">内存地址</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#52">5.2 操作数顺序</a>
+    
+  </li>
+
+  <li><a href="#53">5.3 指令后缀表示操作数大小</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#6_1">6. 操作数类型与寻址方式</a>
-    <ul class="paper-toc-sub"><li><a href="#61">6.1 三类操作数</a></li><li><a href="#62">6.2 通用地址公式</a></li><li><a href="#63">6.3 常见例子</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#61">6.1 三类操作数</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#1immediate">1）Immediate（立即数）</a>
+    
+  </li>
+
+  <li><a href="#2register">2）Register（寄存器）</a>
+    
+  </li>
+
+  <li><a href="#3memory-reference">3）Memory Reference（内存引用）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#62">6.2 通用地址公式</a>
+    
+  </li>
+
+  <li><a href="#63">6.3 常见例子</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#ai">数组 a[i]</a>
+    
+  </li>
+
+  <li><a href="#p-y">结构体字段 p-&gt;y</a>
+    
+  </li>
+
+  <li><a href="#_6">栈上局部变量</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7">7. 数据传送指令</a>
-    <ul class="paper-toc-sub"><li><a href="#71-mov">7.1 mov 系列</a></li><li><a href="#72-mov">7.2 限制：普通 mov 不能内存到内存</a></li><li><a href="#73">7.3 扩展传送</a></li><li><a href="#74-movl">7.4 movl 的特殊性</a></li><li><a href="#75-cltq">7.5 cltq</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#71-mov">7.1 mov 系列</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_7">基本形式</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#72-mov">7.2 限制：普通 mov 不能内存到内存</a>
+    
+  </li>
+
+  <li><a href="#73">7.3 扩展传送</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#unsigned">零扩展（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#signed">符号扩展（signed）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#74-movl">7.4 movl 的特殊性</a>
+    
+  </li>
+
+  <li><a href="#75-cltq">7.5 cltq</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8">8. 算术与逻辑指令</a>
-    <ul class="paper-toc-sub"><li><a href="#81">8.1 加减</a></li><li><a href="#82">8.2 乘法</a></li><li><a href="#83">8.3 除法（相对难记）</a></li><li><a href="#84">8.4 逻辑运算</a></li><li><a href="#85">8.5 求负</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#81">8.1 加减</a>
+    
+  </li>
+
+  <li><a href="#82">8.2 乘法</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_8">无符号/普通低位乘法</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#83">8.3 除法（相对难记）</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#idiv">idiv</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#84">8.4 逻辑运算</a>
+    
+  </li>
+
+  <li><a href="#85">8.5 求负</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9. 移位指令</a>
-    <ul class="paper-toc-sub"><li><a href="#91">9.1 左移 / 右移</a></li><li><a href="#92-sar-vs-shr">9.2 区别：sar vs shr</a></li><li><a href="#93">9.3 移位量来源</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#91">9.1 左移 / 右移</a>
+    
+  </li>
+
+  <li><a href="#92-sar-vs-shr">9.2 区别：sar vs shr</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#sar">sar</a>
+    
+  </li>
+
+  <li><a href="#shr">shr</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#93">9.3 移位量来源</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-leaq">10. leaq：超高频指令</a>
-    <ul class="paper-toc-sub"><li><a href="#101">10.1 本质</a></li><li><a href="#102">10.2 例子</a></li><li><a href="#103">10.3 为什么它常被拿来做普通算术</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#101">10.1 本质</a>
+    
+  </li>
+
+  <li><a href="#102">10.2 例子</a>
+    
+  </li>
+
+  <li><a href="#103">10.3 为什么它常被拿来做普通算术</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#11-condition-codes">11. 条件码（Condition Codes）</a>
-    <ul class="paper-toc-sub"><li><a href="#111">11.1 主要标志位</a></li><li><a href="#112">11.2 哪些指令会设置条件码</a></li><li><a href="#113-cmp">11.3 cmp</a></li><li><a href="#114-test">11.4 test</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#111">11.1 主要标志位</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#zfzero-flag">ZF（Zero Flag）</a>
+    
+  </li>
+
+  <li><a href="#sfsign-flag">SF（Sign Flag）</a>
+    
+  </li>
+
+  <li><a href="#cfcarry-flag">CF（Carry Flag）</a>
+    
+  </li>
+
+  <li><a href="#ofoverflow-flag">OF（Overflow Flag）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#112">11.2 哪些指令会设置条件码</a>
+    
+  </li>
+
+  <li><a href="#113-cmp">11.3 cmp</a>
+    
+  </li>
+
+  <li><a href="#114-test">11.4 test</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#12-jump">12. 条件跳转（Jump）</a>
-    <ul class="paper-toc-sub"><li><a href="#121">12.1 无条件跳转</a></li><li><a href="#122">12.2 条件跳转</a></li><li><a href="#123">12.3 有符号比较条件</a></li><li><a href="#124">12.4 无符号比较条件</a></li><li><a href="#125-signed-unsigned">12.5 signed / unsigned 千万别混</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#121">12.1 无条件跳转</a>
+    
+  </li>
+
+  <li><a href="#122">12.2 条件跳转</a>
+    
+  </li>
+
+  <li><a href="#123">12.3 有符号比较条件</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_9">相等</a>
+    
+  </li>
+
+  <li><a href="#_10">不等</a>
+    
+  </li>
+
+  <li><a href="#signed_1">小于（signed）</a>
+    
+  </li>
+
+  <li><a href="#signed_2">小于等于（signed）</a>
+    
+  </li>
+
+  <li><a href="#signed_3">大于（signed）</a>
+    
+  </li>
+
+  <li><a href="#signed_4">大于等于（signed）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#124">12.4 无符号比较条件</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#unsigned_1">小于（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#unsigned_2">小于等于（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#unsigned_3">大于（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#unsigned_4">大于等于（unsigned）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#125-signed-unsigned">12.5 signed / unsigned 千万别混</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#13-set-01">13. set 指令：把条件变成 0/1</a>
-    <ul class="paper-toc-sub"><li><a href="#131">13.1 形式</a></li><li><a href="#132">13.2 例子</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#131">13.1 形式</a>
+    
+  </li>
+
+  <li><a href="#132">13.2 例子</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#14-conditional-move">14. 条件传送（Conditional Move）</a>
-    <ul class="paper-toc-sub"><li><a href="#141">14.1 形式</a></li><li><a href="#142">14.2 常见种类</a></li><li><a href="#143">14.3 用途</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#141">14.1 形式</a>
+    
+  </li>
+
+  <li><a href="#142">14.2 常见种类</a>
+    
+  </li>
+
+  <li><a href="#143">14.3 用途</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#15-if-while-for">15. 用跳转实现 if / while / for</a>
-    <ul class="paper-toc-sub"><li><a href="#151-if">15.1 if 语句</a></li><li><a href="#152-if-else">15.2 if-else</a></li><li><a href="#153-while">15.3 while 循环</a></li><li><a href="#154-do-while">15.4 do-while</a></li><li><a href="#155-for">15.5 for</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#151-if">15.1 if 语句</a>
+    
+  </li>
+
+  <li><a href="#152-if-else">15.2 if-else</a>
+    
+  </li>
+
+  <li><a href="#153-while">15.3 while 循环</a>
+    
+  </li>
+
+  <li><a href="#154-do-while">15.4 do-while</a>
+    
+  </li>
+
+  <li><a href="#155-for">15.5 for</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#16-switch-jump-table">16. switch 与跳转表（Jump Table）</a>
-    <ul class="paper-toc-sub"><li><a href="#161">16.1 思想</a></li><li><a href="#162">16.2 伪代码</a></li><li><a href="#163">16.3 什么时候不会用跳转表</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#161">16.1 思想</a>
+    
+  </li>
+
+  <li><a href="#162">16.2 伪代码</a>
+    
+  </li>
+
+  <li><a href="#163">16.3 什么时候不会用跳转表</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#17">17. 过程（函数）调用机制</a>
-    <ul class="paper-toc-sub"><li><a href="#171-call">17.1 call</a></li><li><a href="#172-ret">17.2 ret</a></li><li><a href="#173">17.3 参数传递规则（整数/指针）</a></li><li><a href="#174">17.4 返回值</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#171-call">17.1 call</a>
+    
+  </li>
+
+  <li><a href="#172-ret">17.2 ret</a>
+    
+  </li>
+
+  <li><a href="#173">17.3 参数传递规则（整数/指针）</a>
+    
+  </li>
+
+  <li><a href="#174">17.4 返回值</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#18-stack-frame">18. 栈帧（Stack Frame）</a>
-    <ul class="paper-toc-sub"><li><a href="#181">18.1 栈的方向</a></li><li><a href="#182-push-pop">18.2 push / pop</a></li><li><a href="#183">18.3 典型函数序言 / 结语</a></li><li><a href="#184-rbp">18.4 现代编译器可能省略 %rbp</a></li><li><a href="#185">18.5 栈对齐</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#181">18.1 栈的方向</a>
+    
+  </li>
+
+  <li><a href="#182-push-pop">18.2 push / pop</a>
+    
+  </li>
+
+  <li><a href="#183">18.3 典型函数序言 / 结语</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#prologue">序言（prologue）</a>
+    
+  </li>
+
+  <li><a href="#epilogue">结语（epilogue）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#184-rbp">18.4 现代编译器可能省略 %rbp</a>
+    
+  </li>
+
+  <li><a href="#185">18.5 栈对齐</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#19">19. 递归为什么可行</a>
@@ -258,19 +803,77 @@
   </li>
 
   <li><a href="#20">20. 数组的机器级表示</a>
-    <ul class="paper-toc-sub"><li><a href="#201">20.1 一维数组</a></li><li><a href="#202">20.2 二维数组</a></li><li><a href="#203">20.3 多维数组本质</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#201">20.1 一维数组</a>
+    
   </li>
 
-  <li><a href="#21">21. 结构体与联合体</a>
-    <ul class="paper-toc-sub"><li><a href="#211">21.1 结构体字段偏移</a></li><li><a href="#212">21.2 对齐规则</a></li><li><a href="#213">21.3 例子分析</a></li><li><a href="#214">21.4 访问结构体字段</a></li><li><a href="#215-union">21.5 联合体（union）</a></li></ul>
+  <li><a href="#202">20.2 二维数组</a>
+    
   </li>
 
-  <li><a href="#22">22. 指针、数组、地址运算</a>
-    <ul class="paper-toc-sub"><li><a href="#221">22.1 指针加法</a></li><li><a href="#222-p">22.2 *p</a></li><li><a href="#223-x">22.3 &amp;x</a></li></ul>
+  <li><a href="#203">20.3 多维数组本质</a>
+    
   </li>
 
 </ul>
-</details>
+
+  </li>
+
+  <li><a href="#21">21. 结构体与联合体</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#211">21.1 结构体字段偏移</a>
+    
+  </li>
+
+  <li><a href="#212">21.2 对齐规则</a>
+    
+  </li>
+
+  <li><a href="#213">21.3 例子分析</a>
+    
+  </li>
+
+  <li><a href="#214">21.4 访问结构体字段</a>
+    
+  </li>
+
+  <li><a href="#215-union">21.5 联合体（union）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#22">22. 指针、数组、地址运算</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#221">22.1 指针加法</a>
+    
+  </li>
+
+  <li><a href="#222-p">22.2 *p</a>
+    
+  </li>
+
+  <li><a href="#223-x">22.3 &amp;x</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             
 <h2 id="1-c">1. 从 C 到可执行文件：编译过程<a class="headerlink" href="#1-c" title="此章节的链接">&para;</a></h2>
@@ -1340,12 +1943,11 @@
 </ul>
           </div>
           
-          <details class="paper-series"><summary>CSAPP · 共 3 篇</summary><ol><li><a href="../p34/">CSAPP第二章</a></li><li><a href="./" aria-current="page">CSAPP第三章</a></li><li><a href="../p66/">CSAPP第四章</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p34/"><span>上一篇 · CSAPP</span>CSAPP第二章</a>
             <a href="../p66/"><span>下一篇 · CSAPP</span>CSAPP第四章</a>
           </nav>
+          
           
 
 
@@ -1363,7 +1965,27 @@
 <ul class="paper-toc-list">
 
   <li><a href="#1-c">1. 从 C 到可执行文件：编译过程</a>
-    <ul class="paper-toc-sub"><li><a href="#11-preprocessing">1.1 预处理（Preprocessing）</a></li><li><a href="#12-compilation">1.2 编译（Compilation）</a></li><li><a href="#13-assembly">1.3 汇编（Assembly）</a></li><li><a href="#14-linking">1.4 链接（Linking）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#11-preprocessing">1.1 预处理（Preprocessing）</a>
+    
+  </li>
+
+  <li><a href="#12-compilation">1.2 编译（Compilation）</a>
+    
+  </li>
+
+  <li><a href="#13-assembly">1.3 汇编（Assembly）</a>
+    
+  </li>
+
+  <li><a href="#14-linking">1.4 链接（Linking）</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#2-cpu">2. 机器级程序视角：CPU 到底在干什么</a>
@@ -1371,67 +1993,579 @@
   </li>
 
   <li><a href="#3">3. 信息存储基础</a>
-    <ul class="paper-toc-sub"><li><a href="#31-endian">3.1 字节序（Endian）</a></li><li><a href="#32-lp64">3.2 基本数据大小（典型 LP64 模型）</a></li><li><a href="#33-word">3.3 机器字（word）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#31-endian">3.1 字节序（Endian）</a>
+    
+  </li>
+
+  <li><a href="#32-lp64">3.2 基本数据大小（典型 LP64 模型）</a>
+    
+  </li>
+
+  <li><a href="#33-word">3.3 机器字（word）</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4-x86-64">4. x86-64 寄存器</a>
-    <ul class="paper-toc-sub"><li><a href="#41-16">4.1 16 个通用寄存器</a></li><li><a href="#42-system-v-amd64-abi">4.2 常见用途（System V AMD64 ABI）</a></li><li><a href="#43-caller-saved-callee-saved">4.3 caller-saved / callee-saved 的含义</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#41-16">4.1 16 个通用寄存器</a>
+    
+  </li>
+
+  <li><a href="#42-system-v-amd64-abi">4.2 常见用途（System V AMD64 ABI）</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#6">参数传递寄存器（前 6 个整数 / 指针参数）</a>
+    
+  </li>
+
+  <li><a href="#_1">返回值</a>
+    
+  </li>
+
+  <li><a href="#_2">栈指针</a>
+    
+  </li>
+
+  <li><a href="#callee-saved">被调用者保存（callee-saved）</a>
+    
+  </li>
+
+  <li><a href="#caller-saved">调用者保存（caller-saved）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#43-caller-saved-callee-saved">4.3 caller-saved / callee-saved 的含义</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#caller-saved_1">caller-saved</a>
+    
+  </li>
+
+  <li><a href="#callee-saved_1">callee-saved</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#5-att-gcc">5. AT&amp;T 汇编语法（gcc 生成的汇编默认这种）</a>
-    <ul class="paper-toc-sub"><li><a href="#51">5.1 基本规则</a></li><li><a href="#52">5.2 操作数顺序</a></li><li><a href="#53">5.3 指令后缀表示操作数大小</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#51">5.1 基本规则</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_3">寄存器</a>
+    
+  </li>
+
+  <li><a href="#_4">立即数</a>
+    
+  </li>
+
+  <li><a href="#_5">内存地址</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#52">5.2 操作数顺序</a>
+    
+  </li>
+
+  <li><a href="#53">5.3 指令后缀表示操作数大小</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#6_1">6. 操作数类型与寻址方式</a>
-    <ul class="paper-toc-sub"><li><a href="#61">6.1 三类操作数</a></li><li><a href="#62">6.2 通用地址公式</a></li><li><a href="#63">6.3 常见例子</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#61">6.1 三类操作数</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#1immediate">1）Immediate（立即数）</a>
+    
+  </li>
+
+  <li><a href="#2register">2）Register（寄存器）</a>
+    
+  </li>
+
+  <li><a href="#3memory-reference">3）Memory Reference（内存引用）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#62">6.2 通用地址公式</a>
+    
+  </li>
+
+  <li><a href="#63">6.3 常见例子</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#ai">数组 a[i]</a>
+    
+  </li>
+
+  <li><a href="#p-y">结构体字段 p-&gt;y</a>
+    
+  </li>
+
+  <li><a href="#_6">栈上局部变量</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7">7. 数据传送指令</a>
-    <ul class="paper-toc-sub"><li><a href="#71-mov">7.1 mov 系列</a></li><li><a href="#72-mov">7.2 限制：普通 mov 不能内存到内存</a></li><li><a href="#73">7.3 扩展传送</a></li><li><a href="#74-movl">7.4 movl 的特殊性</a></li><li><a href="#75-cltq">7.5 cltq</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#71-mov">7.1 mov 系列</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_7">基本形式</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#72-mov">7.2 限制：普通 mov 不能内存到内存</a>
+    
+  </li>
+
+  <li><a href="#73">7.3 扩展传送</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#unsigned">零扩展（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#signed">符号扩展（signed）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#74-movl">7.4 movl 的特殊性</a>
+    
+  </li>
+
+  <li><a href="#75-cltq">7.5 cltq</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8">8. 算术与逻辑指令</a>
-    <ul class="paper-toc-sub"><li><a href="#81">8.1 加减</a></li><li><a href="#82">8.2 乘法</a></li><li><a href="#83">8.3 除法（相对难记）</a></li><li><a href="#84">8.4 逻辑运算</a></li><li><a href="#85">8.5 求负</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#81">8.1 加减</a>
+    
+  </li>
+
+  <li><a href="#82">8.2 乘法</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_8">无符号/普通低位乘法</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#83">8.3 除法（相对难记）</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#idiv">idiv</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#84">8.4 逻辑运算</a>
+    
+  </li>
+
+  <li><a href="#85">8.5 求负</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9. 移位指令</a>
-    <ul class="paper-toc-sub"><li><a href="#91">9.1 左移 / 右移</a></li><li><a href="#92-sar-vs-shr">9.2 区别：sar vs shr</a></li><li><a href="#93">9.3 移位量来源</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#91">9.1 左移 / 右移</a>
+    
+  </li>
+
+  <li><a href="#92-sar-vs-shr">9.2 区别：sar vs shr</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#sar">sar</a>
+    
+  </li>
+
+  <li><a href="#shr">shr</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#93">9.3 移位量来源</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-leaq">10. leaq：超高频指令</a>
-    <ul class="paper-toc-sub"><li><a href="#101">10.1 本质</a></li><li><a href="#102">10.2 例子</a></li><li><a href="#103">10.3 为什么它常被拿来做普通算术</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#101">10.1 本质</a>
+    
+  </li>
+
+  <li><a href="#102">10.2 例子</a>
+    
+  </li>
+
+  <li><a href="#103">10.3 为什么它常被拿来做普通算术</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#11-condition-codes">11. 条件码（Condition Codes）</a>
-    <ul class="paper-toc-sub"><li><a href="#111">11.1 主要标志位</a></li><li><a href="#112">11.2 哪些指令会设置条件码</a></li><li><a href="#113-cmp">11.3 cmp</a></li><li><a href="#114-test">11.4 test</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#111">11.1 主要标志位</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#zfzero-flag">ZF（Zero Flag）</a>
+    
+  </li>
+
+  <li><a href="#sfsign-flag">SF（Sign Flag）</a>
+    
+  </li>
+
+  <li><a href="#cfcarry-flag">CF（Carry Flag）</a>
+    
+  </li>
+
+  <li><a href="#ofoverflow-flag">OF（Overflow Flag）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#112">11.2 哪些指令会设置条件码</a>
+    
+  </li>
+
+  <li><a href="#113-cmp">11.3 cmp</a>
+    
+  </li>
+
+  <li><a href="#114-test">11.4 test</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#12-jump">12. 条件跳转（Jump）</a>
-    <ul class="paper-toc-sub"><li><a href="#121">12.1 无条件跳转</a></li><li><a href="#122">12.2 条件跳转</a></li><li><a href="#123">12.3 有符号比较条件</a></li><li><a href="#124">12.4 无符号比较条件</a></li><li><a href="#125-signed-unsigned">12.5 signed / unsigned 千万别混</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#121">12.1 无条件跳转</a>
+    
+  </li>
+
+  <li><a href="#122">12.2 条件跳转</a>
+    
+  </li>
+
+  <li><a href="#123">12.3 有符号比较条件</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_9">相等</a>
+    
+  </li>
+
+  <li><a href="#_10">不等</a>
+    
+  </li>
+
+  <li><a href="#signed_1">小于（signed）</a>
+    
+  </li>
+
+  <li><a href="#signed_2">小于等于（signed）</a>
+    
+  </li>
+
+  <li><a href="#signed_3">大于（signed）</a>
+    
+  </li>
+
+  <li><a href="#signed_4">大于等于（signed）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#124">12.4 无符号比较条件</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#unsigned_1">小于（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#unsigned_2">小于等于（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#unsigned_3">大于（unsigned）</a>
+    
+  </li>
+
+  <li><a href="#unsigned_4">大于等于（unsigned）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#125-signed-unsigned">12.5 signed / unsigned 千万别混</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#13-set-01">13. set 指令：把条件变成 0/1</a>
-    <ul class="paper-toc-sub"><li><a href="#131">13.1 形式</a></li><li><a href="#132">13.2 例子</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#131">13.1 形式</a>
+    
+  </li>
+
+  <li><a href="#132">13.2 例子</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#14-conditional-move">14. 条件传送（Conditional Move）</a>
-    <ul class="paper-toc-sub"><li><a href="#141">14.1 形式</a></li><li><a href="#142">14.2 常见种类</a></li><li><a href="#143">14.3 用途</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#141">14.1 形式</a>
+    
+  </li>
+
+  <li><a href="#142">14.2 常见种类</a>
+    
+  </li>
+
+  <li><a href="#143">14.3 用途</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#15-if-while-for">15. 用跳转实现 if / while / for</a>
-    <ul class="paper-toc-sub"><li><a href="#151-if">15.1 if 语句</a></li><li><a href="#152-if-else">15.2 if-else</a></li><li><a href="#153-while">15.3 while 循环</a></li><li><a href="#154-do-while">15.4 do-while</a></li><li><a href="#155-for">15.5 for</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#151-if">15.1 if 语句</a>
+    
+  </li>
+
+  <li><a href="#152-if-else">15.2 if-else</a>
+    
+  </li>
+
+  <li><a href="#153-while">15.3 while 循环</a>
+    
+  </li>
+
+  <li><a href="#154-do-while">15.4 do-while</a>
+    
+  </li>
+
+  <li><a href="#155-for">15.5 for</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#16-switch-jump-table">16. switch 与跳转表（Jump Table）</a>
-    <ul class="paper-toc-sub"><li><a href="#161">16.1 思想</a></li><li><a href="#162">16.2 伪代码</a></li><li><a href="#163">16.3 什么时候不会用跳转表</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#161">16.1 思想</a>
+    
+  </li>
+
+  <li><a href="#162">16.2 伪代码</a>
+    
+  </li>
+
+  <li><a href="#163">16.3 什么时候不会用跳转表</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#17">17. 过程（函数）调用机制</a>
-    <ul class="paper-toc-sub"><li><a href="#171-call">17.1 call</a></li><li><a href="#172-ret">17.2 ret</a></li><li><a href="#173">17.3 参数传递规则（整数/指针）</a></li><li><a href="#174">17.4 返回值</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#171-call">17.1 call</a>
+    
+  </li>
+
+  <li><a href="#172-ret">17.2 ret</a>
+    
+  </li>
+
+  <li><a href="#173">17.3 参数传递规则（整数/指针）</a>
+    
+  </li>
+
+  <li><a href="#174">17.4 返回值</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#18-stack-frame">18. 栈帧（Stack Frame）</a>
-    <ul class="paper-toc-sub"><li><a href="#181">18.1 栈的方向</a></li><li><a href="#182-push-pop">18.2 push / pop</a></li><li><a href="#183">18.3 典型函数序言 / 结语</a></li><li><a href="#184-rbp">18.4 现代编译器可能省略 %rbp</a></li><li><a href="#185">18.5 栈对齐</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#181">18.1 栈的方向</a>
+    
+  </li>
+
+  <li><a href="#182-push-pop">18.2 push / pop</a>
+    
+  </li>
+
+  <li><a href="#183">18.3 典型函数序言 / 结语</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#prologue">序言（prologue）</a>
+    
+  </li>
+
+  <li><a href="#epilogue">结语（epilogue）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#184-rbp">18.4 现代编译器可能省略 %rbp</a>
+    
+  </li>
+
+  <li><a href="#185">18.5 栈对齐</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#19">19. 递归为什么可行</a>
@@ -1439,15 +2573,71 @@
   </li>
 
   <li><a href="#20">20. 数组的机器级表示</a>
-    <ul class="paper-toc-sub"><li><a href="#201">20.1 一维数组</a></li><li><a href="#202">20.2 二维数组</a></li><li><a href="#203">20.3 多维数组本质</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#201">20.1 一维数组</a>
+    
+  </li>
+
+  <li><a href="#202">20.2 二维数组</a>
+    
+  </li>
+
+  <li><a href="#203">20.3 多维数组本质</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#21">21. 结构体与联合体</a>
-    <ul class="paper-toc-sub"><li><a href="#211">21.1 结构体字段偏移</a></li><li><a href="#212">21.2 对齐规则</a></li><li><a href="#213">21.3 例子分析</a></li><li><a href="#214">21.4 访问结构体字段</a></li><li><a href="#215-union">21.5 联合体（union）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#211">21.1 结构体字段偏移</a>
+    
+  </li>
+
+  <li><a href="#212">21.2 对齐规则</a>
+    
+  </li>
+
+  <li><a href="#213">21.3 例子分析</a>
+    
+  </li>
+
+  <li><a href="#214">21.4 访问结构体字段</a>
+    
+  </li>
+
+  <li><a href="#215-union">21.5 联合体（union）</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#22">22. 指针、数组、地址运算</a>
-    <ul class="paper-toc-sub"><li><a href="#221">22.1 指针加法</a></li><li><a href="#222-p">22.2 *p</a></li><li><a href="#223-x">22.3 &amp;x</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#221">22.1 指针加法</a>
+    
+  </li>
+
+  <li><a href="#222-p">22.2 *p</a>
+    
+  </li>
+
+  <li><a href="#223-x">22.3 &amp;x</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
 </ul>
@@ -1562,10 +2752,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

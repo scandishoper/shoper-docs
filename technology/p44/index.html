@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,10 +175,13 @@
             <a class="paper-eyebrow" href="../../topics/technology/">技术实践</a>
             
             <h1 id="0">hexo博客搭建</h1>
-            <div class="paper-meta"><time datetime="2025-05-02">2025年5月2日</time><span aria-hidden="true">·</span><a href="../">技术实践</a></div>
+            <div class="paper-meta"><time datetime="2025-05-02">2025年5月2日</time><span aria-hidden="true">·</span><a href="../">技术实践</a><span aria-hidden="true">·</span><span>约 7 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#1">1.准备阶段</a>
@@ -186,15 +189,83 @@
   </li>
 
   <li><a href="#2">2.需要下载的软件</a>
-    <ul class="paper-toc-sub"><li><a href="#21-node">2.1 安装 Node</a></li><li><a href="#22-git">2.2.安装 Git</a></li><li><a href="#23-vscode">2.3 下载并安装 vscode （这是一款轻量型的代码编辑器</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#21-node">2.1 安装 Node</a>
+    
+  </li>
+
+  <li><a href="#22-git">2.2.安装 Git</a>
+    
+  </li>
+
+  <li><a href="#23-vscode">2.3 下载并安装 vscode （这是一款轻量型的代码编辑器</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#3-git-github">3.配置 Git 密钥并连接至 Github</a>
-    <ul class="paper-toc-sub"><li><a href="#31-git-bash">3.1 打开 Git Bash 如图</a></li><li><a href="#32">3.2 配置用户名和邮箱</a></li><li><a href="#33-github">3.3 配置公钥连接 Github</a></li><li><a href="#ssh">如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#31-git-bash">3.1 打开 Git Bash 如图</a>
+    
+  </li>
+
+  <li><a href="#32">3.2 配置用户名和邮箱</a>
+    
+  </li>
+
+  <li><a href="#33-github">3.3 配置公钥连接 Github</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#331-ssh-github">3.3.1 执行以下命令生成 ssh 公钥，此公钥用于你的计算机连接 Github</a>
+    
+  </li>
+
+  <li><a href="#332-ssh-key-github">3.3.2 将 SSH KEY 配置到 GitHub</a>
+    
+  </li>
+
+  <li><a href="#333">3.3.3 测试连接，输入以下命令</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#ssh">如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接没有现实如图信息，则查看下面这篇博文尝试解决！！！</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4-githubio">4.创建 GitHub.io 仓库</a>
-    <ul class="paper-toc-sub"><li><a href="#41-new-repositorygithubio">4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户...</a></li><li><a href="#42-githubio-githubio">4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀...</a></li><li><a href="#43-public-creat-repository">4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Cre...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#41-new-repositorygithubio">4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户名&gt;.github.io 的仓库。</a>
+    
+  </li>
+
+  <li><a href="#42-githubio-githubio">4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)（不要忘记加.github.io</a>
+    
+  </li>
+
+  <li><a href="#43-public-creat-repository">4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Creat repository 进行创建即可</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_1"></a>
@@ -202,7 +273,35 @@
   </li>
 
   <li><a href="#5-hexo">5.初始化 Hexo 博客</a>
-    <ul class="paper-toc-sub"><li><a href="#51-dcollege-open-git-bash-here">5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college）...</a></li><li><a href="#52-git-bash-hexo">5.2 在【Git BASH】输入如下命令安装 Hexo</a></li><li><a href="#53-hexo-v">5.3 安装完后输入【hexo -v】验证是否安装成功。</a></li><li><a href="#54-hexo">5.4 初始化 Hexo 项目安装相关依赖。</a></li><li><a href="#55-college">5.5 初始化项目后，college 文件夹中 有如下结构：</a></li><li><a href="#56-hexo-cl-hexo-s">5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#51-dcollege-open-git-bash-here">5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college），在文件夹内右键鼠标，选择 【Open Git Bash here】</a>
+    
+  </li>
+
+  <li><a href="#52-git-bash-hexo">5.2 在【Git BASH】输入如下命令安装 Hexo</a>
+    
+  </li>
+
+  <li><a href="#53-hexo-v">5.3 安装完后输入【hexo -v】验证是否安装成功。</a>
+    
+  </li>
+
+  <li><a href="#54-hexo">5.4 初始化 Hexo 项目安装相关依赖。</a>
+    
+  </li>
+
+  <li><a href="#55-college">5.5 初始化项目后，college 文件夹中 有如下结构：</a>
+    
+  </li>
+
+  <li><a href="#56-hexo-cl-hexo-s">5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_2"></a>
@@ -210,27 +309,113 @@
   </li>
 
   <li><a href="#6-github-pages">6.将静态博客挂载到 GitHub Pages</a>
-    <ul class="paper-toc-sub"><li><a href="#61-hexo-deployer-git">6.1 安装 hexo-deployer-git</a></li><li><a href="#62-_configyml">6.2 修改 _config.yml 文件</a></li><li><a href="#63-githubhexo">6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。</a></li><li><a href="#httpscollegegithubio">稍等两分钟，打开浏览器访问：https://college.github.io...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#61-hexo-deployer-git">6.1 安装 hexo-deployer-git</a>
+    
   </li>
 
-  <li><a href="#7-cloudflare-pages">7.将静态博客挂载到 Cloudflare Pages</a>
-    <ul class="paper-toc-sub"><li><a href="#71-cloudflare-pages-workers-pages-pages-git">7.1 打开 Cloudflare Pages，在 【Workers 和 Pa...</a></li><li><a href="#githubioprivate">这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Priva...</a></li></ul>
+  <li><a href="#62-_configyml">6.2 修改 _config.yml 文件</a>
+    
   </li>
 
-  <li><a href="#8">8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它</a>
-    <ul class="paper-toc-sub"><li><a href="#81-git-bash-next">8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题</a></li><li><a href="#81-vscode-vscode">8.1 打开 vscode， 在 vscode 中打开项目文件夹</a></li><li><a href="#82-vscode">8.2 新建终端，以后直接在 vscode 上运行命令</a></li><li><a href="#83-pug-stylus">8.3 第一次使用需要安装 pug 以及 stylus 的渲染器</a></li><li><a href="#84-_configyml-nextanzhiyu">8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】</a></li><li><a href="#85">8.5 覆盖配置</a></li></ul>
+  <li><a href="#63-githubhexo">6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。</a>
+    
   </li>
 
-  <li><a href="#9">9.平时编辑博客和博文的一些基本操作</a>
-    <ul class="paper-toc-sub"><li><a href="#91">9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面...</a></li><li><a href="#92">9.2 新建一篇博文</a></li><li><a href="#93-scaffolds-postmd">9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板</a></li><li><a href="#94">9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行</a></li><li><a href="#95">9.5 平时我个人更改博客的一些小技巧</a></li></ul>
-  </li>
-
-  <li><a href="#ai">至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一...</a>
+  <li><a href="#httpscollegegithubio">稍等两分钟，打开浏览器访问：https://college.github.io （注意！这里要用你的仓库名字替换），这时候我们就可以看到博客内容了。</a>
     
   </li>
 
 </ul>
-</details>
+
+  </li>
+
+  <li><a href="#7-cloudflare-pages">7.将静态博客挂载到 Cloudflare Pages</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#71-cloudflare-pages-workers-pages-pages-git">7.1 打开 Cloudflare Pages，在 【Workers 和 Pages】 中选择 【Pages】 的 【连接到 Git】 如图</a>
+    
+  </li>
+
+  <li><a href="#githubioprivate">这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Private】私库了（不改也行</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#8">8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#81-git-bash-next">8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题</a>
+    
+  </li>
+
+  <li><a href="#81-vscode-vscode">8.1 打开 vscode， 在 vscode 中打开项目文件夹</a>
+    
+  </li>
+
+  <li><a href="#82-vscode">8.2 新建终端，以后直接在 vscode 上运行命令</a>
+    
+  </li>
+
+  <li><a href="#83-pug-stylus">8.3 第一次使用需要安装 pug 以及 stylus 的渲染器</a>
+    
+  </li>
+
+  <li><a href="#84-_configyml-nextanzhiyu">8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】</a>
+    
+  </li>
+
+  <li><a href="#85">8.5 覆盖配置</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#9">9.平时编辑博客和博文的一些基本操作</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#91">9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面命令上传，才能反馈给网站产生变化</a>
+    
+  </li>
+
+  <li><a href="#92">9.2 新建一篇博文</a>
+    
+  </li>
+
+  <li><a href="#93-scaffolds-postmd">9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板</a>
+    
+  </li>
+
+  <li><a href="#94">9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行</a>
+    
+  </li>
+
+  <li><a href="#95">9.5 平时我个人更改博客的一些小技巧</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#ai">至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一开始面对晦涩的名词多有不解，不过没事！我们目的本来就不是要学会它的原理，只是搭建一个较为自由的个人平台，方便自己记录些东西。刚开始可能会出现许多问题，遇到问题可以多问问 ai 详细描述你的困境，一般都能解决（我就是这样子。。。</a>
+    
+  </li>
+
+</ul>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             
 <p>整体过程 借助 hexo 框架使用现有主题直接形成网站基本框架，然后部署到 GitHub Pages 和 Cloudflare Pages 上。</p>
@@ -457,6 +642,7 @@ post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p
             <a href="../p46/"><span>下一篇</span>智慧树等刷课</a>
           </nav>
           
+          
 
 <section class="paper-legacy-comments" id="legacy-comments" aria-labelledby="legacy-comments-title">
   <h2 id="legacy-comments-title">过往留言</h2>
@@ -500,15 +686,83 @@ post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p
   </li>
 
   <li><a href="#2">2.需要下载的软件</a>
-    <ul class="paper-toc-sub"><li><a href="#21-node">2.1 安装 Node</a></li><li><a href="#22-git">2.2.安装 Git</a></li><li><a href="#23-vscode">2.3 下载并安装 vscode （这是一款轻量型的代码编辑器</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#21-node">2.1 安装 Node</a>
+    
+  </li>
+
+  <li><a href="#22-git">2.2.安装 Git</a>
+    
+  </li>
+
+  <li><a href="#23-vscode">2.3 下载并安装 vscode （这是一款轻量型的代码编辑器</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#3-git-github">3.配置 Git 密钥并连接至 Github</a>
-    <ul class="paper-toc-sub"><li><a href="#31-git-bash">3.1 打开 Git Bash 如图</a></li><li><a href="#32">3.2 配置用户名和邮箱</a></li><li><a href="#33-github">3.3 配置公钥连接 Github</a></li><li><a href="#ssh">如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#31-git-bash">3.1 打开 Git Bash 如图</a>
+    
+  </li>
+
+  <li><a href="#32">3.2 配置用户名和邮箱</a>
+    
+  </li>
+
+  <li><a href="#33-github">3.3 配置公钥连接 Github</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#331-ssh-github">3.3.1 执行以下命令生成 ssh 公钥，此公钥用于你的计算机连接 Github</a>
+    
+  </li>
+
+  <li><a href="#332-ssh-key-github">3.3.2 将 SSH KEY 配置到 GitHub</a>
+    
+  </li>
+
+  <li><a href="#333">3.3.3 测试连接，输入以下命令</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#ssh">如果是在公司或学校网络，可能会存在防火墙或代理限制，阻止了 SSH 连接。连接没有现实如图信息，则查看下面这篇博文尝试解决！！！</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4-githubio">4.创建 GitHub.io 仓库</a>
-    <ul class="paper-toc-sub"><li><a href="#41-new-repositorygithubio">4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户...</a></li><li><a href="#42-githubio-githubio">4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀...</a></li><li><a href="#43-public-creat-repository">4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Cre...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#41-new-repositorygithubio">4.1 点击右上角的+按钮，选择 New repository，创建一个&lt;用户名&gt;.github.io 的仓库。</a>
+    
+  </li>
+
+  <li><a href="#42-githubio-githubio">4.2 仓库名字的格式必须为：【&lt;用户名&gt;.github.io】 (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)（不要忘记加.github.io</a>
+    
+  </li>
+
+  <li><a href="#43-public-creat-repository">4.3 可见性必须选择 【Public】 方便第一次部署检查问题，点击 Creat repository 进行创建即可</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_1"></a>
@@ -516,7 +770,35 @@ post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p
   </li>
 
   <li><a href="#5-hexo">5.初始化 Hexo 博客</a>
-    <ul class="paper-toc-sub"><li><a href="#51-dcollege-open-git-bash-here">5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college）...</a></li><li><a href="#52-git-bash-hexo">5.2 在【Git BASH】输入如下命令安装 Hexo</a></li><li><a href="#53-hexo-v">5.3 安装完后输入【hexo -v】验证是否安装成功。</a></li><li><a href="#54-hexo">5.4 初始化 Hexo 项目安装相关依赖。</a></li><li><a href="#55-college">5.5 初始化项目后，college 文件夹中 有如下结构：</a></li><li><a href="#56-hexo-cl-hexo-s">5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#51-dcollege-open-git-bash-here">5.1 创建一个文件夹来保存博客源码（我这里选的路径为 D:/college），在文件夹内右键鼠标，选择 【Open Git Bash here】</a>
+    
+  </li>
+
+  <li><a href="#52-git-bash-hexo">5.2 在【Git BASH】输入如下命令安装 Hexo</a>
+    
+  </li>
+
+  <li><a href="#53-hexo-v">5.3 安装完后输入【hexo -v】验证是否安装成功。</a>
+    
+  </li>
+
+  <li><a href="#54-hexo">5.4 初始化 Hexo 项目安装相关依赖。</a>
+    
+  </li>
+
+  <li><a href="#55-college">5.5 初始化项目后，college 文件夹中 有如下结构：</a>
+    
+  </li>
+
+  <li><a href="#56-hexo-cl-hexo-s">5.6 输入 【hexo cl &amp;&amp; hexo s】 启动项目</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_2"></a>
@@ -524,22 +806,106 @@ post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p
   </li>
 
   <li><a href="#6-github-pages">6.将静态博客挂载到 GitHub Pages</a>
-    <ul class="paper-toc-sub"><li><a href="#61-hexo-deployer-git">6.1 安装 hexo-deployer-git</a></li><li><a href="#62-_configyml">6.2 修改 _config.yml 文件</a></li><li><a href="#63-githubhexo">6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。</a></li><li><a href="#httpscollegegithubio">稍等两分钟，打开浏览器访问：https://college.github.io...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#61-hexo-deployer-git">6.1 安装 hexo-deployer-git</a>
+    
+  </li>
+
+  <li><a href="#62-_configyml">6.2 修改 _config.yml 文件</a>
+    
+  </li>
+
+  <li><a href="#63-githubhexo">6.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo 三连）。</a>
+    
+  </li>
+
+  <li><a href="#httpscollegegithubio">稍等两分钟，打开浏览器访问：https://college.github.io （注意！这里要用你的仓库名字替换），这时候我们就可以看到博客内容了。</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7-cloudflare-pages">7.将静态博客挂载到 Cloudflare Pages</a>
-    <ul class="paper-toc-sub"><li><a href="#71-cloudflare-pages-workers-pages-pages-git">7.1 打开 Cloudflare Pages，在 【Workers 和 Pa...</a></li><li><a href="#githubioprivate">这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Priva...</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#71-cloudflare-pages-workers-pages-pages-git">7.1 打开 Cloudflare Pages，在 【Workers 和 Pages】 中选择 【Pages】 的 【连接到 Git】 如图</a>
+    
+  </li>
+
+  <li><a href="#githubioprivate">这时你也就可以将你的【&lt;用户名&gt;.github.io】的仓库设置为【Private】私库了（不改也行</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8">8.至此 你已经拥有自己的博客网站，不过它还很丑陋，我们接下来可以下载主题来美化它</a>
-    <ul class="paper-toc-sub"><li><a href="#81-git-bash-next">8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题</a></li><li><a href="#81-vscode-vscode">8.1 打开 vscode， 在 vscode 中打开项目文件夹</a></li><li><a href="#82-vscode">8.2 新建终端，以后直接在 vscode 上运行命令</a></li><li><a href="#83-pug-stylus">8.3 第一次使用需要安装 pug 以及 stylus 的渲染器</a></li><li><a href="#84-_configyml-nextanzhiyu">8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】</a></li><li><a href="#85">8.5 覆盖配置</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#81-git-bash-next">8.1 继续在刚才的 Git Bash 上运行下面命令 下载【next】主题</a>
+    
+  </li>
+
+  <li><a href="#81-vscode-vscode">8.1 打开 vscode， 在 vscode 中打开项目文件夹</a>
+    
+  </li>
+
+  <li><a href="#82-vscode">8.2 新建终端，以后直接在 vscode 上运行命令</a>
+    
+  </li>
+
+  <li><a href="#83-pug-stylus">8.3 第一次使用需要安装 pug 以及 stylus 的渲染器</a>
+    
+  </li>
+
+  <li><a href="#84-_configyml-nextanzhiyu">8.4 打开_config.yml 文件，修改主题为【next】或者【anzhiyu】</a>
+    
+  </li>
+
+  <li><a href="#85">8.5 覆盖配置</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9.平时编辑博客和博文的一些基本操作</a>
-    <ul class="paper-toc-sub"><li><a href="#91">9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面...</a></li><li><a href="#92">9.2 新建一篇博文</a></li><li><a href="#93-scaffolds-postmd">9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板</a></li><li><a href="#94">9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行</a></li><li><a href="#95">9.5 平时我个人更改博客的一些小技巧</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#91">9.1 每次在编译器上的修改，在网站上是不能同步的，你需要在每次修改后通过下面命令上传，才能反馈给网站产生变化</a>
+    
   </li>
 
-  <li><a href="#ai">至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一...</a>
+  <li><a href="#92">9.2 新建一篇博文</a>
+    
+  </li>
+
+  <li><a href="#93-scaffolds-postmd">9.3 【/scaffolds】 目录下有几个模板文件，其中【post.md】是新建博文模板</a>
+    
+  </li>
+
+  <li><a href="#94">9.4 当然，主题还有许多功能，可以自行查看主题官方网站（直接搜索就行</a>
+    
+  </li>
+
+  <li><a href="#95">9.5 平时我个人更改博客的一些小技巧</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#ai">至此！彻底结束喽，以上教程我自己实现的时候是零基础！并不需要任何高端的技能，一开始面对晦涩的名词多有不解，不过没事！我们目的本来就不是要学会它的原理，只是搭建一个较为自由的个人平台，方便自己记录些东西。刚开始可能会出现许多问题，遇到问题可以多问问 ai 详细描述你的困境，一般都能解决（我就是这样子。。。</a>
     
   </li>
 
@@ -655,10 +1021,10 @@ post.md 模版，仅供参考（建议直接全部复制到 post.md 文件中</p
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

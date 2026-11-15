@@ -32,28 +32,102 @@
     });
   }
 
-  const toc = document.querySelector(".paper-toc");
-  if (toc && "IntersectionObserver" in window) {
-    const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
+  // Add a language caption outside <code>, so copied source remains unchanged.
+  document.querySelectorAll(".paper-body .highlight").forEach(block => {
+    const language = Array.from(block.classList).find(name => name.startsWith("language-"))?.slice(9);
+    if (!language || block.querySelector(".filename") || !block.querySelector("pre")) return;
+    const label = document.createElement("div");
+    label.className = "paper-code-label";
+    label.textContent = language;
+    label.setAttribute("aria-hidden", "true");
+    block.prepend(label);
+  });
+
+  // Material derives code IDs from the nearest ancestor ID. Our article anchor
+  // is shared by every block, so repair only collisions after the theme mounts.
+  function repairCodeCopyTargets() {
+    document.querySelectorAll(".paper-body pre").forEach((pre, index) => {
+      const buttons = pre.querySelectorAll('[data-md-type="copy"][data-clipboard-target]');
+      if (!buttons.length) return;
+      if (!pre.id || document.getElementById(pre.id) !== pre) {
+        let id = `__paper_code_${index + 1}`;
+        while (document.getElementById(id)) id += "_";
+        pre.id = id;
+      }
+      buttons.forEach(button => { button.dataset.clipboardTarget = `#${CSS.escape(pre.id)} > code`; });
+    });
+  }
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(() => requestAnimationFrame(repairCodeCopyTargets));
+  } else {
+    requestAnimationFrame(repairCodeCopyTargets);
+  }
+
+  const tocs = Array.from(document.querySelectorAll(".paper-toc, .paper-mobile-toc"));
+  const article = document.querySelector(".paper-article");
+  if (tocs.length && article) {
+    const links = tocs.flatMap(toc => Array.from(toc.querySelectorAll('a[href^="#"]')));
     const targets = new Map();
     for (const link of links) {
       const heading = document.getElementById(decodeURIComponent(link.hash.slice(1)));
-      if (heading) targets.set(heading, link);
+      if (!heading) continue;
+      if (!targets.has(heading)) targets.set(heading, []);
+      targets.get(heading).push(link);
+      link.addEventListener("click", () => select(heading));
     }
-    function select(link) {
-      for (const item of links) item.removeAttribute("aria-current");
-      toc.querySelectorAll(".is-current").forEach(item => item.classList.remove("is-current"));
-      link.setAttribute("aria-current", "location");
-      let item = link.closest("li");
-      while (item && toc.contains(item)) { item.classList.add("is-current"); item = item.parentElement.closest("li"); }
+    let current;
+    let positions = [];
+    let scrollPending = false;
+    let measurePending = false;
+    function select(heading) {
+      if (current === heading) return;
+      current = heading;
+      links.forEach(link => link.removeAttribute("aria-current"));
+      tocs.forEach(toc => toc.querySelectorAll(".is-current").forEach(item => item.classList.remove("is-current")));
+      for (const link of targets.get(heading) || []) {
+        link.setAttribute("aria-current", "location");
+        const toc = link.closest(".paper-toc, .paper-mobile-toc");
+        let item = link.closest("li");
+        while (item && toc.contains(item)) {
+          item.classList.add("is-current");
+          item = item.parentElement.closest("li");
+        }
+      }
     }
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      if (visible.length) select(targets.get(visible[0].target));
-    }, { rootMargin: "-5% 0px -65% 0px" });
-    targets.forEach((link, heading) => observer.observe(heading));
-    if (links.length) select(links[0]);
-    links.forEach(link => link.addEventListener("click", () => select(link)));
+    function update() {
+      scrollPending = false;
+      // Keep the current section selected through long paragraphs and when
+      // scrolling back upward. Geometry is measured only after layout changes.
+      const readingLine = window.scrollY + Math.min(128, window.innerHeight * .2);
+      let active = positions[0]?.heading;
+      for (const item of positions) {
+        if (item.top > readingLine) break;
+        active = item.heading;
+      }
+      if (active) select(active);
+    }
+    function measure() {
+      measurePending = false;
+      positions = Array.from(targets.keys(), heading => ({ heading, top: heading.getBoundingClientRect().top + window.scrollY }));
+      update();
+    }
+    function scheduleMeasure() {
+      if (measurePending) return;
+      measurePending = true;
+      requestAnimationFrame(measure);
+    }
+    window.addEventListener("scroll", () => {
+      if (scrollPending) return;
+      scrollPending = true;
+      requestAnimationFrame(update);
+    }, { passive: true });
+    window.addEventListener("resize", scheduleMeasure);
+    window.addEventListener("load", scheduleMeasure);
+    article.addEventListener("load", scheduleMeasure, true);
+    article.querySelectorAll("details").forEach(detail => detail.addEventListener("toggle", scheduleMeasure));
+    if ("ResizeObserver" in window) new ResizeObserver(scheduleMeasure).observe(article);
+    document.fonts?.ready.then(scheduleMeasure);
+    measure();
   }
 
   const comments = document.querySelector("[data-paper-comments]");

@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,18 +175,285 @@
             <a class="paper-eyebrow" href="../../topics/algorithms/">算法与题解</a>
             
             <h1>wustoj-c++</h1>
-            <div class="paper-meta"><time datetime="2025-05-07">2025年5月7日</time><span aria-hidden="true">·</span><a href="../">题解</a></div>
+            <div class="paper-meta"><time datetime="2025-05-07">2025年5月7日</time><span aria-hidden="true">·</span><a href="../">题解</a><span aria-hidden="true">·</span><span>约 3 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
-  <li><a href="#2025619-wustoj">2025.6.19 补充：现在开始我有 wustoj 的管理权限啦，下面提到的...</a>
+  <li><a href="#2025619-wustoj">2025.6.19 补充：现在开始我有 wustoj 的管理权限啦，下面提到的出现问题的题面都已更改，如果你有新的发现，欢迎评论指错~</a>
     
   </li>
 
-  <li><a href="#wustoj-ac-cv">由于 wustoj 属于闭源项目，无法看到他人提交代码，故在此记录个人 ac ...</a>
-    <ul class="paper-toc-sub"><li><a href="#wustoj">wustoj 不知道是谁在负责维护，我联系不到，部分题有出现错误，有题目可能是...</a></li><li><a href="#1">1.类和对象</a></li><li><a href="#2">2.运算符重载</a></li><li><a href="#ac">好忙好忙~ 实在是啃不动了，下面代码是我朋友的 ac 码，提供参考</a></li></ul>
+  <li><a href="#wustoj-ac-cv">由于 wustoj 属于闭源项目，无法看到他人提交代码，故在此记录个人 ac 代码，以便大家共同交流~希望你不是直接 CV 大法！~ 本博文将随个人进度持续更新。</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#wustoj">wustoj 不知道是谁在负责维护，我联系不到，部分题有出现错误，有题目可能是笔误，有测试数据可能有错误。我站在我的角度客观分析题目，如仍有错误，望指正！</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_1">代码旨在直接解决题目要求，代码格式不规范请谅解</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#1">1.类和对象</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c1001-clock">c++1001 时钟类 Clock 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1002-point">c++1002 点类 Point 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1003-circle">c++1003 圆类 Circle 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1004-rectangle">c++.1004 矩形类 Rectangle 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1005-complex">c++.1005 复数类 Complex 的设计</a>
+    
+  </li>
+
+  <li><a href="#ac-1-1-1i-1i">这道题个人认为测试数据有问题！下面给出两段代码，第一段是能够 ac 这题的代码（不过其实是错误的，当虚部为 1 或者-1 时，会表现出 1i 或者-1i。）。第二段代码则是我认为的正解！（估计是测试数据出错了</a>
+    
+  </li>
+
+  <li><a href="#c1006-date">c++.1006 日期类 Date 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1007-student">c++.1007 学生类 Student 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1008-line">c++.1008 线段类 Line 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1009-country">c++.1009 国家类 Country 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1010-fixed_deposit">c++.1010 长期存款类 Fixed_Deposit 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1011-book">c++.1011 书类 Book 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1012-building">c++.1012 建筑物类 building 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1013-course">c++.1013 课程类 Course 的设计</a>
+    
+  </li>
+
+  <li><a href="#id-doubleid-int">本题的提供代码中，id 的数据类型是 double，这里题目笔误，id 的数据类型应该是 int（自行修改。</a>
+    
+  </li>
+
+  <li><a href="#c1014-laboratory">c++.1014 实验室类 Laboratory 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1015-person">c++.1015 个人 Person 类的设计</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#2">2.运算符重载</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c2001">c++.2001 时间类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2002">c++.2002 日期类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2003">c++.2003 复数类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2004">c++.2004 学生类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2005">c++.2005 短整数类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#0">本题在定义除法运算符号时，题目没有说明当 除数 为 0 时，应该返回什么来表明无意义计算。但这是应该注意的事情！</a>
+    
+  </li>
+
+  <li><a href="#c2006-person">c++.2006 个人 Person 类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2007">c++.2007 圆类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2008">c++.2008 分数类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#0-11-11-1-1">注意！本题下方有提示 “分数的输出要求。。。最简形式” 这里即使分子为 0 时，输出仍然不可省略分母部分。。。即使分子等于分母，或者分子分母互为相反数，也只能输出 1/1 或者 -1/1，而不能输出 1 或者 -1。</a>
+    
+  </li>
+
+  <li><a href="#c2009">c++,2009 整型动态数组类及运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2010-2">c++.2010 分数类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2011-2">c++.2011 圆类 运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2012">c++.2012 矩形类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2013-2">c++.2013 日期类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2014-2">c++.2014 时间类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2015-string">c++.2015 字符串 string 运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2016-string-2">c++.2016 字符串 string 运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2017-2">c++.2017 矩形类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2018-2">c++.2018 复数类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2019-2">c++.2019 学生类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2020-person-2">c++.2020 个人 Person 类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#ccstring">c++.CSTRING 类的设计</a>
+    
+  </li>
+
+  <li><a href="#c3001">c++.3001 日期类（由时间类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3002-point">c++.3002 圆类（由 Point 点类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3003computer-cpu">c++.3003Computer 计算机类（由 CPU 类派生）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#ac">好忙好忙~ 实在是啃不动了，下面代码是我朋友的 ac 码，提供参考</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c3004province-country">c++.3004Province 省类（由 Country 国家类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3005rectangle-point">c++3005Rectangle 矩形类（由 Point 点类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3006three_dimensional-point">c++.3006Three_dimensional 三维坐标类（由 Point 点类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3007person-cdate">c++.3007Person 人员类（由 CDate 日期类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3008teacher-person">c++.3008Teacher 教师类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3009student-person">c++.3009Student 学生类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3010dog-mammal">c++.3010Dog 狗类（由 Mammal 哺乳动物类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3011sofa-furniture">c++.3011Sofa 沙发类（由 Furniture 家具类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3012bed-furniture">c++.3012Bed 床类（由 Furniture 家具类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3013alarmclock-clock">c++.3013AlarmClock 闹钟类（由 Clock 钟表类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3014doctor-person">c++.3014Doctor 医生类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3015employee-person">c++.3015Employee 雇员类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#_2">如有问题，欢迎评论！</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_3">至此！完结撒花~</a>
@@ -194,7 +461,9 @@
   </li>
 
 </ul>
-</details>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             <h2 id="2025619-wustoj">2025.6.19 补充：现在开始我有 wustoj 的管理权限啦，下面提到的出现问题的题面都已更改，如果你有新的发现，欢迎评论指错~<a class="headerlink" href="#2025619-wustoj" title="此章节的链接">&para;</a></h2>
 <h1 id="wustoj-ac-cv">由于 wustoj 属于闭源项目，无法看到他人提交代码，故在此记录个人 ac 代码，以便大家共同交流~希望你不是直接 CV 大法！~ 本博文将随个人进度持续更新。<a class="headerlink" href="#wustoj-ac-cv" title="此章节的链接">&para;</a></h1>
@@ -3671,6 +3940,7 @@
             
           </nav>
           
+          
 
 
 <section class="paper-comments" id="__comments" data-paper-comments>
@@ -3686,12 +3956,276 @@
       <aside class="paper-toc" aria-label="本文目录"><div class="paper-toc__inner"><span class="paper-toc__label">本文目录</span>
 <ul class="paper-toc-list">
 
-  <li><a href="#2025619-wustoj">2025.6.19 补充：现在开始我有 wustoj 的管理权限啦，下面提到的...</a>
+  <li><a href="#2025619-wustoj">2025.6.19 补充：现在开始我有 wustoj 的管理权限啦，下面提到的出现问题的题面都已更改，如果你有新的发现，欢迎评论指错~</a>
     
   </li>
 
-  <li><a href="#wustoj-ac-cv">由于 wustoj 属于闭源项目，无法看到他人提交代码，故在此记录个人 ac ...</a>
-    <ul class="paper-toc-sub"><li><a href="#wustoj">wustoj 不知道是谁在负责维护，我联系不到，部分题有出现错误，有题目可能是...</a></li><li><a href="#1">1.类和对象</a></li><li><a href="#2">2.运算符重载</a></li><li><a href="#ac">好忙好忙~ 实在是啃不动了，下面代码是我朋友的 ac 码，提供参考</a></li></ul>
+  <li><a href="#wustoj-ac-cv">由于 wustoj 属于闭源项目，无法看到他人提交代码，故在此记录个人 ac 代码，以便大家共同交流~希望你不是直接 CV 大法！~ 本博文将随个人进度持续更新。</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#wustoj">wustoj 不知道是谁在负责维护，我联系不到，部分题有出现错误，有题目可能是笔误，有测试数据可能有错误。我站在我的角度客观分析题目，如仍有错误，望指正！</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_1">代码旨在直接解决题目要求，代码格式不规范请谅解</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#1">1.类和对象</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c1001-clock">c++1001 时钟类 Clock 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1002-point">c++1002 点类 Point 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1003-circle">c++1003 圆类 Circle 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1004-rectangle">c++.1004 矩形类 Rectangle 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1005-complex">c++.1005 复数类 Complex 的设计</a>
+    
+  </li>
+
+  <li><a href="#ac-1-1-1i-1i">这道题个人认为测试数据有问题！下面给出两段代码，第一段是能够 ac 这题的代码（不过其实是错误的，当虚部为 1 或者-1 时，会表现出 1i 或者-1i。）。第二段代码则是我认为的正解！（估计是测试数据出错了</a>
+    
+  </li>
+
+  <li><a href="#c1006-date">c++.1006 日期类 Date 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1007-student">c++.1007 学生类 Student 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1008-line">c++.1008 线段类 Line 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1009-country">c++.1009 国家类 Country 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1010-fixed_deposit">c++.1010 长期存款类 Fixed_Deposit 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1011-book">c++.1011 书类 Book 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1012-building">c++.1012 建筑物类 building 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1013-course">c++.1013 课程类 Course 的设计</a>
+    
+  </li>
+
+  <li><a href="#id-doubleid-int">本题的提供代码中，id 的数据类型是 double，这里题目笔误，id 的数据类型应该是 int（自行修改。</a>
+    
+  </li>
+
+  <li><a href="#c1014-laboratory">c++.1014 实验室类 Laboratory 的设计</a>
+    
+  </li>
+
+  <li><a href="#c1015-person">c++.1015 个人 Person 类的设计</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#2">2.运算符重载</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c2001">c++.2001 时间类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2002">c++.2002 日期类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2003">c++.2003 复数类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2004">c++.2004 学生类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2005">c++.2005 短整数类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#0">本题在定义除法运算符号时，题目没有说明当 除数 为 0 时，应该返回什么来表明无意义计算。但这是应该注意的事情！</a>
+    
+  </li>
+
+  <li><a href="#c2006-person">c++.2006 个人 Person 类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2007">c++.2007 圆类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2008">c++.2008 分数类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#0-11-11-1-1">注意！本题下方有提示 “分数的输出要求。。。最简形式” 这里即使分子为 0 时，输出仍然不可省略分母部分。。。即使分子等于分母，或者分子分母互为相反数，也只能输出 1/1 或者 -1/1，而不能输出 1 或者 -1。</a>
+    
+  </li>
+
+  <li><a href="#c2009">c++,2009 整型动态数组类及运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2010-2">c++.2010 分数类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2011-2">c++.2011 圆类 运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2012">c++.2012 矩形类运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2013-2">c++.2013 日期类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2014-2">c++.2014 时间类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2015-string">c++.2015 字符串 string 运算符重载</a>
+    
+  </li>
+
+  <li><a href="#c2016-string-2">c++.2016 字符串 string 运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2017-2">c++.2017 矩形类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2018-2">c++.2018 复数类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2019-2">c++.2019 学生类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#c2020-person-2">c++.2020 个人 Person 类运算符重载（2）</a>
+    
+  </li>
+
+  <li><a href="#ccstring">c++.CSTRING 类的设计</a>
+    
+  </li>
+
+  <li><a href="#c3001">c++.3001 日期类（由时间类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3002-point">c++.3002 圆类（由 Point 点类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3003computer-cpu">c++.3003Computer 计算机类（由 CPU 类派生）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#ac">好忙好忙~ 实在是啃不动了，下面代码是我朋友的 ac 码，提供参考</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#c3004province-country">c++.3004Province 省类（由 Country 国家类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3005rectangle-point">c++3005Rectangle 矩形类（由 Point 点类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3006three_dimensional-point">c++.3006Three_dimensional 三维坐标类（由 Point 点类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3007person-cdate">c++.3007Person 人员类（由 CDate 日期类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3008teacher-person">c++.3008Teacher 教师类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3009student-person">c++.3009Student 学生类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3010dog-mammal">c++.3010Dog 狗类（由 Mammal 哺乳动物类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3011sofa-furniture">c++.3011Sofa 沙发类（由 Furniture 家具类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3012bed-furniture">c++.3012Bed 床类（由 Furniture 家具类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3013alarmclock-clock">c++.3013AlarmClock 闹钟类（由 Clock 钟表类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3014doctor-person">c++.3014Doctor 医生类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#c3015employee-person">c++.3015Employee 雇员类（由 Person 人员类派生）</a>
+    
+  </li>
+
+  <li><a href="#_2">如有问题，欢迎评论！</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_3">至此！完结撒花~</a>
@@ -3810,10 +4344,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

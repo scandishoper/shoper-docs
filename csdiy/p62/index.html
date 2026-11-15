@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,54 +175,383 @@
             <a class="paper-eyebrow" href="../../topics/cs/">CS 自学</a>
             <span class="paper-breadcrumb"> / CMU 15-445</span>
             <h1 id="cmu-15-445-lecture-02modern-sql">CMU 15-445 Lecture 02</h1>
-            <div class="paper-meta"><time datetime="2026-04-15">2026年4月15日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a></div>
+            <div class="paper-meta"><time datetime="2026-04-15">2026年4月15日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a><span aria-hidden="true">·</span><span>约 3 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · CMU 15-445</span>
+                <span class="paper-series__position">第 1 / 1 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="./" aria-current="page">CMU 15-445 Lecture 02</a></li></ol>
+              <a class="paper-series__all" href="../">浏览CS 自学全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#1-select-from-where">1. SELECT-FROM-WHERE：最基本查询</a>
-    <ul class="paper-toc-sub"><li><a href="#_1">作用</a></li><li><a href="#_2">模板</a></li><li><a href="#_3">例子</a></li><li><a href="#_4">语义</a></li><li><a href="#_5">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_1">作用</a>
+    
+  </li>
+
+  <li><a href="#_2">模板</a>
+    
+  </li>
+
+  <li><a href="#_3">例子</a>
+    
+  </li>
+
+  <li><a href="#_4">语义</a>
+    
+  </li>
+
+  <li><a href="#_5">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#2">2. 聚合函数：把多行压成统计值</a>
-    <ul class="paper-toc-sub"><li><a href="#_6">常见聚合函数</a></li><li><a href="#_7">模板</a></li><li><a href="#_8">例子</a></li><li><a href="#_9">语义</a></li><li><a href="#_10">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_6">常见聚合函数</a>
+    
+  </li>
+
+  <li><a href="#_7">模板</a>
+    
+  </li>
+
+  <li><a href="#_8">例子</a>
+    
+  </li>
+
+  <li><a href="#_9">语义</a>
+    
+  </li>
+
+  <li><a href="#_10">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#3-group-by">3. GROUP BY：按组统计</a>
-    <ul class="paper-toc-sub"><li><a href="#_11">作用</a></li><li><a href="#_12">模板</a></li><li><a href="#_13">例子</a></li><li><a href="#_14">语义</a></li><li><a href="#_15">核心规则</a></li><li><a href="#_16">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_11">作用</a>
+    
+  </li>
+
+  <li><a href="#_12">模板</a>
+    
+  </li>
+
+  <li><a href="#_13">例子</a>
+    
+  </li>
+
+  <li><a href="#_14">语义</a>
+    
+  </li>
+
+  <li><a href="#_15">核心规则</a>
+    
+  </li>
+
+  <li><a href="#_16">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4-having">4. HAVING：对分组结果再过滤</a>
-    <ul class="paper-toc-sub"><li><a href="#_17">作用</a></li><li><a href="#_18">模板</a></li><li><a href="#_19">例子</a></li><li><a href="#_20">语义</a></li><li><a href="#where">和 WHERE 的区别</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_17">作用</a>
+    
+  </li>
+
+  <li><a href="#_18">模板</a>
+    
+  </li>
+
+  <li><a href="#_19">例子</a>
+    
+  </li>
+
+  <li><a href="#_20">语义</a>
+    
+  </li>
+
+  <li><a href="#where">和 WHERE 的区别</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#5-order-by">5. ORDER BY：排序</a>
-    <ul class="paper-toc-sub"><li><a href="#_21">作用</a></li><li><a href="#_22">模板</a></li><li><a href="#_23">例子</a></li><li><a href="#_24">说明</a></li><li><a href="#_25">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_21">作用</a>
+    
+  </li>
+
+  <li><a href="#_22">模板</a>
+    
+  </li>
+
+  <li><a href="#_23">例子</a>
+    
+  </li>
+
+  <li><a href="#_24">说明</a>
+    
+  </li>
+
+  <li><a href="#_25">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#6-limit">6. LIMIT：只取前几条</a>
-    <ul class="paper-toc-sub"><li><a href="#_26">作用</a></li><li><a href="#_27">模板</a></li><li><a href="#_28">例子</a></li><li><a href="#_29">关键理解</a></li><li><a href="#_30">正确搭配</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_26">作用</a>
+    
+  </li>
+
+  <li><a href="#_27">模板</a>
+    
+  </li>
+
+  <li><a href="#_28">例子</a>
+    
+  </li>
+
+  <li><a href="#_29">关键理解</a>
+    
+  </li>
+
+  <li><a href="#_30">正确搭配</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7-join">7. JOIN：把两张表按条件拼起来</a>
-    <ul class="paper-toc-sub"><li><a href="#_31">作用</a></li><li><a href="#71-inner-join">7.1 INNER JOIN</a></li><li><a href="#72-left-join">7.2 LEFT JOIN</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_31">作用</a>
+    
+  </li>
+
+  <li><a href="#71-inner-join">7.1 INNER JOIN</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_32">模板</a>
+    
+  </li>
+
+  <li><a href="#_33">例子</a>
+    
+  </li>
+
+  <li><a href="#_34">语义</a>
+    
+  </li>
+
+  <li><a href="#_35">关键理解</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#72-left-join">7.2 LEFT JOIN</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_36">模板</a>
+    
+  </li>
+
+  <li><a href="#_37">例子</a>
+    
+  </li>
+
+  <li><a href="#_38">语义</a>
+    
+  </li>
+
+  <li><a href="#_39">高频用途：找“左边没有匹配”的行</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8-subquery">8. 子查询（Subquery）</a>
-    <ul class="paper-toc-sub"><li><a href="#_40">作用</a></li><li><a href="#_41">模板</a></li><li><a href="#_42">例子</a></li><li><a href="#_43">语义</a></li><li><a href="#_44">常见形式</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_40">作用</a>
+    
+  </li>
+
+  <li><a href="#_41">模板</a>
+    
+  </li>
+
+  <li><a href="#_42">例子</a>
+    
+  </li>
+
+  <li><a href="#_43">语义</a>
+    
+  </li>
+
+  <li><a href="#_44">常见形式</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9-cte">9. CTE：给中间结果起名字</a>
-    <ul class="paper-toc-sub"><li><a href="#_45">作用</a></li><li><a href="#_46">模板</a></li><li><a href="#_47">例子</a></li><li><a href="#_48">语义</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_45">作用</a>
+    
+  </li>
+
+  <li><a href="#_46">模板</a>
+    
+  </li>
+
+  <li><a href="#_47">例子</a>
+    
+  </li>
+
+  <li><a href="#_48">语义</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-window-function">10. Window Function：按组算，但不压缩行数</a>
-    <ul class="paper-toc-sub"><li><a href="#_49">作用</a></li><li><a href="#101">10.1 组内最大值</a></li><li><a href="#102">10.2 组内排名</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_49">作用</a>
+    
+  </li>
+
+  <li><a href="#101">10.1 组内最大值</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_50">模板</a>
+    
+  </li>
+
+  <li><a href="#_51">例子</a>
+    
+  </li>
+
+  <li><a href="#_52">语义</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#102">10.2 组内排名</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_53">模板</a>
+    
+  </li>
+
+  <li><a href="#_54">例子</a>
+    
+  </li>
+
+  <li><a href="#_55">高频用途</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#11">11. 这一课最重要的区分</a>
-    <ul class="paper-toc-sub"><li><a href="#111-where-vs-having">11.1 WHERE vs HAVING</a></li><li><a href="#112-group-by-vs-window-function">11.2 GROUP BY vs Window Function</a></li><li><a href="#113-order-by-vs-limit">11.3 ORDER BY vs LIMIT</a></li><li><a href="#114-inner-join-vs-left-join">11.4 INNER JOIN vs LEFT JOIN</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#111-where-vs-having">11.1 WHERE vs HAVING</a>
+    
+  </li>
+
+  <li><a href="#112-group-by-vs-window-function">11.2 GROUP BY vs Window Function</a>
+    
+  </li>
+
+  <li><a href="#113-order-by-vs-limit">11.3 ORDER BY vs LIMIT</a>
+    
+  </li>
+
+  <li><a href="#114-inner-join-vs-left-join">11.4 INNER JOIN vs LEFT JOIN</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#12-sql">12. 推荐的 SQL 阅读顺序</a>
@@ -230,11 +559,57 @@
   </li>
 
   <li><a href="#13">13. 高频模板速查</a>
-    <ul class="paper-toc-sub"><li><a href="#131">13.1 查符合条件的行</a></li><li><a href="#132">13.2 求整张表统计值</a></li><li><a href="#133">13.3 每组统计</a></li><li><a href="#134">13.4 过滤平均值大的组</a></li><li><a href="#135-k">13.5 排序后取前 k 名</a></li><li><a href="#136">13.6 两表连接</a></li><li><a href="#137">13.7 找左边没有匹配的行</a></li><li><a href="#138">13.8 子查询</a></li><li><a href="#139-cte">13.9 CTE</a></li><li><a href="#1310">13.10 每组排名</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#131">13.1 查符合条件的行</a>
+    
+  </li>
+
+  <li><a href="#132">13.2 求整张表统计值</a>
+    
+  </li>
+
+  <li><a href="#133">13.3 每组统计</a>
+    
+  </li>
+
+  <li><a href="#134">13.4 过滤平均值大的组</a>
+    
+  </li>
+
+  <li><a href="#135-k">13.5 排序后取前 k 名</a>
+    
+  </li>
+
+  <li><a href="#136">13.6 两表连接</a>
+    
+  </li>
+
+  <li><a href="#137">13.7 找左边没有匹配的行</a>
+    
+  </li>
+
+  <li><a href="#138">13.8 子查询</a>
+    
+  </li>
+
+  <li><a href="#139-cte">13.9 CTE</a>
+    
+  </li>
+
+  <li><a href="#1310">13.10 每组排名</a>
+    
   </li>
 
 </ul>
-</details>
+
+  </li>
+
+</ul>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             
 <h2 id="1-select-from-where">1. SELECT-FROM-WHERE：最基本查询<a class="headerlink" href="#1-select-from-where" title="此章节的链接">&para;</a></h2>
@@ -658,10 +1033,6 @@
 </span></code></pre></div>
           </div>
           
-          <nav class="paper-pagination" aria-label="继续阅读">
-            
-            
-          </nav>
           
 
 
@@ -679,47 +1050,363 @@
 <ul class="paper-toc-list">
 
   <li><a href="#1-select-from-where">1. SELECT-FROM-WHERE：最基本查询</a>
-    <ul class="paper-toc-sub"><li><a href="#_1">作用</a></li><li><a href="#_2">模板</a></li><li><a href="#_3">例子</a></li><li><a href="#_4">语义</a></li><li><a href="#_5">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_1">作用</a>
+    
+  </li>
+
+  <li><a href="#_2">模板</a>
+    
+  </li>
+
+  <li><a href="#_3">例子</a>
+    
+  </li>
+
+  <li><a href="#_4">语义</a>
+    
+  </li>
+
+  <li><a href="#_5">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#2">2. 聚合函数：把多行压成统计值</a>
-    <ul class="paper-toc-sub"><li><a href="#_6">常见聚合函数</a></li><li><a href="#_7">模板</a></li><li><a href="#_8">例子</a></li><li><a href="#_9">语义</a></li><li><a href="#_10">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_6">常见聚合函数</a>
+    
+  </li>
+
+  <li><a href="#_7">模板</a>
+    
+  </li>
+
+  <li><a href="#_8">例子</a>
+    
+  </li>
+
+  <li><a href="#_9">语义</a>
+    
+  </li>
+
+  <li><a href="#_10">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#3-group-by">3. GROUP BY：按组统计</a>
-    <ul class="paper-toc-sub"><li><a href="#_11">作用</a></li><li><a href="#_12">模板</a></li><li><a href="#_13">例子</a></li><li><a href="#_14">语义</a></li><li><a href="#_15">核心规则</a></li><li><a href="#_16">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_11">作用</a>
+    
+  </li>
+
+  <li><a href="#_12">模板</a>
+    
+  </li>
+
+  <li><a href="#_13">例子</a>
+    
+  </li>
+
+  <li><a href="#_14">语义</a>
+    
+  </li>
+
+  <li><a href="#_15">核心规则</a>
+    
+  </li>
+
+  <li><a href="#_16">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4-having">4. HAVING：对分组结果再过滤</a>
-    <ul class="paper-toc-sub"><li><a href="#_17">作用</a></li><li><a href="#_18">模板</a></li><li><a href="#_19">例子</a></li><li><a href="#_20">语义</a></li><li><a href="#where">和 WHERE 的区别</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_17">作用</a>
+    
+  </li>
+
+  <li><a href="#_18">模板</a>
+    
+  </li>
+
+  <li><a href="#_19">例子</a>
+    
+  </li>
+
+  <li><a href="#_20">语义</a>
+    
+  </li>
+
+  <li><a href="#where">和 WHERE 的区别</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#5-order-by">5. ORDER BY：排序</a>
-    <ul class="paper-toc-sub"><li><a href="#_21">作用</a></li><li><a href="#_22">模板</a></li><li><a href="#_23">例子</a></li><li><a href="#_24">说明</a></li><li><a href="#_25">易错点</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_21">作用</a>
+    
+  </li>
+
+  <li><a href="#_22">模板</a>
+    
+  </li>
+
+  <li><a href="#_23">例子</a>
+    
+  </li>
+
+  <li><a href="#_24">说明</a>
+    
+  </li>
+
+  <li><a href="#_25">易错点</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#6-limit">6. LIMIT：只取前几条</a>
-    <ul class="paper-toc-sub"><li><a href="#_26">作用</a></li><li><a href="#_27">模板</a></li><li><a href="#_28">例子</a></li><li><a href="#_29">关键理解</a></li><li><a href="#_30">正确搭配</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_26">作用</a>
+    
+  </li>
+
+  <li><a href="#_27">模板</a>
+    
+  </li>
+
+  <li><a href="#_28">例子</a>
+    
+  </li>
+
+  <li><a href="#_29">关键理解</a>
+    
+  </li>
+
+  <li><a href="#_30">正确搭配</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7-join">7. JOIN：把两张表按条件拼起来</a>
-    <ul class="paper-toc-sub"><li><a href="#_31">作用</a></li><li><a href="#71-inner-join">7.1 INNER JOIN</a></li><li><a href="#72-left-join">7.2 LEFT JOIN</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_31">作用</a>
+    
+  </li>
+
+  <li><a href="#71-inner-join">7.1 INNER JOIN</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_32">模板</a>
+    
+  </li>
+
+  <li><a href="#_33">例子</a>
+    
+  </li>
+
+  <li><a href="#_34">语义</a>
+    
+  </li>
+
+  <li><a href="#_35">关键理解</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#72-left-join">7.2 LEFT JOIN</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_36">模板</a>
+    
+  </li>
+
+  <li><a href="#_37">例子</a>
+    
+  </li>
+
+  <li><a href="#_38">语义</a>
+    
+  </li>
+
+  <li><a href="#_39">高频用途：找“左边没有匹配”的行</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8-subquery">8. 子查询（Subquery）</a>
-    <ul class="paper-toc-sub"><li><a href="#_40">作用</a></li><li><a href="#_41">模板</a></li><li><a href="#_42">例子</a></li><li><a href="#_43">语义</a></li><li><a href="#_44">常见形式</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_40">作用</a>
+    
+  </li>
+
+  <li><a href="#_41">模板</a>
+    
+  </li>
+
+  <li><a href="#_42">例子</a>
+    
+  </li>
+
+  <li><a href="#_43">语义</a>
+    
+  </li>
+
+  <li><a href="#_44">常见形式</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9-cte">9. CTE：给中间结果起名字</a>
-    <ul class="paper-toc-sub"><li><a href="#_45">作用</a></li><li><a href="#_46">模板</a></li><li><a href="#_47">例子</a></li><li><a href="#_48">语义</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_45">作用</a>
+    
+  </li>
+
+  <li><a href="#_46">模板</a>
+    
+  </li>
+
+  <li><a href="#_47">例子</a>
+    
+  </li>
+
+  <li><a href="#_48">语义</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-window-function">10. Window Function：按组算，但不压缩行数</a>
-    <ul class="paper-toc-sub"><li><a href="#_49">作用</a></li><li><a href="#101">10.1 组内最大值</a></li><li><a href="#102">10.2 组内排名</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_49">作用</a>
+    
+  </li>
+
+  <li><a href="#101">10.1 组内最大值</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_50">模板</a>
+    
+  </li>
+
+  <li><a href="#_51">例子</a>
+    
+  </li>
+
+  <li><a href="#_52">语义</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#102">10.2 组内排名</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_53">模板</a>
+    
+  </li>
+
+  <li><a href="#_54">例子</a>
+    
+  </li>
+
+  <li><a href="#_55">高频用途</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#11">11. 这一课最重要的区分</a>
-    <ul class="paper-toc-sub"><li><a href="#111-where-vs-having">11.1 WHERE vs HAVING</a></li><li><a href="#112-group-by-vs-window-function">11.2 GROUP BY vs Window Function</a></li><li><a href="#113-order-by-vs-limit">11.3 ORDER BY vs LIMIT</a></li><li><a href="#114-inner-join-vs-left-join">11.4 INNER JOIN vs LEFT JOIN</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#111-where-vs-having">11.1 WHERE vs HAVING</a>
+    
+  </li>
+
+  <li><a href="#112-group-by-vs-window-function">11.2 GROUP BY vs Window Function</a>
+    
+  </li>
+
+  <li><a href="#113-order-by-vs-limit">11.3 ORDER BY vs LIMIT</a>
+    
+  </li>
+
+  <li><a href="#114-inner-join-vs-left-join">11.4 INNER JOIN vs LEFT JOIN</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#12-sql">12. 推荐的 SQL 阅读顺序</a>
@@ -727,7 +1414,51 @@
   </li>
 
   <li><a href="#13">13. 高频模板速查</a>
-    <ul class="paper-toc-sub"><li><a href="#131">13.1 查符合条件的行</a></li><li><a href="#132">13.2 求整张表统计值</a></li><li><a href="#133">13.3 每组统计</a></li><li><a href="#134">13.4 过滤平均值大的组</a></li><li><a href="#135-k">13.5 排序后取前 k 名</a></li><li><a href="#136">13.6 两表连接</a></li><li><a href="#137">13.7 找左边没有匹配的行</a></li><li><a href="#138">13.8 子查询</a></li><li><a href="#139-cte">13.9 CTE</a></li><li><a href="#1310">13.10 每组排名</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#131">13.1 查符合条件的行</a>
+    
+  </li>
+
+  <li><a href="#132">13.2 求整张表统计值</a>
+    
+  </li>
+
+  <li><a href="#133">13.3 每组统计</a>
+    
+  </li>
+
+  <li><a href="#134">13.4 过滤平均值大的组</a>
+    
+  </li>
+
+  <li><a href="#135-k">13.5 排序后取前 k 名</a>
+    
+  </li>
+
+  <li><a href="#136">13.6 两表连接</a>
+    
+  </li>
+
+  <li><a href="#137">13.7 找左边没有匹配的行</a>
+    
+  </li>
+
+  <li><a href="#138">13.8 子查询</a>
+    
+  </li>
+
+  <li><a href="#139-cte">13.9 CTE</a>
+    
+  </li>
+
+  <li><a href="#1310">13.10 每组排名</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
 </ul>
@@ -842,10 +1573,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

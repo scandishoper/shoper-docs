@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -167,7 +167,7 @@
     
     
     
-    <div class="paper-reading">
+    <div class="paper-reading paper-reading--with-toc">
       <article class="paper-article md-typeset" id="paper-content">
         
           
@@ -175,9 +175,72 @@
             <a class="paper-eyebrow" href="../../topics/algorithms/">算法与题解</a>
             <span class="paper-breadcrumb"> / 基础算法</span>
             <h1>三分</h1>
-            <div class="paper-meta"><time datetime="2025-03-01">2025年3月1日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a></div>
+            <div class="paper-meta"><time datetime="2025-03-01">2025年3月1日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a><span aria-hidden="true">·</span><span>约 2 分钟</span></div>
             
           </header>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · 基础算法</span>
+                <span class="paper-series__position">第 2 / 8 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p2/">二分/01分数规划</a></li><li><a href="./" aria-current="page">三分</a></li><li><a href="../p5/">位运算笔记 / 贪心例五题解</a></li><li><a href="../p16/">c/c++高精度算法</a></li><li><a href="../p11/">曼哈顿距离与切比雪夫距离的转换</a></li><li><a href="../p9/">排序算法</a></li><li><a href="../p14/">贪心/局部交叉型</a></li><li><a href="../p6/">六六表/数构造 笔记</a></li></ol>
+              <a class="paper-series__all" href="../">浏览算法笔记全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
+<ul class="paper-toc-list">
+
+  <li><a href="#_1">三分法用来解决单峰单谷问题，经典二次函数型的变化时，可以使用三分优化</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">当问题是解决一堆都是整数的问题时，较为简单，模板代码如下：</a>
+    
+  </li>
+
+  <li><a href="#_3">但是要使用三分思路解决的问题往往是要求到实数，问题的变化过程往往是一段连续实数的函数，而不是像数列那样的连续整数，那会有什么变化吗？</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#_4">这里给出三种解决思路</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#while-epsilon-1e-7">一.直接使用数据本身进行循环判断，既然实数多次计算有误差，while 直接用来判断每次两者差值小于某个 epsilon（例如 1e-7），来控制循环结束（这时候数据已经细分很小，可以直接近似得到最值了）具体精度控制看题目要求</a>
+    
+  </li>
+
+  <li><a href="#_5">二.我们发现当每一次三分数据总数都会缩小三分之一，那么当循环次数达到一定多时，剩余数据就能够在误差范围内得到正确答案！所以可以固定循环次数为循环条件进行三分！</a>
+    
+  </li>
+
+  <li><a href="#n-n-500010000">三.将要求的实数区间存放在整数数组中，例如：给定一段长度的两端值，我们主动将这段长度均分为 N 份(N 可能是 5000，10000.....)，这时候就可以将问题转换为最简单的模板类型解决！</a>
+    
+  </li>
+
+  <li><a href="#_6">例题</a>
+    
+  </li>
+
+  <li><a href="#dy-dx-dx">其实还有一种妙法！就是求导！利用定义求导，(dy / dx) 当 dx 极小时，整个就是当前点的导数值。这样就可以将三分问题转换为二分求零点的问题！这里留给读者思考（因为我自己其实也没试过，怕写错了误导大家~</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+</nav></details>
+          </div>
           
           <div class="paper-body">
             <h2 id="_1">三分法用来解决单峰单谷问题，经典二次函数型的变化时，可以使用三分优化<a class="headerlink" href="#_1" title="此章节的链接">&para;</a></h2>
@@ -325,12 +388,11 @@
 <p>再附上一道三分例题：<a href="https://ac.nowcoder.com/acm/contest/22353/1009">例题</a></p>
           </div>
           
-          <details class="paper-series"><summary>基础算法 · 共 8 篇</summary><ol><li><a href="../p2/">二分/01分数规划</a></li><li><a href="./" aria-current="page">三分</a></li><li><a href="../p5/">位运算笔记 / 贪心例五题解</a></li><li><a href="../p16/">c/c++高精度算法</a></li><li><a href="../p11/">曼哈顿距离与切比雪夫距离的转换</a></li><li><a href="../p9/">排序算法</a></li><li><a href="../p14/">贪心/局部交叉型</a></li><li><a href="../p6/">六六表/数构造 笔记</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p2/"><span>上一篇 · 基础算法</span>二分/01分数规划</a>
             <a href="../p5/"><span>下一篇 · 基础算法</span>位运算笔记 / 贪心例五题解</a>
           </nav>
+          
           
 
 
@@ -344,7 +406,55 @@
 
         
       </article>
-      
+      <aside class="paper-toc" aria-label="本文目录"><div class="paper-toc__inner"><span class="paper-toc__label">本文目录</span>
+<ul class="paper-toc-list">
+
+  <li><a href="#_1">三分法用来解决单峰单谷问题，经典二次函数型的变化时，可以使用三分优化</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">当问题是解决一堆都是整数的问题时，较为简单，模板代码如下：</a>
+    
+  </li>
+
+  <li><a href="#_3">但是要使用三分思路解决的问题往往是要求到实数，问题的变化过程往往是一段连续实数的函数，而不是像数列那样的连续整数，那会有什么变化吗？</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#_4">这里给出三种解决思路</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#while-epsilon-1e-7">一.直接使用数据本身进行循环判断，既然实数多次计算有误差，while 直接用来判断每次两者差值小于某个 epsilon（例如 1e-7），来控制循环结束（这时候数据已经细分很小，可以直接近似得到最值了）具体精度控制看题目要求</a>
+    
+  </li>
+
+  <li><a href="#_5">二.我们发现当每一次三分数据总数都会缩小三分之一，那么当循环次数达到一定多时，剩余数据就能够在误差范围内得到正确答案！所以可以固定循环次数为循环条件进行三分！</a>
+    
+  </li>
+
+  <li><a href="#n-n-500010000">三.将要求的实数区间存放在整数数组中，例如：给定一段长度的两端值，我们主动将这段长度均分为 N 份(N 可能是 5000，10000.....)，这时候就可以将问题转换为最简单的模板类型解决！</a>
+    
+  </li>
+
+  <li><a href="#_6">例题</a>
+    
+  </li>
+
+  <li><a href="#dy-dx-dx">其实还有一种妙法！就是求导！利用定义求导，(dy / dx) 当 dx 极小时，整个就是当前点的导数值。这样就可以将三分问题转换为二分求零点的问题！这里留给读者思考（因为我自己其实也没试过，怕写错了误导大家~</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+</div></aside>
     </div>
   
 </div>
@@ -455,10 +565,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

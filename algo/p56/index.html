@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,14 +175,35 @@
             <a class="paper-eyebrow" href="../../topics/algorithms/">算法与题解</a>
             <span class="paper-breadcrumb"> / 数据结构</span>
             <h1 id="st-sparse-table">ST表</h1>
-            <div class="paper-meta"><time datetime="2026-02-17">2026年2月17日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a></div>
+            <div class="paper-meta"><time datetime="2026-02-17">2026年2月17日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a><span aria-hidden="true">·</span><span>约 1 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · 数据结构</span>
+                <span class="paper-series__position">第 5 / 6 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p12/">栈/队列/双端</a></li><li><a href="../p4/">优先/pair/map/set/自定义比较器</a></li><li><a href="../p8/">并查集(树</a></li><li><a href="../p3/">二叉树的遍历</a></li><li><a href="./" aria-current="page">ST表</a></li><li><a href="../p61/">pbds库</a></li></ol>
+              <a class="paper-series__all" href="../">浏览算法笔记全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#_1">一、算法简介</a>
-    <ul class="paper-toc-sub"><li><a href="#_2">适用范围</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">适用范围</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_3">二、核心思想</a>
@@ -202,11 +223,13 @@
   </li>
 
 </ul>
-</details>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             
 <h2 id="_1">一、算法简介<a class="headerlink" href="#_1" title="此章节的链接">&para;</a></h2>
-<p><strong>ST 表（Sparse Table）</strong> 是一种用于处理**区间最值查询（RMQ）**的高效数据结构。
+<p><strong>ST 表（Sparse Table）</strong> 是一种用于处理<strong>区间最值查询（RMQ）</strong>的高效数据结构。
  核心思想：</p>
 <blockquote>
 <p>通过预处理所有长度为 2^k 的区间的最值，在查询时利用区间的二进制分割快速合并结果。</p>
@@ -324,12 +347,11 @@
 </ol>
           </div>
           
-          <details class="paper-series"><summary>数据结构 · 共 6 篇</summary><ol><li><a href="../p12/">栈/队列/双端</a></li><li><a href="../p4/">优先/pair/map/set/自定义比较器</a></li><li><a href="../p8/">并查集(树</a></li><li><a href="../p3/">二叉树的遍历</a></li><li><a href="./" aria-current="page">ST表</a></li><li><a href="../p61/">pbds库</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p3/"><span>上一篇 · 数据结构</span>二叉树的遍历</a>
             <a href="../p61/"><span>下一篇 · 数据结构</span>pbds库</a>
           </nav>
+          
           
 
 
@@ -347,7 +369,15 @@
 <ul class="paper-toc-list">
 
   <li><a href="#_1">一、算法简介</a>
-    <ul class="paper-toc-sub"><li><a href="#_2">适用范围</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">适用范围</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#_3">二、核心思想</a>
@@ -478,10 +508,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

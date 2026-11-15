@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,66 +175,455 @@
             <a class="paper-eyebrow" href="../../topics/cs/">CS 自学</a>
             <span class="paper-breadcrumb"> / CSAPP</span>
             <h1 id="csapp-4-y86-64">CSAPP第四章</h1>
-            <div class="paper-meta"><time datetime="2026-07-28">2026年7月28日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a></div>
+            <div class="paper-meta"><time datetime="2026-07-28">2026年7月28日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a><span aria-hidden="true">·</span><span>约 10 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · CSAPP</span>
+                <span class="paper-series__position">第 3 / 3 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p34/">CSAPP第二章</a></li><li><a href="../p55/">CSAPP第三章</a></li><li><a href="./" aria-current="page">CSAPP第四章</a></li></ol>
+              <a class="paper-series__all" href="../">浏览CS 自学全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#0">0. 整章知识地图</a>
-    <ul class="paper-toc-sub"><li><a href="#_1">本章最重要的三个问题</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_1">本章最重要的三个问题</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#1-isa">1. ISA：软件与硬件之间的接口</a>
-    <ul class="paper-toc-sub"><li><a href="#11-isa">1.1 什么是 ISA</a></li><li><a href="#12-y86-64">1.2 Y86-64 的程序员可见状态</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#11-isa">1.1 什么是 ISA</a>
+    
+  </li>
+
+  <li><a href="#12-y86-64">1.2 Y86-64 的程序员可见状态</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">条件码</a>
+    
+  </li>
+
+  <li><a href="#_3">状态码</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#2-y86-64">2. Y86-64 指令集</a>
-    <ul class="paper-toc-sub"><li><a href="#21">2.1 数据传送指令</a></li><li><a href="#22-opq">2.2 算术和逻辑指令 OPq</a></li><li><a href="#23">2.3 条件传送和条件跳转</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#21">2.1 数据传送指令</a>
+    
+  </li>
+
+  <li><a href="#22-opq">2.2 算术和逻辑指令 OPq</a>
+    
+  </li>
+
+  <li><a href="#23">2.3 条件传送和条件跳转</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_4">条件传送</a>
+    
+  </li>
+
+  <li><a href="#_5">条件跳转</a>
+    
+  </li>
+
+  <li><a href="#ifun">ifun 条件编码</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#24">2.4 栈和过程控制</a>
-    <ul class="paper-toc-sub"><li><a href="#call-valp">call 为什么把 valP 写入内存</a></li><li><a href="#ret">ret 为什么比较特殊</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#call-valp">call 为什么把 valP 写入内存</a>
+    
+  </li>
+
+  <li><a href="#ret">ret 为什么比较特殊</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#3">3. 指令编码</a>
-    <ul class="paper-toc-sub"><li><a href="#31">3.1 基本格式</a></li><li><a href="#32">3.2 寄存器编码</a></li><li><a href="#33">3.3 指令长度</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#31">3.1 基本格式</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#icode">icode 总表</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#32">3.2 寄存器编码</a>
+    
+  </li>
+
+  <li><a href="#33">3.3 指令长度</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4">4. 硬件基础：组合逻辑与时序逻辑</a>
-    <ul class="paper-toc-sub"><li><a href="#41">4.1 组合逻辑</a></li><li><a href="#42">4.2 时序逻辑</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#41">4.1 组合逻辑</a>
+    
+  </li>
+
+  <li><a href="#42">4.2 时序逻辑</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#verilog">Verilog 对应关系</a>
+    
+  </li>
+
+  <li><a href="#_6">为什么需要区分</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#5-seqy86-64">5. SEQ：Y86-64 的顺序实现</a>
-    <ul class="paper-toc-sub"><li><a href="#51">5.1 六个逻辑阶段</a></li><li><a href="#52">5.2 各阶段的职责</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#51">5.1 六个逻辑阶段</a>
+    
+  </li>
+
+  <li><a href="#52">5.2 各阶段的职责</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#fetch">Fetch：取指</a>
+    
+  </li>
+
+  <li><a href="#decode">Decode：译码和读寄存器</a>
+    
+  </li>
+
+  <li><a href="#execute">Execute：执行</a>
+    
+  </li>
+
+  <li><a href="#memory">Memory：访存</a>
+    
+  </li>
+
+  <li><a href="#write-back">Write Back：写回</a>
+    
+  </li>
+
+  <li><a href="#update-pc-pc">Update PC：更新 PC</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#6">6. 常见指令的阶段级语义</a>
-    <ul class="paper-toc-sub"><li><a href="#61">6.1 总表</a></li><li><a href="#62">6.2 关键控制信号速查</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#61">6.1 总表</a>
+    
+  </li>
+
+  <li><a href="#62">6.2 关键控制信号速查</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_7">源寄存器</a>
+    
+  </li>
+
+  <li><a href="#_8">目的寄存器</a>
+    
+  </li>
+
+  <li><a href="#alu">ALU 输入</a>
+    
+  </li>
+
+  <li><a href="#_9">内存控制</a>
+    
+  </li>
+
+  <li><a href="#_10">为什么统一成多路选择器</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7-seq">7. 从 SEQ 到流水线</a>
-    <ul class="paper-toc-sub"><li><a href="#71">7.1 为什么做流水线</a></li><li><a href="#72">7.2 吞吐量与延迟</a></li><li><a href="#73">7.3 非均匀划分与深流水线</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#71">7.1 为什么做流水线</a>
+    
+  </li>
+
+  <li><a href="#72">7.2 吞吐量与延迟</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_11">不流水化示例</a>
+    
+  </li>
+
+  <li><a href="#100-ps">分成三级，每级 100 ps</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#73">7.3 非均匀划分与深流水线</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8-pipe">8. PIPE：五级流水线硬件结构</a>
-    <ul class="paper-toc-sub"><li><a href="#81">8.1 流水线寄存器</a></li><li><a href="#82">8.2 流水线寄存器的三种操作</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#81">8.1 流水线寄存器</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#f">F 寄存器</a>
+    
+  </li>
+
+  <li><a href="#d">D 寄存器</a>
+    
+  </li>
+
+  <li><a href="#e">E 寄存器</a>
+    
+  </li>
+
+  <li><a href="#m">M 寄存器</a>
+    
+  </li>
+
+  <li><a href="#w">W 寄存器</a>
+    
+  </li>
+
+  <li><a href="#srcasrcbdstedstm">为什么要把 srcA/srcB/dstE/dstM 一起传下去</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#82">8.2 流水线寄存器的三种操作</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_12">正常加载</a>
+    
+  </li>
+
+  <li><a href="#stall">Stall（暂停）</a>
+    
+  </li>
+
+  <li><a href="#bubble">Bubble（气泡）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9. 数据依赖、数据冒险和转发</a>
-    <ul class="paper-toc-sub"><li><a href="#91">9.1 依赖与冒险不是一回事</a></li><li><a href="#92">9.2 为什么等待写回很浪费</a></li><li><a href="#93-forwarding-bypassing">9.3 转发（Forwarding / Bypassing）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#91">9.1 依赖与冒险不是一回事</a>
+    
+  </li>
+
+  <li><a href="#92">9.2 为什么等待写回很浪费</a>
+    
+  </li>
+
+  <li><a href="#93-forwarding-bypassing">9.3 转发（Forwarding / Bypassing）</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#jxxcall-vala-valp">为什么 jXX/call 的 valA 保存 valP</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-loaduse">10. Load/Use 冒险</a>
-    <ul class="paper-toc-sub"><li><a href="#101">10.1 典型代码</a></li><li><a href="#102">10.2 正确控制</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#101">10.1 典型代码</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_13">为什么普通转发仍来不及</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#102">10.2 正确控制</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#11">11. 控制冒险</a>
-    <ul class="paper-toc-sub"><li><a href="#111">11.1 根源</a></li><li><a href="#112">11.2 条件跳转与分支预测</a></li><li><a href="#113-ret">11.3 ret 冒险</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#111">11.1 根源</a>
+    
+  </li>
+
+  <li><a href="#112">11.2 条件跳转与分支预测</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_14">预测正确</a>
+    
+  </li>
+
+  <li><a href="#_15">预测错误</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#113-ret">11.3 ret 冒险</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#call">为什么 call 没有同样的问题</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#12">12. 流水线控制信号总表</a>
-    <ul class="paper-toc-sub"><li><a href="#121-d_bubble-load_use">12.1 为什么 D_bubble 中有 !load_use</a></li><li><a href="#122-pc">12.2 PC 选择优先级</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#121-d_bubble-load_use">12.1 为什么 D_bubble 中有 !load_use</a>
+    
+  </li>
+
+  <li><a href="#122-pc">12.2 PC 选择优先级</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#13">13. 异常在流水线中的处理思路</a>
@@ -242,11 +631,25 @@
   </li>
 
   <li><a href="#14-cpi">14. 性能分析：CPI</a>
-    <ul class="paper-toc-sub"><li><a href="#141">14.1 基本定义</a></li><li><a href="#142">14.2 惩罚项计算</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#141">14.1 基本定义</a>
+    
+  </li>
+
+  <li><a href="#142">14.2 惩罚项计算</a>
+    
   </li>
 
 </ul>
-</details>
+
+  </li>
+
+</ul>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             
 <blockquote>
@@ -1420,12 +1823,11 @@
 <p>该例中最大的性能损失来自分支误预测。</p>
           </div>
           
-          <details class="paper-series"><summary>CSAPP · 共 3 篇</summary><ol><li><a href="../p34/">CSAPP第二章</a></li><li><a href="../p55/">CSAPP第三章</a></li><li><a href="./" aria-current="page">CSAPP第四章</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p55/"><span>上一篇 · CSAPP</span>CSAPP第三章</a>
             
           </nav>
+          
           
 
 
@@ -1443,59 +1845,435 @@
 <ul class="paper-toc-list">
 
   <li><a href="#0">0. 整章知识地图</a>
-    <ul class="paper-toc-sub"><li><a href="#_1">本章最重要的三个问题</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_1">本章最重要的三个问题</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#1-isa">1. ISA：软件与硬件之间的接口</a>
-    <ul class="paper-toc-sub"><li><a href="#11-isa">1.1 什么是 ISA</a></li><li><a href="#12-y86-64">1.2 Y86-64 的程序员可见状态</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#11-isa">1.1 什么是 ISA</a>
+    
+  </li>
+
+  <li><a href="#12-y86-64">1.2 Y86-64 的程序员可见状态</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">条件码</a>
+    
+  </li>
+
+  <li><a href="#_3">状态码</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#2-y86-64">2. Y86-64 指令集</a>
-    <ul class="paper-toc-sub"><li><a href="#21">2.1 数据传送指令</a></li><li><a href="#22-opq">2.2 算术和逻辑指令 OPq</a></li><li><a href="#23">2.3 条件传送和条件跳转</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#21">2.1 数据传送指令</a>
+    
+  </li>
+
+  <li><a href="#22-opq">2.2 算术和逻辑指令 OPq</a>
+    
+  </li>
+
+  <li><a href="#23">2.3 条件传送和条件跳转</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_4">条件传送</a>
+    
+  </li>
+
+  <li><a href="#_5">条件跳转</a>
+    
+  </li>
+
+  <li><a href="#ifun">ifun 条件编码</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#24">2.4 栈和过程控制</a>
-    <ul class="paper-toc-sub"><li><a href="#call-valp">call 为什么把 valP 写入内存</a></li><li><a href="#ret">ret 为什么比较特殊</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#call-valp">call 为什么把 valP 写入内存</a>
+    
+  </li>
+
+  <li><a href="#ret">ret 为什么比较特殊</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#3">3. 指令编码</a>
-    <ul class="paper-toc-sub"><li><a href="#31">3.1 基本格式</a></li><li><a href="#32">3.2 寄存器编码</a></li><li><a href="#33">3.3 指令长度</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#31">3.1 基本格式</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#icode">icode 总表</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#32">3.2 寄存器编码</a>
+    
+  </li>
+
+  <li><a href="#33">3.3 指令长度</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#4">4. 硬件基础：组合逻辑与时序逻辑</a>
-    <ul class="paper-toc-sub"><li><a href="#41">4.1 组合逻辑</a></li><li><a href="#42">4.2 时序逻辑</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#41">4.1 组合逻辑</a>
+    
+  </li>
+
+  <li><a href="#42">4.2 时序逻辑</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#verilog">Verilog 对应关系</a>
+    
+  </li>
+
+  <li><a href="#_6">为什么需要区分</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#5-seqy86-64">5. SEQ：Y86-64 的顺序实现</a>
-    <ul class="paper-toc-sub"><li><a href="#51">5.1 六个逻辑阶段</a></li><li><a href="#52">5.2 各阶段的职责</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#51">5.1 六个逻辑阶段</a>
+    
+  </li>
+
+  <li><a href="#52">5.2 各阶段的职责</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#fetch">Fetch：取指</a>
+    
+  </li>
+
+  <li><a href="#decode">Decode：译码和读寄存器</a>
+    
+  </li>
+
+  <li><a href="#execute">Execute：执行</a>
+    
+  </li>
+
+  <li><a href="#memory">Memory：访存</a>
+    
+  </li>
+
+  <li><a href="#write-back">Write Back：写回</a>
+    
+  </li>
+
+  <li><a href="#update-pc-pc">Update PC：更新 PC</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#6">6. 常见指令的阶段级语义</a>
-    <ul class="paper-toc-sub"><li><a href="#61">6.1 总表</a></li><li><a href="#62">6.2 关键控制信号速查</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#61">6.1 总表</a>
+    
+  </li>
+
+  <li><a href="#62">6.2 关键控制信号速查</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_7">源寄存器</a>
+    
+  </li>
+
+  <li><a href="#_8">目的寄存器</a>
+    
+  </li>
+
+  <li><a href="#alu">ALU 输入</a>
+    
+  </li>
+
+  <li><a href="#_9">内存控制</a>
+    
+  </li>
+
+  <li><a href="#_10">为什么统一成多路选择器</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#7-seq">7. 从 SEQ 到流水线</a>
-    <ul class="paper-toc-sub"><li><a href="#71">7.1 为什么做流水线</a></li><li><a href="#72">7.2 吞吐量与延迟</a></li><li><a href="#73">7.3 非均匀划分与深流水线</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#71">7.1 为什么做流水线</a>
+    
+  </li>
+
+  <li><a href="#72">7.2 吞吐量与延迟</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_11">不流水化示例</a>
+    
+  </li>
+
+  <li><a href="#100-ps">分成三级，每级 100 ps</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#73">7.3 非均匀划分与深流水线</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#8-pipe">8. PIPE：五级流水线硬件结构</a>
-    <ul class="paper-toc-sub"><li><a href="#81">8.1 流水线寄存器</a></li><li><a href="#82">8.2 流水线寄存器的三种操作</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#81">8.1 流水线寄存器</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#f">F 寄存器</a>
+    
+  </li>
+
+  <li><a href="#d">D 寄存器</a>
+    
+  </li>
+
+  <li><a href="#e">E 寄存器</a>
+    
+  </li>
+
+  <li><a href="#m">M 寄存器</a>
+    
+  </li>
+
+  <li><a href="#w">W 寄存器</a>
+    
+  </li>
+
+  <li><a href="#srcasrcbdstedstm">为什么要把 srcA/srcB/dstE/dstM 一起传下去</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#82">8.2 流水线寄存器的三种操作</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_12">正常加载</a>
+    
+  </li>
+
+  <li><a href="#stall">Stall（暂停）</a>
+    
+  </li>
+
+  <li><a href="#bubble">Bubble（气泡）</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9. 数据依赖、数据冒险和转发</a>
-    <ul class="paper-toc-sub"><li><a href="#91">9.1 依赖与冒险不是一回事</a></li><li><a href="#92">9.2 为什么等待写回很浪费</a></li><li><a href="#93-forwarding-bypassing">9.3 转发（Forwarding / Bypassing）</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#91">9.1 依赖与冒险不是一回事</a>
+    
+  </li>
+
+  <li><a href="#92">9.2 为什么等待写回很浪费</a>
+    
+  </li>
+
+  <li><a href="#93-forwarding-bypassing">9.3 转发（Forwarding / Bypassing）</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#jxxcall-vala-valp">为什么 jXX/call 的 valA 保存 valP</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-loaduse">10. Load/Use 冒险</a>
-    <ul class="paper-toc-sub"><li><a href="#101">10.1 典型代码</a></li><li><a href="#102">10.2 正确控制</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#101">10.1 典型代码</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_13">为什么普通转发仍来不及</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#102">10.2 正确控制</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#11">11. 控制冒险</a>
-    <ul class="paper-toc-sub"><li><a href="#111">11.1 根源</a></li><li><a href="#112">11.2 条件跳转与分支预测</a></li><li><a href="#113-ret">11.3 ret 冒险</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#111">11.1 根源</a>
+    
+  </li>
+
+  <li><a href="#112">11.2 条件跳转与分支预测</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_14">预测正确</a>
+    
+  </li>
+
+  <li><a href="#_15">预测错误</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#113-ret">11.3 ret 冒险</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#call">为什么 call 没有同样的问题</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#12">12. 流水线控制信号总表</a>
-    <ul class="paper-toc-sub"><li><a href="#121-d_bubble-load_use">12.1 为什么 D_bubble 中有 !load_use</a></li><li><a href="#122-pc">12.2 PC 选择优先级</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#121-d_bubble-load_use">12.1 为什么 D_bubble 中有 !load_use</a>
+    
+  </li>
+
+  <li><a href="#122-pc">12.2 PC 选择优先级</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#13">13. 异常在流水线中的处理思路</a>
@@ -1503,7 +2281,19 @@
   </li>
 
   <li><a href="#14-cpi">14. 性能分析：CPI</a>
-    <ul class="paper-toc-sub"><li><a href="#141">14.1 基本定义</a></li><li><a href="#142">14.2 惩罚项计算</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#141">14.1 基本定义</a>
+    
+  </li>
+
+  <li><a href="#142">14.2 惩罚项计算</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
 </ul>
@@ -1618,10 +2408,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

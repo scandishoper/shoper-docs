@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -175,18 +175,75 @@
             <a class="paper-eyebrow" href="../../topics/cs/">CS 自学</a>
             <span class="paper-breadcrumb"> / CS106L</span>
             <h1>CS106L / assignment2笔记</h1>
-            <div class="paper-meta"><time datetime="2026-02-21">2026年2月21日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a></div>
+            <div class="paper-meta"><time datetime="2026-02-21">2026年2月21日</time><span aria-hidden="true">·</span><a href="../">CS 自学</a><span aria-hidden="true">·</span><span>约 2 分钟</span></div>
             
           </header>
-          <details class="paper-mobile-toc"><summary>本文目录</summary>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · CS106L</span>
+                <span class="paper-series__position">第 2 / 2 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p54/">CS106L / assignment1笔记</a></li><li><a href="./" aria-current="page">CS106L / assignment2笔记</a></li></ol>
+              <a class="paper-series__all" href="../">浏览CS 自学全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
 <ul class="paper-toc-list">
 
   <li><a href="#cs106l-assignment2">CS106L / assignment2笔记</a>
-    <ul class="paper-toc-sub"><li><a href="#1-cerr">1) cerr 该“返回什么”？</a></li><li><a href="#2-ifstream-vs-istringstream">2) ifstream vs istringstream</a></li><li><a href="#3-mchstrstu-clear">3) mch.str(stu) 是什么？为什么要 clear()？</a></li><li><a href="#4-queueconst-string-vs">4) queue&lt;const string*&gt; 存指针 vs 存字符串</a></li><li><a href="#5-const-stdstring-best-const">5) const std::string* best 的 const 含义</a></li><li><a href="#7">7) “跳过空指针”意义？</a></li><li><a href="#8-fname">8) 你写的 f(name) 有啥问题？</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#1-cerr">1) cerr 该“返回什么”？</a>
+    
+  </li>
+
+  <li><a href="#2-ifstream-vs-istringstream">2) ifstream vs istringstream</a>
+    
+  </li>
+
+  <li><a href="#3-mchstrstu-clear">3) mch.str(stu) 是什么？为什么要 clear()？</a>
+    
+  </li>
+
+  <li><a href="#4-queueconst-string-vs">4) queue&lt;const string*&gt; 存指针 vs 存字符串</a>
+    
+  </li>
+
+  <li><a href="#5-const-stdstring-best-const">5) const std::string* best 的 const 含义</a>
+    
+  </li>
+
+  <li><a href="#7">7) “跳过空指针”意义？</a>
+    
+  </li>
+
+  <li><a href="#8-fname">8) 你写的 f(name) 有啥问题？</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9) 段错误怎么找：推荐流程</a>
-    <ul class="paper-toc-sub"><li><a href="#sanitizer">编译时加调试信息 + Sanitizer</a></li><li><a href="#gdb">用 gdb 看栈</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#sanitizer">编译时加调试信息 + Sanitizer</a>
+    
+  </li>
+
+  <li><a href="#gdb">用 gdb 看栈</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-asan">10) 你这次 ASan 报告怎么读出来的结论</a>
@@ -194,7 +251,9 @@
   </li>
 
 </ul>
-</details>
+</nav></details>
+          </div>
+          
           <div class="paper-body">
             <h2 id="cs106l-assignment2">CS106L / assignment2笔记<a class="headerlink" href="#cs106l-assignment2" title="此章节的链接">&para;</a></h2>
 <h3 id="1-cerr">1) <code>cerr</code> 该“返回什么”？<a class="headerlink" href="#1-cerr" title="此章节的链接">&para;</a></h3>
@@ -284,12 +343,11 @@
 </ul>
           </div>
           
-          <details class="paper-series"><summary>CS106L · 共 2 篇</summary><ol><li><a href="../p54/">CS106L / assignment1笔记</a></li><li><a href="./" aria-current="page">CS106L / assignment2笔记</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p54/"><span>上一篇 · CS106L</span>CS106L / assignment1笔记</a>
             
           </nav>
+          
           
 
 
@@ -307,11 +365,55 @@
 <ul class="paper-toc-list">
 
   <li><a href="#cs106l-assignment2">CS106L / assignment2笔记</a>
-    <ul class="paper-toc-sub"><li><a href="#1-cerr">1) cerr 该“返回什么”？</a></li><li><a href="#2-ifstream-vs-istringstream">2) ifstream vs istringstream</a></li><li><a href="#3-mchstrstu-clear">3) mch.str(stu) 是什么？为什么要 clear()？</a></li><li><a href="#4-queueconst-string-vs">4) queue&lt;const string*&gt; 存指针 vs 存字符串</a></li><li><a href="#5-const-stdstring-best-const">5) const std::string* best 的 const 含义</a></li><li><a href="#7">7) “跳过空指针”意义？</a></li><li><a href="#8-fname">8) 你写的 f(name) 有啥问题？</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#1-cerr">1) cerr 该“返回什么”？</a>
+    
+  </li>
+
+  <li><a href="#2-ifstream-vs-istringstream">2) ifstream vs istringstream</a>
+    
+  </li>
+
+  <li><a href="#3-mchstrstu-clear">3) mch.str(stu) 是什么？为什么要 clear()？</a>
+    
+  </li>
+
+  <li><a href="#4-queueconst-string-vs">4) queue&lt;const string*&gt; 存指针 vs 存字符串</a>
+    
+  </li>
+
+  <li><a href="#5-const-stdstring-best-const">5) const std::string* best 的 const 含义</a>
+    
+  </li>
+
+  <li><a href="#7">7) “跳过空指针”意义？</a>
+    
+  </li>
+
+  <li><a href="#8-fname">8) 你写的 f(name) 有啥问题？</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#9">9) 段错误怎么找：推荐流程</a>
-    <ul class="paper-toc-sub"><li><a href="#sanitizer">编译时加调试信息 + Sanitizer</a></li><li><a href="#gdb">用 gdb 看栈</a></li></ul>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#sanitizer">编译时加调试信息 + Sanitizer</a>
+    
+  </li>
+
+  <li><a href="#gdb">用 gdb 看栈</a>
+    
+  </li>
+
+</ul>
+
   </li>
 
   <li><a href="#10-asan">10) 你这次 ASan 报告怎么读出来的结论</a>
@@ -430,10 +532,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       

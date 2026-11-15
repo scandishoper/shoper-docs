@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/2026-3-20-1.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -167,7 +167,7 @@
     
     
     
-    <div class="paper-reading">
+    <div class="paper-reading paper-reading--with-toc">
       <article class="paper-article md-typeset" id="paper-content">
         
           
@@ -175,9 +175,76 @@
             <a class="paper-eyebrow" href="../../topics/algorithms/">算法与题解</a>
             <span class="paper-breadcrumb"> / 数据结构</span>
             <h1>并查集(树</h1>
-            <div class="paper-meta"><time datetime="2025-03-12">2025年3月12日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a></div>
+            <div class="paper-meta"><time datetime="2025-03-12">2025年3月12日</time><span aria-hidden="true">·</span><a href="../">算法笔记</a><span aria-hidden="true">·</span><span>约 2 分钟</span></div>
             
           </header>
+          
+          <div class="paper-reading-tools">
+            
+            <details class="paper-series">
+              <summary>
+                <span class="paper-series__label">系列 · 数据结构</span>
+                <span class="paper-series__position">第 3 / 6 篇</span>
+                <span class="paper-series__action" aria-hidden="true">目录</span>
+              </summary>
+              <ol class="paper-series__list"><li><a href="../p12/">栈/队列/双端</a></li><li><a href="../p4/">优先/pair/map/set/自定义比较器</a></li><li><a href="./" aria-current="page">并查集(树</a></li><li><a href="../p3/">二叉树的遍历</a></li><li><a href="../p56/">ST表</a></li><li><a href="../p61/">pbds库</a></li></ol>
+              <a class="paper-series__all" href="../">浏览算法笔记全部文章 <span aria-hidden="true">→</span></a>
+            </details>
+            
+            <details class="paper-mobile-toc"><summary>本文目录</summary><nav aria-label="本文目录">
+<ul class="paper-toc-list">
+
+  <li><a href="#_1">并查集定义</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">初始化</a>
+    
+  </li>
+
+  <li><a href="#find">定义 find 函数，用于寻找某个节点的根节点（就是父节点的父节点的父。。。。。</a>
+    
+  </li>
+
+  <li><a href="#join">定义 join 合并函数，用于将两个树合并在一起，使他们拥有同一个根</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#_3">并查集优化</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_4">一.路径压缩</a>
+    
+  </li>
+
+  <li><a href="#_5">二.按秩合并（加权标记）</a>
+    
+  </li>
+
+  <li><a href="#_6">这样子就可以开心的解决问题啦</a>
+    
+  </li>
+
+  <li><a href="#_7">例题 路径压缩</a>
+    
+  </li>
+
+  <li><a href="#_8">例题 按秩合并</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+</nav></details>
+          </div>
           
           <div class="paper-body">
             <h2 id="_1">并查集定义<a class="headerlink" href="#_1" title="此章节的链接">&para;</a></h2>
@@ -272,12 +339,11 @@
 <h3 id="_8"><a href="http://poj.org/problem?id=1988">例题 按秩合并</a><a class="headerlink" href="#_8" title="此章节的链接">&para;</a></h3>
           </div>
           
-          <details class="paper-series"><summary>数据结构 · 共 6 篇</summary><ol><li><a href="../p12/">栈/队列/双端</a></li><li><a href="../p4/">优先/pair/map/set/自定义比较器</a></li><li><a href="./" aria-current="page">并查集(树</a></li><li><a href="../p3/">二叉树的遍历</a></li><li><a href="../p56/">ST表</a></li><li><a href="../p61/">pbds库</a></li></ol></details>
-          
           <nav class="paper-pagination" aria-label="继续阅读">
             <a href="../p4/"><span>上一篇 · 数据结构</span>优先/pair/map/set/自定义比较器</a>
             <a href="../p3/"><span>下一篇 · 数据结构</span>二叉树的遍历</a>
           </nav>
+          
           
 
 <section class="paper-legacy-comments" id="legacy-comments" aria-labelledby="legacy-comments-title">
@@ -333,7 +399,59 @@
 
         
       </article>
-      
+      <aside class="paper-toc" aria-label="本文目录"><div class="paper-toc__inner"><span class="paper-toc__label">本文目录</span>
+<ul class="paper-toc-list">
+
+  <li><a href="#_1">并查集定义</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_2">初始化</a>
+    
+  </li>
+
+  <li><a href="#find">定义 find 函数，用于寻找某个节点的根节点（就是父节点的父节点的父。。。。。</a>
+    
+  </li>
+
+  <li><a href="#join">定义 join 合并函数，用于将两个树合并在一起，使他们拥有同一个根</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+  <li><a href="#_3">并查集优化</a>
+    
+<ul class="paper-toc-sub">
+
+  <li><a href="#_4">一.路径压缩</a>
+    
+  </li>
+
+  <li><a href="#_5">二.按秩合并（加权标记）</a>
+    
+  </li>
+
+  <li><a href="#_6">这样子就可以开心的解决问题啦</a>
+    
+  </li>
+
+  <li><a href="#_7">例题 路径压缩</a>
+    
+  </li>
+
+  <li><a href="#_8">例题 按秩合并</a>
+    
+  </li>
+
+</ul>
+
+  </li>
+
+</ul>
+</div></aside>
     </div>
   
 </div>
@@ -444,10 +562,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/javascripts/mathjax.js"></script>
       
