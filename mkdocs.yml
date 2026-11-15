@@ -29,6 +29,7 @@ theme:
 hooks:
   - hooks/blog.py
   - hooks/comments.py
+  - hooks/assets.py
 
 plugins:
   - search:

@@ -1,5 +1,5 @@
-mkdocs>=1.6,<2
-mkdocs-material>=9.7,<10
+mkdocs==1.6.1
+mkdocs-material==9.7.7
 mkdocs-git-revision-date-localized-plugin
 mkdocs-git-authors-plugin
 mkdocs-encryptcontent-plugin
